@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "147501650924",
+    "firebase_url": "https://ishop-850e4.firebaseio.com",
+    "project_id": "ishop-850e4",
+    "storage_bucket": "ishop-850e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147501650924:android:ddadaeab48bf97a299e6c9",
+        "android_client_info": {
+          "package_name": "app.demo.ishop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "147501650924-t99o9fc5hrge3941vj2n5j8645indr9d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAx__0ygQSxx0HVZsjZOkHLW-SU7-l28mw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "147501650924-t99o9fc5hrge3941vj2n5j8645indr9d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,219 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:ishop/utils/styles.dart';
+import 'package:ishop/widgets/basic_button.dart';
+import 'package:ishop/widgets/input_field.dart';
+import 'package:ishop/widgets/whiteTick.dart';
+
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key key}) : super(key: key);
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
+  final _formKey = GlobalKey<FormState>();
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
+  FirebaseAuth auth = FirebaseAuth.instance;
+  UserCredential userCredential;
+  AnimationController _loginButtonController;
+  var animationStatus = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _loginButtonController = AnimationController(
+        duration: Duration(milliseconds: 3000), vsync: this);
+    auth.authStateChanges().listen((User user) async {
+      if (user == null) {
+        print('Unable to Authenticate User.  Please sign in.');
+      } else {
+        await auth.currentUser
+            .getIdTokenResult()
+            .then((idTokenResult) async => {
+                  if (!!idTokenResult.claims['admin'])
+                    {_playAnimation()}
+                  else
+                    {
+                      await auth
+                          .signOut()
+                          .then((val) => {userCredential = null})
+                          .catchError((err) => {print(err)})
+                    }
+                })
+            .catchError((err) => {print(err)});
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    // clean up the controllers when the form is disposed
+    _usernameController.dispose();
+    _passwordController.dispose();
+    _loginButtonController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _playAnimation() async {
+    setState(() {
+      animationStatus = 1;
+    });
+    try {
+      await _loginButtonController.forward();
+      await _loginButtonController.reverse();
+    } on TickerCanceled {
+      print('Ticker Canceled!');
+    }
+  }
+
+  Future<bool> _onWillPop() {
+    return showDialog(
+          context: context,
+          child: AlertDialog(
+            title: Text('Are you sure?'),
+            actions: <Widget>[
+              FlatButton(
+                onPressed: () => Navigator.of(context).pop(false),
+                child: Text('No'),
+              ),
+              FlatButton(
+                onPressed: () =>
+                    Navigator.pushReplacementNamed(context, '/home'),
+                child: Text('YES'),
+              ),
+            ],
+          ),
+        ) ??
+        false;
+  }
+
+  Future<void> _onSubmitForm() async {
+    try {
+      await FirebaseAuth.instance
+          .signInWithEmailAndPassword(
+              email: _usernameController.text,
+              password: _passwordController.text)
+          .then((val) => userCredential = val ?? userCredential);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
+      }
+    }
+  }
+
+  Future<void> _onGoogleSignIn() async {
+    // Trigger the authentication flow
+    final account = await GoogleSignIn().signIn();
+    // Obtain the auth details from the request
+    final details = await account.authentication;
+    // create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: details.accessToken,
+      idToken: details.idToken,
+    );
+    final result = await FirebaseAuth.instance.signInWithCredential(credential);
+    userCredential = result ?? userCredential;
+  }
+
+  Widget _buildFormSubmitButton() {
+    return animationStatus == 0
+        ? Padding(
+            padding: const EdgeInsets.only(bottom: 50.0),
+            child: InkWell(onTap: _onSubmitForm, child: BasicButton('Sign In')),
+          )
+        : LoginAnimation(buttonController: _loginButtonController.view);
+  }
+
+  Widget _buildGoogleButton() {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 50.0),
+      child:
+          InkWell(onTap: _onGoogleSignIn, child: BasicButton('Google Account')),
+    );
+  }
+
+  Widget _buildLoginForm() {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 20.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          Form(
+              key: _formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  InputField(
+                    _usernameController,
+                    hint: 'Username',
+                    obscure: false,
+                    icon: Icons.person_outline,
+                  ),
+                  InputField(
+                    _passwordController,
+                    hint: 'Password',
+                    obscure: true,
+                    icon: Icons.lock_outline,
+                  ),
+                ],
+              )),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    timeDilation = 0.4;
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+    return WillPopScope(
+      onWillPop: _onWillPop,
+      child: Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+            image: backgroundImage,
+          ),
+          child: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+              colors: <Color>[
+                const Color.fromRGBO(162, 146, 199, 0.8),
+                const Color.fromRGBO(51, 51, 63, 0.9),
+              ],
+              stops: [0.2, 1.0],
+              begin: const FractionalOffset(0.0, 0.0),
+              end: const FractionalOffset(0.0, 1.0),
+            )),
+            child: ListView(
+              padding: const EdgeInsets.all(0.0),
+              children: <Widget>[
+                Stack(
+                  alignment: AlignmentDirectional.bottomCenter,
+                  children: <Widget>[
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Tick(image: tick),
+                        _buildLoginForm(),
+                        _buildFormSubmitButton(),
+                        _buildGoogleButton(),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
