@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:ishop/pages/admin/admin_page.dart';
 import 'package:ishop/pages/login/login_page.dart';
+import 'package:ishop/pages/poi/poi_page.dart';
 import 'package:ishop/utils/colors.dart';
 import 'package:ishop/utils/custom_route.dart';
 import 'package:ishop/widgets/loading.dart';
@@ -47,6 +48,12 @@ class MyApp extends StatelessWidget {
                       case '/home':
                         return CustomRoute(
                           builder: (_) => HomePage(),
+                          settings: settings,
+                        );
+
+                      case '/poi':
+                        return CustomRoute(
+                          builder: (_) => POIPage(),
                           settings: settings,
                         );
 

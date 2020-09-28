@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:recase/recase.dart';
 
+enum BannerType {
+  all,
+  foodAndDrug,
+  marketplace,
+}
+
 enum LocalityType { phoenix }
 
 enum DialogActionType {

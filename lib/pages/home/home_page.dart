@@ -5,7 +5,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:ishop/pages/locations/locations_map_page.dart';
+import 'package:ishop/pages/poi/poi_page.dart';
 import 'package:ishop/providers/retail_locations_service.dart';
 import 'package:ishop/utils/colors.dart';
 import 'package:ishop/utils/text_styles.dart';
@@ -149,7 +149,8 @@ class _HomePageState extends State<HomePage> {
                                               if (index == 0) {
                                                 return HomePage();
                                               } else if (index == 1) {
-                                                return LocationsMapPage();
+                                                //return POIPage();
+                                                return POIPage();
                                               } else if (index == 2) {
                                                 return HomePage();
                                               } else {

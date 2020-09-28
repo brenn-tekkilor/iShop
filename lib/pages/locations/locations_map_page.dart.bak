@@ -16,9 +16,7 @@ class LocationsMapPage extends StatefulWidget {
 
 class _LocationsMapPageState extends State<LocationsMapPage> {
   _LocationsMapPageState() {
-    _positionStream = getPositionStream(distanceFilter: 10, timeInterval: 10)
-        .listen((value) =>
-            currentPosition = LatLng(value.latitude, value.longitude));
+    _positionStream = getPositionStream().listen((value) => currentPosition = LatLng(value.latitude, value.longitude));
   }
 
   //# region final members
@@ -30,14 +28,15 @@ class _LocationsMapPageState extends State<LocationsMapPage> {
   //#endregion
 
   //#region private members
+  Stream<QuerySnapshot> _mapLocationMarkers;
+
+  final Completer<GoogleMapController> _mapController = Completer();
 
   CameraPosition _initialPosition;
 
   String _deviceName;
 
   StreamSubscription<Position> _positionStream;
-
-  GoogleMapController _mapController;
 
   LatLng _currentPosition;
 
@@ -188,6 +187,12 @@ class _LocationsMapPageState extends State<LocationsMapPage> {
   }
 
   //#endregion
+
+  @override
+  void initState() {
+    super.initState();
+  _mapLocationMarkers = Firestore.instance
+  .collection('maplocationmarkers').}
 
   @override
   void dispose() {
