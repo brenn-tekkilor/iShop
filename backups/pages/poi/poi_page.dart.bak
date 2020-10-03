@@ -1,0 +1,253 @@
++import 'dart:async';
+import 'dart:math';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:geoflutterfire/geoflutterfire.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:ishop/pages/poi/poi_banner_filter_toggle.dart';
+import 'package:ishop/pages/poi/poi_map.dart';
+import 'package:ishop/pages/poi/poi_slider.dart';
+import 'package:ishop/utils/map_utils.dart';
+import 'package:ishop/utils/util.dart';
+import 'package:rxdart/rxdart.dart';
+
+class POIPage extends StatefulWidget {
+  @override
+  State createState() => POIPageState();
+}
+
+class POIPageState extends State<POIPage> {
+  final firestore = FirebaseFirestore.instance.collection('maplocationmarkers');
+  final markers = <Marker>{};
+  final Completer<GoogleMapController> _mapController = Completer();
+  LatLng _deviceLocation;
+  StreamSubscription<Position> _positionStream;
+  Future<StreamSubscription<List<DocumentSnapshot>>> poiStreamSubscription;
+  double _geoRadius;
+  BehaviorSubject<MapEntry<GeoFirePoint, double>> poiBroadcastStream;
+  BannerType _poiFilter;
+
+  @override
+  void initState() {
+    super.initState();
+    _deviceLocation ??= LatLng(37.7786, -122.4375);
+    _geoRadius ??= 2.0;
+    _poiFilter ??= BannerType.all;
+    _positionStream = getPositionStream(distanceFilter: 10, timeInterval: 5)
+        .listen((value) =>
+            deviceLocation = LatLng(value.latitude, value.longitude));
+    poiBroadcastStream ??=
+        BehaviorSubject<MapEntry<GeoFirePoint, double>>.seeded(
+            MapEntry(geo.point(latitude: 37.7786, longitude: -122.4375), 2.0));
+    BehaviorSubject<MapEntry<GeoFirePoint, double>>.seeded(_getGeoParams());
+    poiStreamSubscription = _getStreamSubscription();
+  }
+
+  //#region overrides
+
+  @override
+  void dispose() {
+    _positionStream.cancel();
+    poiStreamSubscription = null;
+    super.dispose();
+  }
+
+  @override
+  Widget build(context) {
+    final
+    return MaterialApp(
+      home: Scaffold(
+        body: StreamBuilder<StreamSubscription<List<DocumentSnapshot>>>(
+          stream: _poiStreamSubscription.asStream(),
+          builder: (context, snapshot) {
+            if (snapshot.hasError) {
+              return Center(child: Text('Error: ${snapshot.error}'));
+            }
+            if (!snapshot.hasData) {
+              return Center(child: const Text('Loading...'));
+            }
+            //#region BannerFilter Listener
+            return NotificationListener<FilterSwitcherButtonNotification>(
+                //#region OnDragCompleted Listener
+                child: NotificationListener<OnDragCompleted>(
+                  //#region OnDragDragging Listener
+                  child: NotificationListener<OnDragging>(
+                    child: Stack(
+                      children: <Widget>[
+                        POIMap(
+                            markers: markers,
+                            initialPosition: deviceLocation,
+                            mapController: _mapController),
+                        Positioned(
+                          bottom: 50,
+                          left: 10,
+                          child: Container(
+                            constraints: BoxConstraints.expand(
+                              width: MediaQuery.of(context).size.width,
+                              height: 50,
+                            ),
+                            child: POISlider(),
+                          ),
+                        ),
+                        Positioned(
+                          top: 50,
+                          left: 10,
+                          child: POIFilterSwitcher(),
+                        )
+                      ],
+                    ),
+                    onNotification: (dragging) {
+                      if (dragging.lowerValue is double &&
+                          dragging.lowerValue != _geoRadius) {
+                        geoRadius = dragging.lowerValue;
+                      }
+                      return true;
+                    },
+                  ),
+                  //#endregion
+                  onNotification: (dragCompleted) {
+                    if (dragCompleted.lowerValue is double &&
+                        dragCompleted.lowerValue != _geoRadius) {
+                      geoRadius = dragCompleted.lowerValue;
+                    }
+                    return true;
+                  },
+                ),
+                //#endregion
+                onNotification: (filter) {
+                  poiFilter = filter.banner;
+                  return true;
+                });
+            //#endregion
+          },
+        ),
+      ),
+    );
+  }
+
+  //#endregion
+
+  //#region POI Map Markers mgmnt
+
+  void _addMarker(Marker value) {
+    assert(value != null);
+    if (!markers.contains(value)) {
+      markers.removeWhere((e) => e.markerId.value == value.markerId.value);
+      markers.add(value);
+    }
+  }
+
+  void _updateMarkers(List<DocumentSnapshot> docList) {
+    markers.clear();
+    docList.forEach((d) {
+      final data = d.data();
+      final banner = data['meta']['banner'];
+      final point = data['point']['geopoint'];
+      _addMarker(Marker(
+        markerId: MarkerId(d.id),
+        position: geoPointToLatLng(point),
+        icon: banner == 'marketplace'
+            ? BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueGreen)
+            : BitmapDescriptor.defaultMarker,
+        infoWindow: InfoWindow(
+          title: data['name'],
+          snippet: banner,
+        ),
+      ));
+    });
+  }
+
+  //#endregion
+
+  //#region Firestore stream subscription methods
+
+  Future<StreamSubscription<List<DocumentSnapshot>>>
+      _getStreamSubscription() async {
+    return await poiBroadcastStream.switchMap((bounds) {
+      final ref = _getFilterQuery();
+      return geo.collection(collectionRef: ref).within(
+          center: bounds.key,
+          radius: bounds.value,
+          field: 'point',
+          strictMode: false);
+    }).listen(_updateMarkers);
+  }
+
+  MapEntry<GeoFirePoint, double> _getGeoParams() =>
+      MapEntry<GeoFirePoint, double>(
+          latLngToGeoFirePoint(deviceLocation), geoRadius);
+
+  void _setGeoParams() {
+    setState(() {
+      poiBroadcastStream.add(_getGeoParams());
+    });
+  }
+
+  dynamic _getFilterQuery() {
+    return _poiFilter == BannerType.all
+        ? firestore
+        : firestore.where('meta.banner',
+            isEqualTo: bannerValueToString(poiFilter.toString()));
+  }
+
+  //#endregion
+
+  //#region getters/setters
+
+  //#region getters
+
+  BannerType get poiFilter => _poiFilter;
+
+  LatLng get deviceLocation => _deviceLocation;
+
+  double get geoRadius => _geoRadius;
+
+  Completer get mapController => _mapController;
+
+  //#endregion
+
+  //#region setters
+
+  set poiFilter(BannerType value) {
+    assert(value != null && value is BannerType);
+    if (value != _poiFilter) {
+      _poiFilter = value;
+      poiStreamSubscription = _getStreamSubscription();
+    }
+  }
+
+  set deviceLocation(LatLng value) {
+    assert(value != null && value is LatLng);
+    if (_deviceLocation == null) {
+      _deviceLocation = value;
+    } else if (_deviceLocation != value) {
+      if (geo
+              .point(
+                  latitude: _deviceLocation.latitude,
+                  longitude: _deviceLocation.longitude)
+              .distance(lat: value.latitude, lng: value.longitude) >=
+          0.000929079 * pow(_geoRadius, 2) + 2) {
+        _setGeoParams();
+      }
+      _deviceLocation = value;
+    }
+  }
+
+  set geoRadius(double value) {
+    assert(value != null);
+    _geoRadius ??= value;
+    if (_geoRadius != value) {
+      _geoRadius = value;
+      _setGeoParams();
+    }
+  }
+
+//#endregion
+
+  //#endregion getters/setters
+
+}

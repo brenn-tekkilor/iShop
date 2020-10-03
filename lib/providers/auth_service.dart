@@ -2,18 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-class AuthService extends ChangeNotifier {
-  AuthService._create() {
-    _auth ??= FirebaseAuth.instance;
+class AuthService with ChangeNotifier {
+  AuthService() : _auth = FirebaseAuth.instance {
     _auth.authStateChanges().listen(onAuthStateChange);
   }
-  static AuthService getInstance() {
-    _instance ??= AuthService._create();
-    return _instance;
-  }
 
-  static AuthService _instance;
-  FirebaseAuth _auth;
+  final FirebaseAuth _auth;
   UserCredential _userCredential;
   bool _isUserAuthorized;
 

@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:ishop/model/retail_location.dart';
+
+import 'file:///C:/Users/brenn/source/repos/brenn/ishop/lib/model/schemas/retail_location.dart';
 
 class RetailLocationsService extends ChangeNotifier {
   RetailLocationsService._create() : _firestore = FirebaseFirestore.instance;
@@ -16,14 +17,6 @@ class RetailLocationsService extends ChangeNotifier {
   final _retailLocations = <String, RetailLocation>{};
   final _markers = <Marker>[];
   RetailLocation _targetLocation;
-
-  void _addRetailLocationFromDocumentSnapshot(
-      String key, QueryDocumentSnapshot doc) {
-    if (!_retailLocations.containsKey(key)) {
-      final _retailLocation = RetailLocation.fromDoc(doc);
-      retailLocations[key] = _retailLocation;
-    }
-  }
 
   void _addRetailLocation(RetailLocation retailLocation) {
     if (!retailLocations.containsKey(retailLocation.id)) {

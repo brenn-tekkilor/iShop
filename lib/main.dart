@@ -5,14 +5,12 @@ import 'package:ishop/pages/admin/admin_page.dart';
 import 'package:ishop/pages/login/login_page.dart';
 import 'package:ishop/pages/poi/poi_page.dart';
 import 'package:ishop/utils/colors.dart';
-import 'package:ishop/utils/custom_route.dart';
-import 'package:ishop/widgets/loading.dart';
 
 import 'file:///C:/Users/brenn/source/repos/brenn/ishop/lib/pages/home/home_page.dart';
 
 void main() => runApp(MyApp());
 
-final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
 class MyApp extends StatelessWidget {
   @override
@@ -21,62 +19,65 @@ class MyApp extends StatelessWidget {
         future: _initialization,
         builder: (context, snapshot) {
           if (snapshot.hasError) {
-            return Container(child: Text('Error initializing FireBase!'));
+            return Container(
+                child: Text(
+              'Error initializing FireBase!',
+              textDirection: TextDirection.ltr,
+            ));
           }
-          if (snapshot.connectionState == ConnectionState.done) {
-            return DynamicTheme(
-              defaultBrightness: Brightness.dark,
-              data: (brightness) => ThemeData(
-                fontFamily: 'Quicksand',
-                primaryColor: MyColors.primary,
-                accentColor: MyColors.accent,
-                brightness: brightness, // default is dark
-              ),
-              themedWidgetBuilder: (context, theme) {
-                return MaterialApp(
-                  title: 'iShop',
-                  theme: theme,
-                  debugShowCheckedModeBanner: false,
-                  onGenerateRoute: (RouteSettings settings) {
-                    switch (settings.name) {
-                      case '/login':
-                        return CustomRoute(
-                          builder: (_) => LoginPage(),
-                          settings: settings,
-                        );
-
-                      case '/home':
-                        return CustomRoute(
-                          builder: (_) => HomePage(),
-                          settings: settings,
-                        );
-
-                      case '/poi':
-                        return CustomRoute(
-                          builder: (_) => POIPage(),
-                          settings: settings,
-                        );
-
-                      case '/admin':
-                        return CustomRoute(
-                          builder: (_) => AdminPage(),
-                          settings: settings,
-                        );
-
-                      default:
-                        return CustomRoute(
-                          builder: (_) => LoginPage(),
-                          settings: settings,
-                        );
-                    }
-                  },
-                  initialRoute: '/login',
-                  home: HomePage(),
-                );
-              },
-            );
+          if (!snapshot.hasData) {
+            return CircularProgressIndicator();
           }
-          return Loading();
+          return DynamicTheme(
+            defaultBrightness: Brightness.dark,
+            data: (brightness) => ThemeData(
+              fontFamily: 'Quicksand',
+              primaryColor: MyColors.primary,
+              accentColor: MyColors.accent,
+              brightness: brightness, // default is dark
+            ),
+            themedWidgetBuilder: (context, theme) {
+              return MaterialApp(
+                title: 'iShop',
+                theme: theme,
+                debugShowCheckedModeBanner: false,
+                onGenerateRoute: (RouteSettings settings) {
+                  switch (settings.name) {
+                    case '/login':
+                      return MaterialPageRoute(
+                        builder: (context) => LoginPage(),
+                        settings: settings,
+                      );
+
+                    case '/home':
+                      return MaterialPageRoute(
+                        builder: (context) => HomePage(),
+                        settings: settings,
+                      );
+
+                    case '/poi':
+                      return MaterialPageRoute(
+                        builder: (context) => POIPage(),
+                        settings: settings,
+                      );
+
+                    case '/admin':
+                      return MaterialPageRoute(
+                        builder: (context) => AdminPage(),
+                        settings: settings,
+                      );
+
+                    default:
+                      return MaterialPageRoute(
+                        builder: (context) => LoginPage(),
+                        settings: settings,
+                      );
+                  }
+                },
+                initialRoute: '/login',
+              );
+            },
+          );
         });
   }
 }

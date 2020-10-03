@@ -23,8 +23,6 @@ dependencies:
   cloud_firestore: ^0.14.0+2
   firebase_auth: ^0.18.0+1
   firebase_analytics: ^6.0.0
-  shimmer:
-    path: "/Users/brenn/source/repos/flutter_shimmer"
   google_sign_in: ^4.5.4
   geolocator: ^6.0.0+4
   flutter_polyline_points: ^0.2.3

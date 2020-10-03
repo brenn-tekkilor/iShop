@@ -1,11 +1,15 @@
 import 'dart:math' show asin, cos, sqrt;
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:geocoding/geocoding.dart';
+import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:ishop/secrets.dart';
+
+final geo = Geoflutterfire();
 
 Future<Placemark> getAddressFromPosition(Position position) async {
   Placemark result;
@@ -35,7 +39,7 @@ Future<double> distanceInMeters(Position start, Position end) async {
       start.latitude, start.longitude, end.latitude, end.longitude);
 }
 
-double _coordinateDistance(double lat1, double lon1, double lat2, double lon2) {
+double coordinateDistance(double lat1, double lon1, double lat2, double lon2) {
   var p = 0.017453292519943295;
   var c = cos;
   var a = 0.5 -
@@ -44,12 +48,18 @@ double _coordinateDistance(double lat1, double lon1, double lat2, double lon2) {
   return 12742 * asin(sqrt(a));
 }
 
+double latLngDistance(LatLng start, LatLng end) =>
+    (start != null && end != null)
+        ? coordinateDistance(
+            start.latitude, start.longitude, end.latitude, end.longitude)
+        : -1.0;
+
 double polylineDistance(Polyline polyline) {
   var result = 0.0;
   // Calculating the total distance by adding the distance
   // between small segments
   for (var i = 0; i < polyline.points.length - 1; i++) {
-    result += _coordinateDistance(
+    result += coordinateDistance(
         polyline.points[i].latitude,
         polyline.points[i].longitude,
         polyline.points[i + 1].latitude,
@@ -90,3 +100,14 @@ Future<Map<PolylineId, Polyline>> createPolylines(
   // Adding the polyline to the map
   return await Map<PolylineId, Polyline>.fromEntries([MapEntry(id, polyline)]);
 }
+
+GeoFirePoint latLngToGeoFirePoint(LatLng value) =>
+    geo.point(latitude: value.latitude, longitude: value.longitude);
+
+LatLng geoFlutterFirePointToLatLng(GeoFirePoint value) =>
+    LatLng(value.latitude, value.longitude);
+
+LatLng geoPointToLatLng(GeoPoint value) =>
+    LatLng(value.latitude, value.longitude);
+
+LatLng posToLatLng(Position value) => LatLng(value.latitude, value.longitude);

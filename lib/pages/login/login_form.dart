@@ -14,15 +14,15 @@ class _LoginFormState extends State<LoginForm> with TickerProviderStateMixin {
   final _formKey = GlobalKey<FormState>();
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
-  AuthService _authService() => AuthService.getInstance();
+  AuthService _authService;
 
   Future<void> _onSubmitForm() async {
-    await _authService().signInWithEmailAndPassword(
+    await _authService.signInWithEmailAndPassword(
         _usernameController.text, _passwordController.text);
   }
 
   Future<void> _onGoogleSignIn() async {
-    await _authService().signInWithGoogle();
+    await _authService.signInWithGoogle();
   }
 
   Widget _buildGoogleSignInButton(Function onTap) {
@@ -48,12 +48,13 @@ class _LoginFormState extends State<LoginForm> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    _authService = Provider.of<AuthService>(context);
     var _isUserAuthorized = context.select<AuthService, bool>(
       (authService) => authService.isUserAuthorized,
     );
     if (_isUserAuthorized != null && _isUserAuthorized) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        Navigator.of(context).pushReplacementNamed('/home');
+        Navigator.of(context).pushNamed('/home');
       });
     }
     return Container(

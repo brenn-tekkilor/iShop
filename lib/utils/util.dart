@@ -162,3 +162,14 @@ class TimeRangeOfDay {
   TimeOfDay end;
   bool is24Hours;
 }
+
+BannerType parseBannerType(String value) {
+  assert(value != null && value.isNotEmpty);
+  return BannerType.values.firstWhere((v) => v.toString() == value);
+}
+
+String bannerValueToString(String fullName) {
+  return (fullName != null && fullName.isNotEmpty)
+      ? fullName.replaceFirst('BannerType.', '')
+      : null;
+}

@@ -15,16 +15,18 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
-  final AuthService _authservice = AuthService.getInstance();
   @override
   Widget build(BuildContext context) {
     timeDilation = 0.4;
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
-
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return ChangeNotifierProvider(
-      create: (context) => _authservice,
+      create: (context) => AuthService(),
       child: Scaffold(
         body: Container(
+          width: width,
+          height: height,
           decoration: BoxDecoration(
             image: backgroundImage,
           ),

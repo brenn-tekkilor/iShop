@@ -1,53 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:frino_icons/frino_icons.dart';
-import 'package:ishop/model/list_model.dart';
-import 'package:ishop/utils/util.dart';
+
+import 'file:///C:/Users/brenn/source/repos/brenn/ishop/lib/model/schemas/list_model.dart';
 
 class LocationsListScroll extends StatefulWidget {
-  LocationsListScroll(this.filterValue);
-  int filterValue;
   @override
-  _LocationsListScrollState createState() =>
-      _LocationsListScrollState(filterValue);
+  _LocationsListScrollState createState() => _LocationsListScrollState();
 }
 
 class _LocationsListScrollState extends State<LocationsListScroll> {
-  _LocationsListScrollState(int filterValue) {
-    _bannerFilterActions.addAll([
-      IconButton(
-          key: ValueKey(0),
-          icon: Icon(FrinoIcons.f_infinity),
-          onPressed: () {
-            setState(() {
-              _filterAction = ValueNotifier(1);
-            });
-            FilterActionNotification(value: 1)..dispatch(context);
-          }),
-      IconButton(
-          key: ValueKey(1),
-          icon: Icon(FrinoIcons.f_shop),
-          onPressed: () {
-            setState(() {
-              _filterAction = ValueNotifier(2);
-            });
-            FilterActionNotification(value: 2)..dispatch(context);
-          }),
-      IconButton(
-          key: ValueKey(2),
-          icon: Icon(FrinoIcons.f_basket),
-          onPressed: () {
-            setState(() {
-              _filterAction = ValueNotifier(0);
-            });
-            FilterActionNotification(value: 0)..dispatch(context);
-          }),
-    ]);
-    _filterAction = ValueNotifier(filterValue);
-  }
-
-  final listKey = GlobalKey<AnimatedListState>();
   final _cards = <CardItem>{};
   final _marketplaceCards = <CardItem>{};
   final _foodAndDrugCards = <CardItem>{};

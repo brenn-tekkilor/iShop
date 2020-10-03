@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ishop/pages/admin/retail_locations_list.dart';
 import 'package:ishop/utils/ui_helpers.dart';
 
 class AdminPage extends StatefulWidget {
@@ -25,7 +24,7 @@ class _AdminPageState extends State<AdminPage> {
                 ),
               ),
               Expanded(
-                child: RetailLocationsList(),
+                child: Text('TODO'),
               ),
             ]),
       ),

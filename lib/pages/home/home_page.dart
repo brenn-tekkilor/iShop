@@ -5,13 +5,12 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:ishop/pages/poi/poi_page.dart';
-import 'package:ishop/providers/retail_locations_service.dart';
 import 'package:ishop/utils/colors.dart';
 import 'package:ishop/utils/text_styles.dart';
 import 'package:ishop/utils/ui_helpers.dart';
 import 'package:ishop/widgets/basic_tile.dart';
-import 'package:provider/provider.dart';
+
+import 'file:///C:/Users/brenn/source/repos/brenn/ishop/lib/model/poi_model.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -22,13 +21,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  //#region final provider singleton members
-
-  final RetailLocationsService _retailLocationsService =
-      RetailLocationsService.getInstance();
-
-  //#endregion
-
   //#region final page names
 
   final itemNames = [
@@ -37,17 +29,7 @@ class _HomePageState extends State<HomePage> {
     'Admin',
   ];
 
-  //#endregion
-
-  //#region open/close drawer methods
-
-  void _closeDrawer() {
-    Navigator.of(context).pop();
-  }
-
-  void _openDrawer() {
-    _scaffoldKey.currentState.openDrawer();
-  }
+  POIModel service;
 
   //#endregion
 
@@ -56,12 +38,12 @@ class _HomePageState extends State<HomePage> {
     final _width = MediaQuery.of(context).size.width;
     final _height = MediaQuery.of(context).size.height;
 
-    return ChangeNotifierProvider(
-      create: (context) => _retailLocationsService,
-      child: Container(
+    return Scaffold(
+      body: Container(
         width: _width,
         height: _height,
         child: Scaffold(
+          key: _scaffoldKey,
           backgroundColor: invertInvertColorsStrong(context),
           body: Container(
             width: _width,
@@ -104,8 +86,8 @@ class _HomePageState extends State<HomePage> {
                                 fit: StackFit.expand,
                                 children: <Widget>[
                                   Hero(
-                                    tag:
-                                        'tile$index', //using a different hero widget tag for
+                                    tag: 'tile$index',
+                                    //using a different hero widget tag for
                                     // each page mapped to the page's index value
                                     child: BasicTile(),
                                   ),
@@ -142,22 +124,13 @@ class _HomePageState extends State<HomePage> {
                                         borderRadius:
                                             BorderRadius.circular(15.0),
                                         onTap: () {
-                                          Navigator.push(
-                                            context,
-                                            CupertinoPageRoute(
-                                                builder: (context) {
-                                              if (index == 0) {
-                                                return HomePage();
-                                              } else if (index == 1) {
-                                                //return POIPage();
-                                                return POIPage();
-                                              } else if (index == 2) {
-                                                return HomePage();
-                                              } else {
-                                                return null;
-                                              }
-                                            }),
-                                          );
+                                          if (index == 1) {
+                                            //return POIPage();
+                                            Navigator.pushNamed(
+                                                context, '/poi');
+                                          } else {
+                                            return null;
+                                          }
                                         },
                                       ),
                                     ),
@@ -182,7 +155,8 @@ class _HomePageState extends State<HomePage> {
                 : Icon(
                     EvaIcons.moon,
                     size: 26.0,
-                  ), //show moon icon when in light mode
+                  ),
+            //show moon icon when in light mode
             tooltip: isThemeCurrentlyDark(context)
                 ? 'Switch to light mode'
                 : 'Switch to dark mode',
