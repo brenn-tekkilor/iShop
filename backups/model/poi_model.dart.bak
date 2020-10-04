@@ -86,7 +86,7 @@ class POIModelState extends State<POIModel> with ChangeNotifier {
               collectionRef: _filter == BannerType.all
                   ? _collection
                   : _collection.where('meta.banner',
-                      isEqualTo: bannerValueToString(filter.toString())))
+                      isEqualTo: enumValue(filter.toString())))
           .within(
               center: latLngToGeoFirePoint(deviceLocation),
               radius: rad,

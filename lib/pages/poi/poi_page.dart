@@ -1,12 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:ishop/model/poi_model.dart';
-import 'package:ishop/pages/poi/poi_filter.dart';
 import 'package:ishop/pages/poi/poi_map.dart';
 import 'package:ishop/pages/poi/poi_scroll.dart';
-import 'package:ishop/pages/poi/poi_slider.dart';
-import 'package:provider/provider.dart';
+import 'package:ishop/pages/poi/poi_state.dart';
 
 class POIPage extends StatelessWidget {
   //#region overrides
@@ -14,8 +11,8 @@ class POIPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    return FutureBuilder<POIModelState>(
-        future: POIModelState.getInstance(),
+    return FutureBuilder<POIState>(
+        future: POIState().initialize(),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
             return Container(
@@ -25,16 +22,16 @@ class POIPage extends StatelessWidget {
           if (!snapshot.hasData) {
             return CircularProgressIndicator();
           }
-          final provider = POIProvider(model: snapshot.data);
-          return ChangeNotifierProvider.value(
-            value: provider,
-            builder: (context, _) => Scaffold(
+          return POIStateContainer(
+            state: snapshot.data,
+            child: Scaffold(
               body: Container(
                 width: width,
                 height: height,
                 child: Stack(
                   children: <Widget>[
                     POIMap(),
+                    /*
                     Positioned(
                       bottom: 150,
                       left: 0,
@@ -44,15 +41,11 @@ class POIPage extends StatelessWidget {
                         child: POISlider(),
                       ),
                     ),
-                    Positioned(
-                      top: 50,
-                      left: 10,
-                      child: POIFilter(),
-                    ),
+                     */
                     Container(
                       alignment: Alignment.bottomCenter,
                       child: POIScroll(),
-                    )
+                    ),
                   ],
                 ),
               ),

@@ -1,29 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:ishop/pages/login/login_form.dart';
 import 'package:ishop/providers/auth_service.dart';
 import 'package:ishop/utils/styles.dart';
-import 'package:ishop/widgets/whiteTick.dart';
 import 'package:provider/provider.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key key}) : super(key: key);
-  @override
-  _LoginPageState createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
+class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    timeDilation = 0.4;
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return ChangeNotifierProvider(
       create: (context) => AuthService(),
-      child: Scaffold(
+      builder: (context, _) => Scaffold(
         body: Container(
           width: width,
           height: height,
@@ -50,7 +41,6 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        Tick(image: tick),
                         LoginForm(),
                       ],
                     ),

@@ -168,8 +168,7 @@ BannerType parseBannerType(String value) {
   return BannerType.values.firstWhere((v) => v.toString() == value);
 }
 
-String bannerValueToString(String fullName) {
-  return (fullName != null && fullName.isNotEmpty)
-      ? fullName.replaceFirst('BannerType.', '')
-      : null;
+String enumValue<T>(T value) {
+  assert(value != null);
+  return value.toString().replaceFirst(RegExp(r"[A-Za-z0-9-_']+?\."), '');
 }
