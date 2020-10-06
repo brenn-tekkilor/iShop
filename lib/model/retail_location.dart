@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:ishop/utils/text_styles.dart';
+import 'package:ishop/utils/styles.dart';
 import 'package:ishop/utils/util.dart';
 
 enum RetailLocationBannerType {
@@ -77,10 +77,10 @@ class RetailLocation {
   ListTile toListTile() {
     return ListTile(
         key: ValueKey(id),
-        title: Text(name, style: TitleStylesDefault.primary),
+        title: Text(name, style: AppStyles.primaryTextTheme.headline5),
         subtitle: Text(
           id,
-          style: LabelStyles.primary,
+          style: AppStyles.primaryTextTheme.bodyText1,
         ));
   }
 }

@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ishop/pages/login/login_form.dart';
-import 'package:ishop/providers/auth_service.dart';
 import 'package:ishop/utils/styles.dart';
 import 'package:provider/provider.dart';
+
+import 'auth_provider.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -13,7 +14,7 @@ class LoginPage extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return ChangeNotifierProvider(
-      create: (context) => AuthService(),
+      create: (context) => AuthProvider(),
       builder: (context, _) => Scaffold(
         body: Container(
           width: width,

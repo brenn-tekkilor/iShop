@@ -1,16 +1,27 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MyColors {
-  static const primary = Color(0xff212121);
-  static const accent = Color(0xff00e5ff);
-  static const light = Color(0xffeceff1);
-  static const dark = Color(0xff37474f);
-  static const white = Color(0xfffafafa);
-  static const black = Color(0xff212121);
-  static const heart = Color(0xfff50057);
-  static const twitter = Color(0xff00b0ff);
-  static const github = Color(0xff212121);
+class AppColors {
+  static const white1 = Color(0xffffffff);
+  static const white2 = Color(0xfffafafa);
+  static const black1 = Color(0xff000000);
+  static const black2 = Color(0xff212121);
+  static const primaryColor = Color(0xff00d64a);
+  static const primaryLightColor = Color(0xff63ff7b);
+  static const primaryDarkColor = Color(0xff00a313);
+  static const secondaryColor = Color(0xffd7008c);
+  static const secondaryLightColor = Color(0xffff55bc);
+  static const secondaryDarkColor = Color(0xffa0005f);
+  static const primaryTextColor = black1;
+  static const secondaryTextColor = white1;
+  static const primaryLightAccentColor = Color(0xff008cd7);
+  static const primaryDarkAccentColor = Color(0xff4b00d7);
+  static const lightShadowColor = Color(0x80718792);
+  static const darkShardowColor = Color(0x801c313a);
+  static const lightGradientStart = Color(0xffdd2c00);
+  static const lightGradientEnd = Color(0xffffa000);
+  static const darkGradientStart = Color(0xff304ffe);
+  static const darkGradientEnd = Color(0xff00bcd4);
 } //main app colors
 
 class MaterialColors {
@@ -23,15 +34,3 @@ class MaterialColors {
   static const orange = Color(0xffff6d00);
   static const teal = Color(0xff00bfa5);
 } //material design colors
-
-class GradientColors {
-  static const lightStart = Color(0xffdd2c00);
-  static const lightEnd = Color(0xffffa000);
-  static const darkStart = Color(0xff304ffe);
-  static const darkEnd = Color(0xff00bcd4);
-} //colors used in the gradients page
-
-class ShadowColors {
-  static const light = Color(0x80718792);
-  static const dark = Color(0x801c313a);
-} //shadow colors for raised elements

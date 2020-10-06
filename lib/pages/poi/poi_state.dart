@@ -21,14 +21,15 @@ class POIState {
   POIState()
       : _markers = <Marker>{},
         _poiDocs = FirebaseFirestore.instance.collection('maplocationmarkers'),
-        _mapController = Completer(),
+        _poiGoogleMapController = Completer(),
         _positionStream = getPositionStream(distanceFilter: 2, timeInterval: 4),
-        _filter = BannerType.all,
-        _radius = 2.0 {
-    _poiController = BehaviorSubject.seeded(POISubject(poiRef, radius));
-    _positionSubscription =
+        _poiFilterByBannerType = BannerType.all,
+        _poiFilterByRadius = 4.0 {
+    _poiStreamController = BehaviorSubject.seeded(POISubject(poiRef, radius));
+    _devicePositionStreamSubscription =
         _positionStream.listen((value) => _onStreamedPosition(value));
   }
+
   //#endregion
 
   //#region properties
@@ -38,12 +39,13 @@ class POIState {
 
   //#region variable properties
 
-  BehaviorSubject<POISubject> _poiController;
-  LatLng _deviceLocation;
-  double _radius;
-  final Completer<GoogleMapController> _mapController;
-  StreamSubscription<Position> _positionSubscription;
-  BannerType _filter;
+  BehaviorSubject<POISubject> _poiStreamController;
+  LatLng _currentDeviceLocation;
+  double _poiFilterByRadius;
+  final Completer<GoogleMapController> _poiGoogleMapController;
+  ScrollController _poiDraggableScrollableScrollController;
+  StreamSubscription<Position> _devicePositionStreamSubscription;
+  BannerType _poiFilterByBannerType;
   Stream<List<DocumentSnapshot>> _poiStream;
 
   //#endregion
@@ -55,7 +57,7 @@ class POIState {
   //#region async methods
 
   Future<POIState> initialize() async {
-    _deviceLocation = posToLatLng(await getCurrentPosition());
+    _currentDeviceLocation = posToLatLng(await getCurrentPosition());
     _poiStream = await initializePOIStream();
     return await this;
   }
@@ -75,18 +77,18 @@ class POIState {
 
 //#endregion
 
-//#region callbacks
+  //#region callbacks
 
   void _onStreamedPosition(Position value) {
     if (value != null) {
       final location = posToLatLng(value);
       if (deviceLocation != null) {
-        if (latLngDistance(_deviceLocation, location) >=
+        if (latLngDistance(_currentDeviceLocation, location) >=
             (0.000929079 * pow(radius, 2) + 2)) {
-          _deviceLocation = location;
+          _currentDeviceLocation = location;
         }
       } else {
-        _deviceLocation = location;
+        _currentDeviceLocation = location;
       }
     }
   }
@@ -97,11 +99,14 @@ class POIState {
 
   //#region getters
 
+  ScrollController get poiScrollController =>
+      _poiDraggableScrollableScrollController;
+
   Stream<List<DocumentSnapshot>> get poiStream => _poiStream;
 
   Set<Marker> get markers => _markers;
 
-  BannerType get filter => _filter;
+  BannerType get filter => _poiFilterByBannerType;
 
   dynamic get poiRef => filter == BannerType.all
       ? _poiDocs
@@ -109,25 +114,30 @@ class POIState {
 
   CollectionReference get poiDocs => _poiDocs;
 
-  Completer<GoogleMapController> get mapController => _mapController;
+  Completer<GoogleMapController> get mapController => _poiGoogleMapController;
 
-  LatLng get deviceLocation => _deviceLocation;
+  LatLng get deviceLocation => _currentDeviceLocation;
 
   StreamSubscription<Position> get positionSubscription =>
-      _positionSubscription;
+      _devicePositionStreamSubscription;
 
-  double get radius => _radius;
+  double get radius => _poiFilterByRadius;
 
-  BehaviorSubject<POISubject> get poiController => _poiController;
+  BehaviorSubject<POISubject> get poiController => _poiStreamController;
 
   //#endregion
 
   //#region setters
 
+  set poiScrollController(ScrollController value) {
+    assert(value != null);
+    _poiDraggableScrollableScrollController = value;
+  }
+
   set radius(double value) {
     assert(value != null);
     if (radius != value) {
-      _radius = value;
+      _poiFilterByRadius = value;
       if (filter != null) {
         poiController.add(POISubject(poiRef, value));
       }
@@ -137,16 +147,16 @@ class POIState {
   set filter(BannerType value) {
     assert(value != null);
     if (filter != value) {
-      _filter = value;
+      _poiFilterByBannerType = value;
       if (radius != null && radius > 0) {
         poiController.add(POISubject(poiRef, radius));
       }
     }
   }
 
-//#endregion
+  //#endregion
 
-//#endregion=
+  //#endregion=
 
   //#endregion
 

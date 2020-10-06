@@ -25,49 +25,49 @@ bool isThemeCurrentlyDark(BuildContext context) {
 
 Color invertColorsTheme(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
-    return MyColors.primary;
+    return MyColors.primaryColor;
   } else {
-    return MyColors.accent;
+    return MyColors.secondaryColor;
   }
 } //returns appropriate theme colors for ui elements
 
 Color invertInvertColorsTheme(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
-    return MyColors.accent;
+    return MyColors.secondaryColor;
   } else {
-    return MyColors.primary;
+    return MyColors.primaryColor;
   }
 } //keeps the same colors lol
 
 Color invertColorsMild(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
-    return MyColors.light;
+    return MyColors.primaryLightColor;
   } else {
-    return MyColors.dark;
+    return MyColors.primaryDarkColor;
   }
 } //returns appropriate mild colors for text visibility
 
 Color invertInvertColorsMild(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
-    return MyColors.dark;
+    return MyColors.primaryDarkColor;
   } else {
-    return MyColors.light;
+    return MyColors.primaryLightColor;
   }
 } //keeps the same colors lol
 
 Color invertColorsStrong(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
-    return MyColors.white;
+    return MyColors.white2;
   } else {
-    return MyColors.black;
+    return MyColors.black2;
   }
 } //returns appropriate strong colors for text visibility
 
 Color invertInvertColorsStrong(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
-    return MyColors.black;
+    return MyColors.black2;
   } else {
-    return MyColors.white;
+    return MyColors.white2;
   }
 } //keeps the same colors lol
 
@@ -89,9 +89,9 @@ Color invertInvertColorsMaterial(BuildContext context) {
 
 Color shadowColor(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
-    return ShadowColors.dark;
+    return AppColors.darkShardowColor;
   } else {
-    return ShadowColors.light;
+    return AppColors.lightShadowColor;
   }
 } //returns appropriate colors for raised element shadows
 

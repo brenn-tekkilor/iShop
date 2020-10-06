@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:ishop/pages/login/login_page.dart';
 import 'package:ishop/utils/colors.dart';
+import 'package:ishop/utils/styles.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,14 +29,14 @@ class MyApp extends StatelessWidget {
             defaultBrightness: Brightness.dark,
             data: (brightness) => ThemeData(
               fontFamily: 'Quicksand',
-              primaryColor: MyColors.primary,
-              accentColor: MyColors.accent,
+              primaryColor: AppColors.primaryColor,
+              accentColor: AppColors.secondaryColor,
               brightness: brightness, // default is dark
             ),
             themedWidgetBuilder: (context, theme) {
               return MaterialApp(
                 title: 'iShop',
-                theme: theme,
+                theme: AppStyles.primaryTheme,
                 home: LoginPage(),
               );
             },

@@ -4,9 +4,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:ishop/pages/poi/poi_filter.dart';
-import 'package:ishop/pages/poi/poi_slider.dart';
 import 'package:ishop/pages/poi/poi_state.dart';
+import 'package:ishop/pages/poi/poi_toggles.dart';
+import 'package:ishop/utils/colors.dart';
 import 'package:ishop/utils/map_utils.dart';
 
 class POIScroll extends StatefulWidget {
@@ -15,16 +15,16 @@ class POIScroll extends StatefulWidget {
 }
 
 class _POIScrollState extends State<POIScroll> {
-  final cards = <CardItem>{};
-  POIState data;
-  Completer controller;
-  StreamSubscription<List<DocumentSnapshot>> subscription;
+  final _cards = <CardItem>{};
+  POIState _data;
+  Completer _controller;
+  StreamSubscription<List<DocumentSnapshot>> _subscription;
 
   void _addCard(CardItem value) {
     assert(value != null);
-    if (!cards.contains(value)) {
-      cards.removeWhere((e) => e.key == value.key);
-      cards.add(value);
+    if (!_cards.contains(value)) {
+      _cards.removeWhere((e) => e.key == value.key);
+      _cards.add(value);
     }
   }
 
@@ -39,7 +39,7 @@ class _POIScrollState extends State<POIScroll> {
         subtitle: banner,
       ),
       onTap: () async {
-        await controller.future
+        await _controller.future
             .then((value) => value.animateCamera(CameraUpdate.newCameraPosition(
                   CameraPosition(
                     target: geoPointToLatLng(point),
@@ -52,16 +52,33 @@ class _POIScrollState extends State<POIScroll> {
   }
 
   void _updateCards(List<DocumentSnapshot> docs) {
-    cards.clear();
+    _cards.clear();
     docs.forEach((e) => _addCard(_docToCard(e)));
     setState(() {});
   }
 
+  PreferredSizeWidget get _poiSlider => PreferredSize(
+        child: Slider(
+          min: 2.0,
+          max: 100,
+          value: _data.radius,
+          onChanged: (value) => _data.radius = value,
+          activeColor: Colors.cyan.withOpacity(0.8),
+          inactiveColor: Colors.cyan.withOpacity(0.2),
+        ),
+        preferredSize: Size.fromHeight(60.0),
+      );
+
+  Padding get _poiToggles => Padding(
+        padding: EdgeInsets.fromLTRB(0, 0, 50, 0),
+        child: POITogglesBar(),
+      );
+
   @override
   Widget build(BuildContext context) {
-    data = POIStateContainer.of(context).state;
-    controller = data.mapController;
-    subscription = data.poiStream.listen(_updateCards);
+    _data ??= POIStateContainer.of(context).state;
+    _controller ??= _data.mapController;
+    _subscription ??= _data.poiStream.listen(_updateCards);
 
     return DraggableScrollableSheet(
         initialChildSize: 0.1,
@@ -69,36 +86,29 @@ class _POIScrollState extends State<POIScroll> {
         maxChildSize: 0.7,
         expand: true,
         builder: (context, scrollController) {
+          _data.poiScrollController = scrollController;
           return CustomScrollView(
-            controller: scrollController,
+            controller: _data.poiScrollController,
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             slivers: <Widget>[
               SliverAppBar(
-                  title: Text('Options'),
-                  backgroundColor: Colors.blueGrey.withOpacity(0.2),
-                  toolbarHeight: 40,
-                  collapsedHeight: 45,
-                  centerTitle: true,
-                  expandedHeight: 100.0,
-                  floating: true,
-                  snap: true,
-                  elevation: 99.0,
-                  leading: IconButton(
-                    icon: Icon(Icons.arrow_back),
-                    onPressed: () => Navigator.of(context).pop(),
-                  ),
-                  actions: <Widget>[
-                    POIFilter(),
-                  ],
-                  bottom: PreferredSize(
-                    child: POISlider(),
-                    preferredSize: Size.fromHeight(60.0),
-                  )),
+                backgroundColor: Colors.blueGrey.withOpacity(0.2),
+                toolbarHeight: 40,
+                collapsedHeight: 45,
+                expandedHeight: 100.0,
+                floating: true,
+                snap: true,
+                actions: <Widget>[
+                  _poiSlider,
+                  _poiToggles,
+                ],
+              ),
+              //bottom:
               SliverList(
                 delegate: SliverChildBuilderDelegate(
-                  (context, index) => cards.elementAt(index),
-                  childCount: cards.length,
+                  (context, index) => _cards.elementAt(index),
+                  childCount: _cards.length,
                 ),
               ),
             ],
@@ -133,9 +143,11 @@ class CardItem extends StatelessWidget {
         behavior: HitTestBehavior.opaque,
         onTap: onTap,
         child: SizedBox(
-          height: 104,
+          height: 100,
           child: Card(
-            color: data.subtitle == 'marketplace' ? Colors.green : Colors.grey,
+            color: data.subtitle == 'marketplace'
+                ? AppColors.primaryLightColor.withOpacity(0.6)
+                : AppColors.secondaryLightColor.withOpacity(0.6),
             child: Center(
               child: Text(data.title, style: titleTextStyle),
             ),

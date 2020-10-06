@@ -12,75 +12,87 @@ class POIMap extends StatefulWidget {
 }
 
 class _POIMapState extends State<POIMap> {
-  //#region POI Map Markers mgmnt
+  //#region properties
 
-  final markers = <Marker>{};
+  final _markers = <Marker>{};
+
+  LatLng _deviceLocation;
+
+  Completer _controller;
+  POIState _data;
+  StreamSubscription<List<DocumentSnapshot>> _subscription;
+
+  ScrollController _poiScrollController;
+
+  //#endregion
 
   //#region poiMap marker methods
 
   void _addMarker(Marker value) {
     assert(value != null);
-    if (!markers.contains(value)) {
-      markers.removeWhere((e) => e.markerId.value == value.markerId.value);
-      markers.add(value);
+    if (!_markers.contains(value)) {
+      _markers.removeWhere((e) => e.markerId.value == value.markerId.value);
+      _markers.add(value);
     }
   }
 
-  Marker _docToMarker(DocumentSnapshot doc) {
+  Marker _docToMarker(DocumentSnapshot doc, int index) {
     final data = doc.data();
     final banner = data['meta']['banner'];
     final point = data['point']['geopoint'];
     return Marker(
-      markerId: MarkerId(doc.id),
-      position: geoPointToLatLng(point),
-      icon: banner == 'marketplace'
-          ? BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueGreen)
-          : BitmapDescriptor.defaultMarker,
-      infoWindow: InfoWindow(
-        title: data['name'],
-        snippet: banner,
-      ),
-    );
+        markerId: MarkerId(doc.id),
+        position: geoPointToLatLng(point),
+        icon: banner == 'marketplace'
+            ? BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueGreen)
+            : BitmapDescriptor.defaultMarker,
+        infoWindow: InfoWindow(
+          title: data['name'],
+          snippet: banner,
+        ),
+        onTap: () async {
+          final scrollControl = _data.poiScrollController;
+          if (scrollControl != null) {
+            scrollControl.jumpTo(100.0);
+            await scrollControl.animateTo(100.0 + 100.0 * index,
+                duration: Duration(milliseconds: 800), curve: Curves.easeInOut);
+          }
+        });
   }
 
   void _updateMarkers(List<DocumentSnapshot> docs) {
-    markers.clear();
-    docs.forEach((e) => _addMarker(_docToMarker(e)));
+    _markers.clear();
+    _poiScrollController ??= _data.poiScrollController;
+    docs.forEach((e) => _addMarker(_docToMarker(e, docs.indexOf(e))));
     setState(() {});
   }
 
   //#endregion
 
-  LatLng location;
-
-  Completer controller;
-  POIState data;
-  StreamSubscription<List<DocumentSnapshot>> subscription;
-
-//#endregion
-
   @override
   Widget build(BuildContext context) {
-    data ??= POIStateContainer.of(context).state;
-    subscription = data.poiStream.listen(_updateMarkers);
-    location = data.deviceLocation;
-    controller = data.mapController;
+    _data ??= POIStateContainer.of(context).state;
+    _subscription ??= _data.poiStream.listen(_updateMarkers);
+    _deviceLocation ??= _data.deviceLocation;
+    _controller ??= _data.mapController;
+    _poiScrollController ??= _data.poiScrollController;
     //#region GoogleMap
     return GoogleMap(
       //#region initialCameraPosition
       initialCameraPosition: CameraPosition(
-        target: location,
+        target: _deviceLocation,
         zoom: 12,
       ),
       //#endregion
       //#region markers
-      markers: markers,
+      markers: _markers,
       //#endregion
+      zoomControlsEnabled: false,
       myLocationButtonEnabled: true,
       myLocationEnabled: true,
       //#region onMapCreated
       onMapCreated: (mapController) {
-        controller.complete(mapController);
+        _controller.complete(mapController);
       },
       //#endregion
     );

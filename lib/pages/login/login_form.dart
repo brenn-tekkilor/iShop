@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ishop/pages/home/home_page.dart';
-import 'package:ishop/providers/auth_service.dart';
+import 'package:ishop/pages/login/auth_provider.dart';
 import 'package:ishop/widgets/basic_button.dart';
 import 'package:provider/provider.dart';
 
@@ -14,12 +14,12 @@ class LoginForm extends StatelessWidget {
   static final GlobalKey<FormFieldState<String>> passwordKey =
       GlobalKey<FormFieldState<String>>();
 
-  void _onSubmitForm(AuthService auth) {
+  void _onSubmitForm(AuthProvider auth) {
     auth.signInWithEmailAndPassword(
         usernameKey.currentState.value, passwordKey.currentState.value);
   }
 
-  void _onGoogleSignIn(AuthService auth) {
+  void _onGoogleSignIn(AuthProvider auth) {
     auth.signInWithGoogle();
   }
 
@@ -39,10 +39,10 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final auth = Provider.of<AuthService>(context);
+    final auth = Provider.of<AuthProvider>(context);
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    var _isUserAuthorized = context.select<AuthService, bool>(
+    var _isUserAuthorized = context.select<AuthProvider, bool>(
       (authService) => authService.isUserAuthorized,
     );
     if (_isUserAuthorized != null && _isUserAuthorized) {
