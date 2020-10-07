@@ -9,23 +9,24 @@ import 'package:ishop/utils/map_utils.dart';
 import 'package:ishop/utils/util.dart';
 import 'package:rxdart/rxdart.dart';
 
-class POISubject {
-  const POISubject(this.ref, this.rad);
+class POIStreamControlBehaviorSubject {
+  const POIStreamControlBehaviorSubject(this.ref, this.rad);
   final dynamic ref;
   final double rad;
 }
 
-class POIState {
+class POIStateData {
   //#region ctor
 
-  POIState()
+  POIStateData()
       : _markers = <Marker>{},
         _poiDocs = FirebaseFirestore.instance.collection('maplocationmarkers'),
         _poiGoogleMapController = Completer(),
         _positionStream = getPositionStream(distanceFilter: 2, timeInterval: 4),
         _poiFilterByBannerType = BannerType.all,
         _poiFilterByRadius = 4.0 {
-    _poiStreamController = BehaviorSubject.seeded(POISubject(poiRef, radius));
+    _poiStreamController =
+        BehaviorSubject.seeded(POIStreamControlBehaviorSubject(poiRef, radius));
     _devicePositionStreamSubscription =
         _positionStream.listen((value) => _onStreamedPosition(value));
   }
@@ -39,7 +40,7 @@ class POIState {
 
   //#region variable properties
 
-  BehaviorSubject<POISubject> _poiStreamController;
+  BehaviorSubject<POIStreamControlBehaviorSubject> _poiStreamController;
   LatLng _currentDeviceLocation;
   double _poiFilterByRadius;
   final Completer<GoogleMapController> _poiGoogleMapController;
@@ -56,7 +57,7 @@ class POIState {
 
   //#region async methods
 
-  Future<POIState> initialize() async {
+  Future<POIStateData> initialize() async {
     _currentDeviceLocation = posToLatLng(await getCurrentPosition());
     _poiStream = await initializePOIStream();
     return await this;
@@ -123,7 +124,8 @@ class POIState {
 
   double get radius => _poiFilterByRadius;
 
-  BehaviorSubject<POISubject> get poiController => _poiStreamController;
+  BehaviorSubject<POIStreamControlBehaviorSubject> get poiController =>
+      _poiStreamController;
 
   //#endregion
 
@@ -139,7 +141,7 @@ class POIState {
     if (radius != value) {
       _poiFilterByRadius = value;
       if (filter != null) {
-        poiController.add(POISubject(poiRef, value));
+        poiController.add(POIStreamControlBehaviorSubject(poiRef, value));
       }
     }
   }
@@ -149,7 +151,7 @@ class POIState {
     if (filter != value) {
       _poiFilterByBannerType = value;
       if (radius != null && radius > 0) {
-        poiController.add(POISubject(poiRef, radius));
+        poiController.add(POIStreamControlBehaviorSubject(poiRef, radius));
       }
     }
   }
@@ -162,23 +164,23 @@ class POIState {
 
 }
 
-class POIStateContainer extends StatefulWidget {
-  POIStateContainer({@required this.child, @required this.state});
+class POIState extends StatefulWidget {
+  POIState({@required this.child, @required this.state});
   final Widget child;
-  final POIState state;
+  final POIStateData state;
 
-  static POIStateContainerState of(BuildContext context) => (context
+  static POIStateState of(BuildContext context) => (context
           .dependOnInheritedWidgetOfExactType<_InheritedPOIStateContainer>())
       .data;
 
   @override
-  POIStateContainerState createState() => POIStateContainerState(state: state);
+  POIStateState createState() => POIStateState(state: state);
 }
 
-class POIStateContainerState extends State<POIStateContainer> {
-  POIStateContainerState({@required this.state});
+class POIStateState extends State<POIState> {
+  POIStateState({@required this.state});
 
-  POIState state;
+  POIStateData state;
 
   @override
   Widget build(BuildContext context) {
@@ -197,7 +199,7 @@ class _InheritedPOIStateContainer extends InheritedWidget {
   }) : super(key: key, child: child);
 
   // Data is the entire POI state
-  final POIStateContainerState data;
+  final POIStateState data;
 
   // This is a built in method which you can use to check if
   // any state has changed. If not, no reason to rebuild all the widgets

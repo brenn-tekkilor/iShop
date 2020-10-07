@@ -19,7 +19,7 @@ class _POIMapState extends State<POIMap> {
   LatLng _deviceLocation;
 
   Completer _controller;
-  POIState _data;
+  POIStateData _data;
   StreamSubscription<List<DocumentSnapshot>> _subscription;
 
   ScrollController _poiScrollController;
@@ -71,7 +71,7 @@ class _POIMapState extends State<POIMap> {
 
   @override
   Widget build(BuildContext context) {
-    _data ??= POIStateContainer.of(context).state;
+    _data ??= POIState.of(context).state;
     _subscription ??= _data.poiStream.listen(_updateMarkers);
     _deviceLocation ??= _data.deviceLocation;
     _controller ??= _data.mapController;

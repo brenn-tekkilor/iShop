@@ -11,8 +11,8 @@ class POIPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    return FutureBuilder<POIState>(
-        future: POIState().initialize(),
+    return FutureBuilder<POIStateData>(
+        future: POIStateData().initialize(),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
             return Container(
@@ -22,7 +22,7 @@ class POIPage extends StatelessWidget {
           if (!snapshot.hasData) {
             return CircularProgressIndicator();
           }
-          return POIStateContainer(
+          return POIState(
             state: snapshot.data,
             child: Scaffold(
               body: Container(

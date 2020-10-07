@@ -9,7 +9,7 @@ class POITogglesBar extends StatefulWidget {
 }
 
 class _POITogglesBarState extends State<POITogglesBar> {
-  POIState _data;
+  POIStateData _data;
   List<bool> get _isSelected {
     switch (_data.filter) {
       case BannerType.all:
@@ -64,7 +64,7 @@ class _POITogglesBarState extends State<POITogglesBar> {
 
   @override
   Widget build(BuildContext context) {
-    _data ??= POIStateContainer.of(context).state;
+    _data ??= POIState.of(context).state;
     return Container(
       alignment: Alignment.center,
       child: ToggleButtons(

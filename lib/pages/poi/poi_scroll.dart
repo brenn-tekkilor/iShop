@@ -1,13 +1,15 @@
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:frino_icons/frino_icons.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:ishop/pages/poi/poi_state.dart';
-import 'package:ishop/pages/poi/poi_toggles.dart';
 import 'package:ishop/utils/colors.dart';
 import 'package:ishop/utils/map_utils.dart';
+import 'package:ishop/utils/util.dart';
 
 class POIScroll extends StatefulWidget {
   @override
@@ -15,9 +17,18 @@ class POIScroll extends StatefulWidget {
 }
 
 class _POIScrollState extends State<POIScroll> {
+  //#region properties
+
   final _cards = <CardItem>{};
-  POIState _data;
+  POIStateData _data;
   Completer _controller;
+
+  //#endregion
+
+  //#region methods
+
+  //#region Stream and Scrollable List
+
   StreamSubscription<List<DocumentSnapshot>> _subscription;
 
   void _addCard(CardItem value) {
@@ -57,7 +68,14 @@ class _POIScrollState extends State<POIScroll> {
     setState(() {});
   }
 
-  PreferredSizeWidget get _poiSlider => PreferredSize(
+  //#endregion
+
+  //#region slider
+
+  Container get _poiSlider => Container(
+        padding: EdgeInsets.fromLTRB(2, 0, 0, 2),
+        height: 60,
+        alignment: Alignment.center,
         child: Slider(
           min: 2.0,
           max: 100,
@@ -66,17 +84,96 @@ class _POIScrollState extends State<POIScroll> {
           activeColor: Colors.cyan.withOpacity(0.8),
           inactiveColor: Colors.cyan.withOpacity(0.2),
         ),
-        preferredSize: Size.fromHeight(60.0),
       );
 
-  Padding get _poiToggles => Padding(
-        padding: EdgeInsets.fromLTRB(0, 0, 50, 0),
-        child: POITogglesBar(),
-      );
+  //#endregion
+
+  //#region toggle buttons
+
+  //#region _isToggleSelected(BannerType) (ie: ToggleButtons.isSelected getter)
+
+  List<bool> _isToggleSelected(BannerType toggle) =>
+      (_data.filter == BannerType.all ||
+              (toggle == BannerType.foodAndDrug &&
+                  _data.filter == BannerType.foodAndDrug) ||
+              (toggle == BannerType.marketplace &&
+                  _data.filter == BannerType.marketplace))
+          ? [true]
+          : [false];
+
+  //#endregion
+
+  ////#region _onToggle(BannerType) (ie: ToggleButtons.onPressed callback)
+  ///////////////////////////////////////////////////////////
+  /// Controls the firebase query filter sent by
+  /// the stream controller such that the stream returns
+  /// either all items, only food and drug items, or
+  /// only marketplace items.  On Pressed,
+  /// this function uses the current filter state
+  /// when deciding to set a new filter value or do nothing.
+  /// If the toggle button pressed is currently in a selected state
+  /// while the other is not, than this function does nothing
+  /// as setting both toggles' states to unselected is analogous
+  /// to setting a query that returns no items.  However, if
+  /// current filter is set to show all items, then a new filter
+  /// value, equal to the banner type controlled by the calling
+  /// widget.  Otherwise, the calling toggle button is in an
+  /// unselected state and only the other toggle button's toggleable
+  /// value is being show, and therefore, a new filter value
+  /// of BannerType.all will be set.
+
+  void _onToggle(BannerType filter) {
+    if (_data.filter != filter) {
+      _data.filter = _data.filter == BannerType.all
+          ? filter == BannerType.foodAndDrug
+              ? _data.filter = BannerType.marketplace
+              : _data.filter = BannerType.foodAndDrug
+          : _data.filter = BannerType.all;
+    }
+  }
+
+  //#endregion
+
+  //#region _poiToggles (ie: returns two toggle buttons)
+
+  List<ToggleButtons> get _foodToggles => <ToggleButtons>[
+      //#region show only foodAndDrug toggle button
+            ToggleButtons(
+              isSelected: _isToggleSelected(BannerType.foodAndDrug),
+              //#region onPressed callback function
+              onPressed: (index) => _onToggle(BannerType.foodAndDrug),
+              children: <Widget>[
+                Icon(
+                  FrinoIcons.f_basket,
+                  size: 32,
+                  color: AppColors.primaryColor,
+                ),
+              ],
+            ),
+            //#endregion
+            //#endregion
+      //#region show only marketplaces toggle button
+            ToggleButtons(
+              isSelected: _isToggleSelected(BannerType.marketplace),
+              onPressed: (index) => _onToggle(BannerType.marketplace),
+              children: <Widget>[
+                Icon(
+                  FrinoIcons.f_shop,
+                  size: 32,
+                  color: AppColors.primaryColor,
+                ),
+              ],
+            ),
+                //#endregion
+          ];
+
+  //#endregion
+
+  //#endregion
 
   @override
   Widget build(BuildContext context) {
-    _data ??= POIStateContainer.of(context).state;
+    _data ??= POIState.of(context).state;
     _controller ??= _data.mapController;
     _subscription ??= _data.poiStream.listen(_updateCards);
 
@@ -100,8 +197,23 @@ class _POIScrollState extends State<POIScroll> {
                 floating: true,
                 snap: true,
                 actions: <Widget>[
-                  _poiSlider,
-                  _poiToggles,
+                      Flexible(
+                        flex: 3,
+                        fit: FlexFit.loose,
+                        child: _poiSlider,
+                      ),
+                      Flexible(
+                        flex: 1,
+                        fit: FlexFit.loose,
+                        child: Spacer(),
+                      ),
+                      Flexible(
+                        flex: 2,
+                        fit: FlexFit.tight,
+                        child:
+                      )
+                    ],
+                  ),
                 ],
               ),
               //bottom:
@@ -116,6 +228,8 @@ class _POIScrollState extends State<POIScroll> {
         });
   }
 }
+
+//#region Card Item class
 
 class CardItem extends StatelessWidget {
   const CardItem(
@@ -166,3 +280,5 @@ class CardItemData {
   final String title;
   final String subtitle;
 }
+
+//#endregion

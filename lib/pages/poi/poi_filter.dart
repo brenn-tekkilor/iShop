@@ -30,7 +30,7 @@ class _POIFilterState extends State<POIFilter> {
     ),
   };
 
-  POIState data;
+  POIStateData data;
 
   IconButton _nextFilterButton;
 
@@ -53,7 +53,7 @@ class _POIFilterState extends State<POIFilter> {
 
   @override
   Widget build(BuildContext context) {
-    data = POIStateContainer.of(context).state;
+    data = POIState.of(context).state;
     _nextFilterButton = _buildFilterButton(_peekNextFilter(data.filter));
 
     return AnimatedSwitcher(
