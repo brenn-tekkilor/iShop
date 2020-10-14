@@ -13,17 +13,11 @@ class POIMap extends StatefulWidget {
 
 class _POIMapState extends State<POIMap> {
   //#region properties
-
   final _markers = <Marker>{};
-
   LatLng _deviceLocation;
-
-  Completer _controller;
-  POIStateData _data;
+  AppData _data;
   StreamSubscription<List<DocumentSnapshot>> _subscription;
-
   ScrollController _poiScrollController;
-
   //#endregion
 
   //#region poiMap marker methods
@@ -40,8 +34,9 @@ class _POIMapState extends State<POIMap> {
     final data = doc.data();
     final banner = data['meta']['banner'];
     final point = data['point']['geopoint'];
+    final markerId = MarkerId(doc.id);
     return Marker(
-        markerId: MarkerId(doc.id),
+        markerId: markerId,
         position: geoPointToLatLng(point),
         icon: banner == 'marketplace'
             ? BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueGreen)
@@ -53,10 +48,12 @@ class _POIMapState extends State<POIMap> {
         onTap: () async {
           final scrollControl = _data.poiScrollController;
           if (scrollControl != null) {
+            scrollControl.jumpTo(0.0);
             scrollControl.jumpTo(100.0);
-            await scrollControl.animateTo(100.0 + 100.0 * index,
+            await scrollControl.animateTo(140 + 60.0 * index,
                 duration: Duration(milliseconds: 800), curve: Curves.easeInOut);
           }
+          await _data.showMapMarkerInfo(markerId);
         });
   }
 
@@ -71,10 +68,9 @@ class _POIMapState extends State<POIMap> {
 
   @override
   Widget build(BuildContext context) {
-    _data ??= POIState.of(context).state;
+    _data ??= AppState.of(context).state;
     _subscription ??= _data.poiStream.listen(_updateMarkers);
     _deviceLocation ??= _data.deviceLocation;
-    _controller ??= _data.mapController;
     _poiScrollController ??= _data.poiScrollController;
     //#region GoogleMap
     return GoogleMap(
@@ -90,9 +86,10 @@ class _POIMapState extends State<POIMap> {
       zoomControlsEnabled: false,
       myLocationButtonEnabled: true,
       myLocationEnabled: true,
+      trafficEnabled: true,
       //#region onMapCreated
       onMapCreated: (mapController) {
-        _controller.complete(mapController);
+        _data.mapController = mapController;
       },
       //#endregion
     );

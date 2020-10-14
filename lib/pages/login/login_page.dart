@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ishop/pages/login/login_form.dart';
-import 'package:ishop/utils/styles.dart';
 import 'package:provider/provider.dart';
 
 import 'auth_provider.dart';
@@ -19,9 +18,6 @@ class LoginPage extends StatelessWidget {
         body: Container(
           width: width,
           height: height,
-          decoration: BoxDecoration(
-            image: backgroundImage,
-          ),
           child: Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(

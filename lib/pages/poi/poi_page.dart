@@ -5,52 +5,50 @@ import 'package:ishop/pages/poi/poi_map.dart';
 import 'package:ishop/pages/poi/poi_scroll.dart';
 import 'package:ishop/pages/poi/poi_state.dart';
 
-class POIPage extends StatelessWidget {
-  //#region overrides
+class POIPage extends StatefulWidget {
+  POIPage({Key key, @required this.data}) : super(key: key);
+  final AppData data;
+  @override
+  State<StatefulWidget> createState() => _POIPageState();
+}
+
+class _POIPageState extends State<POIPage> with TickerProviderStateMixin {
+  POIMap get _map => POIMap();
+  POIScroll get _scroll => POIScroll();
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    return FutureBuilder<POIStateData>(
-        future: POIStateData().initialize(),
-        builder: (context, snapshot) {
-          if (snapshot.hasError) {
-            return Container(
-                child: Text('Error with future model!',
-                    textDirection: TextDirection.rtl));
-          }
-          if (!snapshot.hasData) {
-            return CircularProgressIndicator();
-          }
-          return POIState(
-            state: snapshot.data,
-            child: Scaffold(
-              body: Container(
-                width: width,
-                height: height,
-                child: Stack(
-                  children: <Widget>[
-                    POIMap(),
-                    /*
-                    Positioned(
-                      bottom: 150,
-                      left: 0,
-                      child: SizedBox(
+    return AppState(
+      state: widget.data,
+      child: Scaffold(
+        body: Builder(
+          builder: (BuildContext context) => Center(
+            child: Column(
+              children: <Widget>[
+                Container(
+                  width: width,
+                  height: height,
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
                         width: width,
-                        height: 100.0,
-                        child: POISlider(),
+                        height: height,
+                        child: _map,
                       ),
-                    ),
-                     */
-                    Container(
-                      alignment: Alignment.bottomCenter,
-                      child: POIScroll(),
-                    ),
-                  ],
+                      Align(
+                        alignment: Alignment.bottomCenter,
+                        child: _scroll,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
+              ],
             ),
-          );
-        });
+          ),
+        ),
+      ),
+    );
   }
 }

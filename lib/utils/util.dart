@@ -1,5 +1,17 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'package:recase/recase.dart';
+
+class ConstKeys {
+  static const deviceKey = 'device_size';
+  static const roundAngelKey = 'round_angle_size';
+  static const regularPolygonKey = 'regular_angle_size';
+  static const circleKey = 'circle custom painter';
+  static const circleTriangleKey = 'circle triangle painter';
+  static const logoKey = 'logo_page_size';
+}
+
+//#region enums
 
 enum BannerType {
   all,
@@ -57,95 +69,7 @@ enum TaxonomyType {
 
 enum TemperatureIndicatorType { ambient }
 
-class Address {
-  //#region constructors: Address, Address.fromDoc
-  Address(
-    this.name,
-    this.locality,
-    this.zipCode, {
-    AdministrativeAreaType administrativeArea = AdministrativeAreaType.az,
-    CountyType countyType = CountyType.maricopa,
-  });
-  Address.fromMap(Map datamap) {
-    name = datamap['a1'];
-    if (datamap.containsKey('a2')) {
-      name += ', ${datamap['a2']}';
-    }
-    locality = LocalityType.values.firstWhere((e) =>
-        e.toString() == 'LocalityType.' + ReCase(datamap['c']).camelCase);
-    administrativeArea = AdministrativeAreaType.values.firstWhere((e) =>
-        e.toString() ==
-        'AdministrativeAreaType.' + ReCase(datamap['s']).camelCase);
-    zipCode = datamap['z'];
-    county = CountyType.values.firstWhere(
-        (e) => e.toString() == 'CountyType.' + ReCase(datamap['u']).camelCase);
-  }
-  //#endregion
-  //#region properties: name, locality, administrativeArea, zipCode, country, county
-  String name;
-  LocalityType locality;
-  AdministrativeAreaType administrativeArea;
-  String zipCode;
-  final CountryType country = CountryType.us;
-  CountyType county;
-  //#endregion
-  //#region @overrides: ==, hashCode
-  //#region ==
-  @override
-  bool operator ==(o) =>
-      o is Address &&
-      o.name.toLowerCase() == name.toLowerCase() &&
-      o.locality.index == locality.index &&
-      o.administrativeArea.index == administrativeArea.index &&
-      o.zipCode == zipCode &&
-      o.country.index == country.index &&
-      o.county.index == county.index;
-  //#endregion
-  //#region hashCode
-  @override
-  int get hashCode =>
-      name.hashCode ^
-      locality.index.hashCode ^
-      administrativeArea.index.hashCode ^
-      zipCode.hashCode ^
-      country.index.hashCode ^
-      county.index.hashCode;
-  //endregion
 //#endregion
-}
-
-class Bounds {
-  double x;
-  double y;
-}
-
-class FilterActionNotification extends Notification {
-  const FilterActionNotification({this.value});
-  final int value;
-}
-
-class GeoLocation {
-  double latitude;
-  double longitude;
-  List<double> latlng() {
-    return [latitude, longitude];
-  }
-
-  @override
-  String toString() {
-    return '$latitude, $longitude';
-  }
-}
-
-class HoursOfOperation {
-  TimeRangeOfDay monday;
-  TimeRangeOfDay tuesday;
-  TimeRangeOfDay wednesday;
-  TimeRangeOfDay thursday;
-  TimeRangeOfDay friday;
-  TimeRangeOfDay saturday;
-  TimeRangeOfDay sunday;
-}
 
 class HTMLImage {
   HTMLImageSizeType size;
@@ -163,12 +87,104 @@ class TimeRangeOfDay {
   bool is24Hours;
 }
 
-BannerType parseBannerType(String value) {
-  assert(value != null && value.isNotEmpty);
-  return BannerType.values.firstWhere((v) => v.toString() == value);
+//#endregion
+
+class Calculator {
+  static int nearestMultipleInt(double value, int multiple) {
+    assert(value != null && multiple != null);
+    final modular = value.round().toInt();
+    multiple = multiple is int ? multiple : multiple.toInt();
+    if (modular == 0 || multiple == 0) {
+      return 0;
+    }
+    if ((modular % multiple) == 0.0) {
+      return modular;
+    }
+    // small multiple boundary
+    final a = ((modular / multiple) * multiple).round().toInt();
+    // large multiple boundary
+    final b = a + multiple;
+    // result is the closest boundary to value
+    return (modular - a > b - modular) ? b : a;
+  }
+
+  static double kilometerToMiles(double value) => value * 0.621371;
 }
 
-String enumValue<T>(T value) {
-  assert(value != null);
-  return value.toString().replaceFirst(RegExp(r"[A-Za-z0-9-_']+?\."), '');
+class EnumParser {
+  static BannerType parseBannerType(String value) {
+    assert(value != null && value.isNotEmpty);
+    return BannerType.values.firstWhere((v) => v.toString() == value);
+  }
+
+  static T fromString<T>(Iterable<T> values, String stringType) {
+    return values.firstWhere(
+        (f) =>
+            "${f.toString().substring(f.toString().indexOf('.') + 1)}"
+                .toString()
+                .toLowerCase() ==
+            stringType.toLowerCase(),
+        orElse: () => null);
+  }
+
+  static String enumValueToString<T>(T value) {
+    assert(value != null);
+    return value.toString().replaceFirst(RegExp(r"[A-Za-z0-9-_']+?\."), '');
+  }
+}
+
+class CanvasDesigner {
+  static final Map<String, CanvasDesigner> _keyValues = {};
+
+  static void initDesignSize() {
+    getInstance(key: ConstKeys.roundAngelKey).designSize = Size(500.0, 500.0);
+    getInstance(key: ConstKeys.regularPolygonKey).designSize =
+        Size(500.0, 500.0);
+    getInstance(key: ConstKeys.logoKey).designSize = Size(580, 648.0);
+    getInstance(key: ConstKeys.circleKey).designSize = Size(500.0, 500.0);
+    getInstance(key: ConstKeys.circleTriangleKey).designSize =
+        Size(500.0, 500.0);
+  }
+
+  //device pixel ratio.
+  Size _designSize;
+
+  //logic size in device
+  Size _logicalSize;
+
+  static CanvasDesigner getInstance({key = ConstKeys.deviceKey}) {
+    if (_keyValues.containsKey(key)) {
+      return _keyValues[key];
+    } else {
+      _keyValues[key] = CanvasDesigner();
+      return _keyValues[key];
+    }
+  }
+
+  set designSize(Size size) {
+    _designSize = size;
+  }
+
+  double get width => _logicalSize.width;
+
+  double get height => _logicalSize.height;
+
+  set logicSize(Size size) => _logicalSize = size;
+
+  double getAxisX(double designWidth) {
+    return (designWidth * width) / _designSize.width;
+  }
+
+  // the y direction
+  double getAxisY(double h) {
+    return (h * height) / _designSize.height;
+  }
+
+  // diagonal direction value with design size s.
+  double getAxisBoth(double s) {
+    return s *
+        sqrt((width * width + height * height) /
+            (_designSize.width * _designSize.width +
+                _designSize.height * _designSize.height));
+  }
 }

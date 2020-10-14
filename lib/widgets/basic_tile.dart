@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ishop/utils/colors.dart';
+import 'package:ishop/utils/styles.dart';
 
 class BasicTile extends StatelessWidget {
   const BasicTile({
@@ -22,7 +22,7 @@ class BasicTile extends StatelessWidget {
         color: color,
         elevation: 10.0,
         borderRadius: BorderRadius.circular(15.0),
-        shadowColor: AppColors.lightShadowColor,
+        shadowColor: AppStyles.appColors['lightShadowColor'],
         child: InkWell(
           child: child,
           splashColor: splashColor,
