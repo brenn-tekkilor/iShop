@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ishop/model/places.dart';
 import 'package:ishop/pages/poi/poi_page.dart';
 import 'package:ishop/pages/poi/poi_state.dart';
+import 'package:ishop/utils/util.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,14 +10,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  AppData _data;
+  LocationData _data;
+
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     final appBarText = Theme.of(context).textTheme.bodyText1;
-    return FutureBuilder<AppData>(
-        future: AppData().initialize(),
+    return FutureBuilder<LocationData>(
+        future: LocationData().initialize(),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
             return Container(
@@ -54,7 +56,10 @@ class _HomePageState extends State<HomePage> {
                         );
                       }
                       return TextButton(
-                        child: Text(preferredStore.name.toUpperCase()),
+                        child: Text(Formatter.condense(
+                            value: preferredStore.name.toUpperCase(),
+                            max: 30,
+                            trailing: '...')),
                         onPressed: () => Navigator.push(
                           context,
                           MaterialPageRoute(

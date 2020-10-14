@@ -15,7 +15,7 @@ class _POIMapState extends State<POIMap> {
   //#region properties
   final _markers = <Marker>{};
   LatLng _deviceLocation;
-  AppData _data;
+  LocationData _data;
   StreamSubscription<List<DocumentSnapshot>> _subscription;
   ScrollController _poiScrollController;
   //#endregion
@@ -68,7 +68,7 @@ class _POIMapState extends State<POIMap> {
 
   @override
   Widget build(BuildContext context) {
-    _data ??= AppState.of(context).state;
+    _data ??= LocationDataProvider.of(context).locationData;
     _subscription ??= _data.poiStream.listen(_updateMarkers);
     _deviceLocation ??= _data.deviceLocation;
     _poiScrollController ??= _data.poiScrollController;

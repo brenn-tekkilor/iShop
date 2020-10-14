@@ -31,7 +31,7 @@ class _ExpandableCardState extends State<ExpandableCard> {
 
   @override
   Widget build(BuildContext context) {
-    final data = AppState.of(context).state;
+    final data = LocationDataProvider.of(context).locationData;
     final width = MediaQuery.of(context).size.width;
     final titleStyle = Theme.of(context).accentTextTheme.headline4;
 

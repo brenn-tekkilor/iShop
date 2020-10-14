@@ -13,7 +13,7 @@ class POISwitch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final data = AppState.of(context).state;
+    final data = LocationDataProvider.of(context).locationData;
     void onChanged(bool value) =>
         data.streamingBanner = !!value ? BannerType.all : otherBanner;
     bool getValue(BannerType filter) => filter != null

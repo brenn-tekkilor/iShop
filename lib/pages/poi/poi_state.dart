@@ -11,16 +11,61 @@ import 'package:ishop/utils/map_utils.dart';
 import 'package:ishop/utils/util.dart';
 import 'package:rxdart/rxdart.dart';
 
-class POIStreamControlBehaviorSubject {
-  const POIStreamControlBehaviorSubject(this.ref, this.rad);
+class ServicePool {}
+
+class AppService extends StatefulWidget {
+  AppService({Key key, @required this.child, @required this.services})
+      : super(key: key);
+  final Widget child;
+  final ServicePool services;
+
+  static AppServiceState of(BuildContext context) =>
+      (context.dependOnInheritedWidgetOfExactType<_InheritedAppProvider>())
+          .services;
+  @override
+  AppServiceState createState() => AppServiceState();
+}
+
+class AppServiceState extends State<AppService> {
+  @override
+  Widget build(BuildContext context) {
+    return _InheritedAppProvider(
+      services: this,
+      child: widget.child,
+    );
+  }
+}
+
+//#region shopping related data and services
+
+class ShoppingData {}
+
+class ShoppingDataProvider extends StatefulWidget {
+  @override
+  ShoppingDataProviderState createState() => ShoppingDataProviderState();
+}
+
+class ShoppingDataProviderState extends State<ShoppingDataProvider> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+//#endregion
+
+//#region location related data and services
+
+class LocationStreamControlBehaviorSubject {
+  const LocationStreamControlBehaviorSubject(this.ref, this.rad);
   final dynamic ref;
   final double rad;
 }
 
-class AppData {
+class LocationData {
   //#region ctor
 
-  AppData()
+  LocationData()
       : _markers = <Marker>{},
         _poiDocs = FirebaseFirestore.instance.collection('maplocationmarkers'),
         _positionStream = getPositionStream(distanceFilter: 2, timeInterval: 4),
@@ -28,7 +73,7 @@ class AppData {
         _streamingRadiusNotifier = ValueNotifier<double>(4.0),
         _preferredStoreNotifier = ValueNotifier<RetailLocation>(null),
         _poiStreamController = BehaviorSubject.seeded(
-            POIStreamControlBehaviorSubject(
+            LocationStreamControlBehaviorSubject(
                 FirebaseFirestore.instance.collection('maplocationmarkers'),
                 4.0)) {
     _devicePositionStreamSubscription =
@@ -44,7 +89,8 @@ class AppData {
   final ValueNotifier<BannerType> _streamingBannerNotifier;
   final ValueNotifier<double> _streamingRadiusNotifier;
   final ValueNotifier<RetailLocation> _preferredStoreNotifier;
-  final BehaviorSubject<POIStreamControlBehaviorSubject> _poiStreamController;
+  final BehaviorSubject<LocationStreamControlBehaviorSubject>
+      _poiStreamController;
   GoogleMapController _poiGoogleMapController;
   LatLng _currentDeviceLocation;
   ScrollController _poiDraggableScrollableScrollController;
@@ -59,7 +105,7 @@ class AppData {
 
   //#region async methods
 
-  Future<AppData> initialize() async {
+  Future<LocationData> initialize() async {
     _currentDeviceLocation = posToLatLng(await getCurrentPosition());
     _poiStream = await initializePOIStream();
     return await this;
@@ -164,7 +210,7 @@ class AppData {
       _streamingRadiusNotifier;
   double get streamingRadius => _streamingRadiusNotifier.value;
 
-  BehaviorSubject<POIStreamControlBehaviorSubject> get poiController =>
+  BehaviorSubject<LocationStreamControlBehaviorSubject> get poiController =>
       _poiStreamController;
 
   //#endregion
@@ -184,7 +230,7 @@ class AppData {
     if (streamingRadius != value) {
       _streamingRadiusNotifier.value = value;
       if (streamingBanner != null) {
-        poiController.add(POIStreamControlBehaviorSubject(poiRef, value));
+        poiController.add(LocationStreamControlBehaviorSubject(poiRef, value));
       }
     }
   }
@@ -195,61 +241,59 @@ class AppData {
       _streamingBannerNotifier.value = value;
       if (streamingRadius != null && streamingRadius > 0) {
         poiController
-            .add(POIStreamControlBehaviorSubject(poiRef, streamingRadius));
+            .add(LocationStreamControlBehaviorSubject(poiRef, streamingRadius));
       }
     }
   }
 }
 
-//#endregion
-
-//#endregion
-
-//#endregion
-
-//#region classes for implementing the InheritedWidget state management model
-
-class AppState extends StatefulWidget {
-  AppState({@required this.child, @required this.state});
+class LocationDataProvider extends StatefulWidget {
+  LocationDataProvider({@required this.child, this.locationData});
   final Widget child;
-  final AppData state;
+  final LocationData locationData;
 
-  static AppStateState of(BuildContext context) =>
-      (context.dependOnInheritedWidgetOfExactType<_InheritedAppState>()).data;
+  static LocationDataProviderState of(BuildContext context) =>
+      (context.dependOnInheritedWidgetOfExactType<_InheritedAppProvider>())
+          .locationData;
 
   @override
-  AppStateState createState() => AppStateState(state: state);
+  LocationDataProviderState createState() =>
+      LocationDataProviderState(locationData: locationData);
 }
 
-class AppStateState extends State<AppState> {
-  AppStateState({@required this.state});
+class LocationDataProviderState extends State<LocationDataProvider> {
+  LocationDataProviderState({@required this.locationData});
 
-  AppData state;
+  LocationData locationData;
 
   @override
   Widget build(BuildContext context) {
-    return _InheritedAppState(
-      data: this,
+    return _InheritedAppProvider(
+      locationData: this,
       child: widget.child,
     );
   }
 }
 
-class _InheritedAppState extends InheritedWidget {
-  _InheritedAppState({
+//#endregion
+
+//#region application data and services provider
+
+class _InheritedAppProvider extends InheritedWidget {
+  _InheritedAppProvider({
     Key key,
-    @required this.data,
+    @required this.services,
     @required Widget child,
   }) : super(key: key, child: child);
 
   // Data is the entire POI state
-  final AppStateState data;
+  final AppServiceState services;
 
   // This is a built in method which you can use to check if
   // any state has changed. If not, no reason to rebuild all the widgets
   // that rely on your state.
   @override
-  bool updateShouldNotify(_InheritedAppState old) => true;
+  bool updateShouldNotify(_InheritedAppProvider old) => true;
 }
 
 //#endregion

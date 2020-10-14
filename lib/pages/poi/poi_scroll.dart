@@ -17,7 +17,7 @@ class POIScroll extends StatefulWidget {
 class _POIScrollState extends State<POIScroll> with TickerProviderStateMixin {
   //#region properties
 
-  AppData _data;
+  LocationData _data;
   final _cards = <ExpandableCard>{};
   final _foodAndDrugSwitch = POISwitch(banner: BannerType.foodAndDrug);
   final _marketplaceSwitch = POISwitch(banner: BannerType.marketplace);
@@ -50,7 +50,7 @@ class _POIScrollState extends State<POIScroll> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    _data ??= AppState.of(context).state;
+    _data ??= LocationDataProvider.of(context).locationData;
     _streamSubscription ??= _data.poiStream.listen(_updateCards);
     return DraggableScrollableSheet(
         initialChildSize: 0.1,

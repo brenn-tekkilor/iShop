@@ -45,7 +45,7 @@ class POISlider extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final data = AppState.of(context).state;
+    final data = LocationDataProvider.of(context).locationData;
     var startValue = 0.0;
     var mapZoom = 12.0;
 

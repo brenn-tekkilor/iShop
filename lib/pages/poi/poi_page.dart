@@ -7,7 +7,7 @@ import 'package:ishop/pages/poi/poi_state.dart';
 
 class POIPage extends StatefulWidget {
   POIPage({Key key, @required this.data}) : super(key: key);
-  final AppData data;
+  final LocationData data;
   @override
   State<StatefulWidget> createState() => _POIPageState();
 }
@@ -20,8 +20,8 @@ class _POIPageState extends State<POIPage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    return AppState(
-      state: widget.data,
+    return LocationDataProvider(
+      locationData: widget.data,
       child: Scaffold(
         body: Builder(
           builder: (BuildContext context) => Center(
