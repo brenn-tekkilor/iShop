@@ -1,0 +1,110 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+
+import 'file:///C:/Users/brenn/source/repos/brenn/ishop/lib/model/schemas/list_model.dart';
+
+class LocationsListScroll extends StatefulWidget {
+  @override
+  _LocationsListScrollState createState() => _LocationsListScrollState();
+}
+
+class _LocationsListScrollState extends State<LocationsListScroll> {
+  final _cards = <CardItem>{};
+  final _marketplaceCards = <CardItem>{};
+  final _foodAndDrugCards = <CardItem>{};
+  final _bannerFilterActions = <IconButton>[];
+  Set<CardItem> visibleCards;
+  CardItem _selectedCard;
+  ValueListenable<int> _filterAction;
+
+  Future<bool> _initializePlaceList() async {
+    final collection = FirebaseFirestore.instance.collection('retaillocations');
+    await collection.get().then((value) async {
+      final queryResult = await value;
+      queryResult.docs.forEach((d) {
+        final data = d.data();
+        final name = data['n'];
+        final banner = data['b'];
+        final card = CardItem(
+            key: ValueKey(d.id),
+            data: CardItemData(title: name, subtitle: banner));
+        _cards.add(card);
+        if (banner == 'marketplace') {
+          _marketplaceCards.add(card);
+        } else {
+          _foodAndDrugCards.add(card);
+        }
+      });
+    }).catchError((e) => print(e));
+    return true;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<bool>(
+        future: _initializePlaceList(),
+        builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
+          if (snapshot.hasError) {
+            return Text('Something went wrong: ${snapshot.error.toString()}');
+          }
+          if (snapshot.connectionState == ConnectionState.waiting &&
+              !snapshot.hasData) {
+            return Text('Loading');
+          }
+          return Container(
+            alignment: Alignment.bottomCenter,
+            child: DraggableScrollableSheet(
+                initialChildSize: 0.1,
+                minChildSize: 0.1,
+                maxChildSize: 0.7,
+                expand: true,
+                builder: (context, scrollController) {
+                  return CustomScrollView(
+                    controller: scrollController,
+                    scrollDirection: Axis.vertical,
+                    slivers: <Widget>[
+                      SliverAppBar(
+                        pinned: true,
+                        expandedHeight: 20.0,
+                        flexibleSpace: FlexibleSpaceBar(
+                          title: Text('Options'),
+                        ),
+                        actions: [
+                          AnimatedSwitcher(
+                            duration: const Duration(milliseconds: 400),
+                            transitionBuilder: (Widget child,
+                                    Animation<double> animation) =>
+                                ScaleTransition(child: child, scale: animation),
+                            child: _bannerFilterActions[_filterAction.value],
+                          ),
+                        ],
+                      ),
+                      ValueListenableBuilder<int>(
+                        valueListenable: _filterAction,
+                        builder: (context, value, child) {
+                          visibleCards = value == 0
+                              ? _cards
+                              : value == 1
+                                  ? _marketplaceCards
+                                  : _foodAndDrugCards;
+                          return SliverList(
+                            delegate: SliverChildBuilderDelegate(
+                              (BuildContext context, int index) {
+                                return Container(
+                                    color: Colors.white,
+                                    height: 100 + index % 4 * 20.0,
+                                    child: visibleCards.elementAt(index));
+                              },
+                              childCount: visibleCards.length,
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  );
+                }),
+          );
+        });
+  }
+}

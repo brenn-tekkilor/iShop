@@ -1,0 +1,53 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import 'file:///C:/Users/brenn/source/repos/brenn/ishop/lib/model/schemas/retail_location.dart';
+
+class PlacesService extends ChangeNotifier {
+  PlacesService._create() : _firestore = FirebaseFirestore.instance;
+
+  static PlacesService getInstance() {
+    _instance ??= PlacesService._create();
+    return _instance;
+  }
+
+  static PlacesService _instance;
+  final FirebaseFirestore _firestore;
+  final _retailLocations = <String, Place>{};
+  final _markers = <Marker>[];
+  Place _targetLocation;
+
+  void _addPlace(Place retailLocation) {
+    if (!retailLocations.containsKey(retailLocation.id)) {
+      retailLocations[retailLocation.id] = retailLocation;
+    }
+  }
+
+  Future<void> updatePlaces() async {
+    final _querySnapshot = await _firestore.collection('retaillocations').get();
+    _querySnapshot.docs.forEach((doc) {
+      final _retailLocation = Place.fromDoc(doc);
+      _addPlace(_retailLocation);
+      //_addPlaceFromDocumentSnapshot(doc.id, doc);
+    });
+    notifyListeners();
+  }
+
+  //region getters/setters
+
+  List<Marker> get markers => _markers;
+
+  Map<String, Place> get retailLocations => _retailLocations;
+
+  Place get targetLocation => _targetLocation;
+
+  set targetLocation(Place value) {
+    assert(value != null);
+    if (_targetLocation != value) {
+      _targetLocation = value;
+      notifyListeners();
+    }
+  }
+  //#endregion
+}

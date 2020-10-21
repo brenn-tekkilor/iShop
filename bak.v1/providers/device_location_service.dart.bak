@@ -1,0 +1,53 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+
+class DeviceLocationService extends ChangeNotifier {
+  //#region singleton pattern members
+  //#region private constructor
+  DeviceLocationService._create() {
+    _positionStream = getPositionStream().listen((Position position) {
+      currentLocation = position;
+    });
+  }
+  //#endregion
+  //#region static method returns singleton instance
+  static DeviceLocationService getInstance() {
+    _instance ??= DeviceLocationService._create();
+    return _instance;
+  }
+
+  //#endregion
+  //#region static singleton instance
+  static DeviceLocationService _instance;
+  //#endregion
+  //#endregion
+  //#region private members
+  //#region private location properties
+  Position _currentLocation;
+  Position _lastKnownLocation;
+  StreamSubscription<Position> _positionStream;
+  //#endregion
+
+  Future<void> updateLocation() async {
+    await getCurrentPosition()
+        .then((value) async => currentLocation = await value)
+        .catchError((e) => print('error updating location: $e'));
+  }
+
+  Position get currentLocation => _currentLocation;
+
+  set currentLocation(Position value) {
+    assert(value != null);
+    if (_currentLocation != null) {
+      _lastKnownLocation = _currentLocation;
+    }
+    _currentLocation = value;
+    notifyListeners();
+  }
+
+  Position get lastKnownLocation => _lastKnownLocation;
+
+  StreamSubscription get positionStream => _positionStream;
+}

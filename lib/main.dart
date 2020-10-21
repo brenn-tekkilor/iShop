@@ -1,34 +1,36 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:ishop/pages/login/login_page.dart';
-import 'package:ishop/utils/styles.dart';
+import 'package:ishop/app/nav.dart';
+import 'package:ishop/app/service_locator.dart';
+import 'package:ishop/app/styles.dart';
+import 'package:logger/logger.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  Logger.level = Level.verbose;
+  runApp(MyApp());
+}
 
-Future<FirebaseApp> _initialization = Firebase.initializeApp();
+Future<FirebaseApp> initialize() async => await Firebase.initializeApp();
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: _initialization,
-      builder: (context, snapshot) {
-        if (snapshot.hasError) {
-          return Container(
-              child: Text(
-            'Error initializing FireBase!',
-            textDirection: TextDirection.ltr,
-          ));
-        }
-        if (!snapshot.hasData) {
-          return CircularProgressIndicator();
-        }
-        return MaterialApp(
-          title: 'iShop',
-          theme: AppStyles.primaryTheme,
-          home: LoginPage(),
-        );
-      },
-    );
+        future: initialize(),
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          setupLocator();
+          return snapshot.hasData
+              ? FutureBuilder(
+                  future: locator.allReady(),
+                  builder: (BuildContext context, AsyncSnapshot snapshot) =>
+                      snapshot.hasData
+                          ? MaterialApp(
+                              title: 'iShop',
+                              theme: AppStyles.primaryTheme,
+                              initialRoute: 'login',
+                              onGenerateRoute: Nav.generateRoute)
+                          : CircularProgressIndicator())
+              : CircularProgressIndicator();
+        });
   }
 }

@@ -1,0 +1,3 @@
+enum AdministrativeArea {
+  az, // Arizona
+}

@@ -1,0 +1,106 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:ishop/utils/colors.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+void doNothing() {
+  print('Nothing is happening here (yet)');
+} //better than doing null-ing, right? ;)
+
+bool isIOS(BuildContext context) {
+  if (Theme.of(context).platform == TargetPlatform.iOS) {
+    return true;
+  } else {
+    return false;
+  }
+} // check if android or ios
+
+bool isThemeCurrentlyDark(BuildContext context) {
+  if (Theme.of(context).brightness == Brightness.dark) {
+    return true;
+  } else {
+    return false;
+  }
+} //returns current theme status
+
+Color invertColorsTheme(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MyColors.primaryColor;
+  } else {
+    return MyColors.secondaryColor;
+  }
+} //returns appropriate theme colors for ui elements
+
+Color invertInvertColorsTheme(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MyColors.secondaryColor;
+  } else {
+    return MyColors.primaryColor;
+  }
+} //keeps the same colors lol
+
+Color invertColorsMild(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MyColors.primaryLightColor;
+  } else {
+    return MyColors.primaryDarkColor;
+  }
+} //returns appropriate mild colors for text visibility
+
+Color invertInvertColorsMild(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MyColors.primaryDarkColor;
+  } else {
+    return MyColors.primaryLightColor;
+  }
+} //keeps the same colors lol
+
+Color invertColorsStrong(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MyColors.white2;
+  } else {
+    return MyColors.black2;
+  }
+} //returns appropriate strong colors for text visibility
+
+Color invertInvertColorsStrong(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MyColors.black2;
+  } else {
+    return MyColors.white2;
+  }
+} //keeps the same colors lol
+
+Color invertColorsMaterial(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MaterialColors.orange;
+  } else {
+    return MaterialColors.yellow;
+  }
+} //returns appropriate material colors
+
+Color invertInvertColorsMaterial(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MaterialColors.yellow;
+  } else {
+    return MaterialColors.orange;
+  }
+} //keeps the same colors lol
+
+Color shadowColor(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return AppColors.darkShardowColor;
+  } else {
+    return AppColors.lightShadowColor;
+  }
+} //returns appropriate colors for raised element shadows
+
+Future<bool> launchURL(String url) async {
+  var success = false;
+  if (await canLaunch(url)) {
+    await launch(url).then((val) => {success = val});
+  } else {
+    print('Error launching $url!');
+  }
+  return success;
+} //opens a custom url in the system browser
