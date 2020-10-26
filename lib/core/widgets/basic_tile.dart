@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ishop/app/styles.dart';
+import 'package:ishop/app/styles/styles.dart';
 
 class BasicTile extends StatelessWidget {
   const BasicTile({

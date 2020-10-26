@@ -8,4 +8,8 @@ class Scribe {
     }
     return result;
   }
+
+  static bool isNotNullOrEmpty(String value) {
+    return (value != null && value.isNotEmpty) ? true : false;
+  }
 }

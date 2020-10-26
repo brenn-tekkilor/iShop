@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:ishop/app/service_locator.dart';
+import 'package:ishop/app/services/locator.dart';
+import 'package:ishop/components/map/map_model.dart';
+import 'package:ishop/components/places/places_service.dart';
 import 'package:ishop/core/models/place.dart';
-import 'package:ishop/services/places_service.dart';
-import 'package:ishop/views/base/base_view.dart';
-import 'package:ishop/views/map/map_model.dart';
+import 'package:stacked/stacked.dart';
 
 class MapView extends StatefulWidget {
   @override
@@ -41,26 +41,29 @@ class _MapViewState extends State<MapView> {
 
   @override
   Widget build(BuildContext context) {
-    return BaseView<MapModel>(builder: (context, model, child) {
-      return GoogleMap(
-        //#region initialCameraPosition
-        initialCameraPosition: CameraPosition(
-          target: model.deviceLocation,
-          zoom: 12,
-        ),
-        //#endregion: :
-        //#region markers
-        markers: markers,
-        //#endregion:
-        zoomControlsEnabled: false,
-        myLocationButtonEnabled: true,
-        myLocationEnabled: true,
-        trafficEnabled: true,
-        //#region onMapCreated
-        onMapCreated: (mapController) {
-          model.placesMap = mapController;
-        },
-      );
-    });
+    return ViewModelBuilder<MapModel>.reactive(
+      builder: (context, model, child) {
+        return GoogleMap(
+          //#region initialCameraPosition
+          initialCameraPosition: CameraPosition(
+            target: model.deviceLocation,
+            zoom: 12,
+          ),
+          //#endregion: :
+          //#region markers
+          markers: markers,
+          //#endregion:
+          zoomControlsEnabled: false,
+          myLocationButtonEnabled: true,
+          myLocationEnabled: true,
+          trafficEnabled: true,
+          //#region onMapCreated
+          onMapCreated: (mapController) {
+            model.placesMap = mapController;
+          },
+        );
+      },
+      viewModelBuilder: () => MapModel.initial(),
+    );
   }
 }

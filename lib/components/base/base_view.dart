@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ishop/app/service_locator.dart';
-import 'package:ishop/views/base/base_model.dart';
+import 'package:ishop/app/services/locator.dart';
+import 'package:ishop/components/base/base_model.dart';
 import 'package:provider/provider.dart';
 
 class BaseView<T extends BaseModel> extends StatefulWidget {

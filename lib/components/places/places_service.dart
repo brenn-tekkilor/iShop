@@ -5,12 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:injectable/injectable.dart';
 import 'package:ishop/core/enums/place_banner.dart';
 import 'package:ishop/core/models/place.dart';
 import 'package:ishop/core/util/parser.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:tuple/tuple.dart';
 
+@lazySingleton
 class PlacesService {
   //#region Ctor / factory
   //#region Ctor
@@ -21,10 +23,20 @@ class PlacesService {
         _streamSubject = BehaviorSubject.seeded(Tuple2(PlaceBanner.all, 4.0));
   //#endregion
   //#region factory
+  @factoryMethod
   factory PlacesService.initial() {
     return PlacesService();
   }
   //#endregion
+  //#region static async initializer
+  @preResolve
+  static Future<PlacesService> get instance async {
+    _instance ??= PlacesService.initial();
+    _instance = await _instance.initialize();
+    return await _instance;
+  }
+
+  static PlacesService _instance;
   //#region initialize
   Future<PlacesService> initialize() async {
     _deviceLocation = await waitDeviceLocation;
@@ -128,7 +140,7 @@ class PlacesService {
 
   Future<LatLng> get waitDeviceLocation async =>
       _deviceLocation ??
-      await getCurrentPosition().then((p) async {
+      await Geolocator.getCurrentPosition().then((p) async {
         _deviceLocation = Parser.posToLatLng(await p);
         return await _deviceLocation;
       }).catchError((e) => print(e));

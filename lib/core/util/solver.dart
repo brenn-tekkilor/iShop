@@ -25,7 +25,7 @@ class Solver {
   static double kilometerToMiles(double value) => value * 0.621371;
 
   static Future<double> distanceInMeters(Position start, Position end) async {
-    return await distanceBetween(
+    return await Geolocator.distanceBetween(
         start.latitude, start.longitude, end.latitude, end.longitude);
   }
 

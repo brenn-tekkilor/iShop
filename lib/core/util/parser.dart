@@ -5,8 +5,7 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-
-import 'file:///C:/Users/brenn/source/repos/brenn/ishop/lib/app/secrets.dart';
+import 'package:ishop/dev/secrets.dart';
 
 class Parser {
   static T stringToEnum<T>(Iterable<T> values, String stringType) {

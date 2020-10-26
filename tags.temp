@@ -1,0 +1,1005 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/663bfb1c/
+0	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+0	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+1	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+1	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+10	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+10	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+100	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+101	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+102	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+103	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+104	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+105	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+106	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+107	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+108	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+109	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+11	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+11	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+110	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+111	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+112	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+113	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+114	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+115	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+116	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+117	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+118	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+119	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+12	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+12	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+120	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+121	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+122	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+123	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+124	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+125	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+126	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+127	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+128	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+129	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+13	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+13	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+130	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+131	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+132	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+133	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+134	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+135	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+136	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+137	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+138	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+139	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+14	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+14	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+140	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+141	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+142	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+143	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+144	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+145	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+146	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+147	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+15	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+15	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+15	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^ÄüB
+16	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+16	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+17	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+17	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+18	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+18	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+19	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+19	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+2	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+2	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+2	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^2=.éÉ¿2X`¿2r!¿$/;"	k
+2	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^2=.éÉ¿2X`¿2r!¿$/;"	k	section:ù.£È¿[ø.£Î¿\\\x06.¿\\j.¿\\©.èŒ¿\\‹.¿
+20	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+20	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+21	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+21	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+22	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+22	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+23	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+23	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+24	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+24	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+25	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+25	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+26	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+26	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+27	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+27	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+28	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+28	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+29	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+29	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+3	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+3	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+30	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+30	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+31	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+31	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+32	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+32	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+33	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+33	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+34	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+34	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+35	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+35	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+36	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+36	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+37	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+37	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+38	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+38	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+39	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+39	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+4	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+4	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+40	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+40	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+41	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+41	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+42	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+42	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+43	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+43	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+44	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+44	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+45	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+45	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+46	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+46	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+47	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+47	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+48	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+48	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+49	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+49	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+5	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+5	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+5	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^5=¿$/;"	k
+5	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^5=¿$/;"	k	section:ù.£È¿[ø.£Î¿\\\x06.¿\\j.¿\\©.èŒ¿\\‹.¿
+50	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+50	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+51	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+51	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+52	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+52	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+53	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+53	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+54	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+54	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+55	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+55	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+56	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+56	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+57	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+57	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+58	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+58	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+59	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+59	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+6	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+6	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+60	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+60	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+61	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+61	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+62	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+62	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+63	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+63	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+64	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+64	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+65	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+65	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+66	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+66	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+67	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+67	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+68	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+68	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+69	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+69	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+7	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+7	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+70	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+70	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+71	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+71	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+72	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+72	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+73	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+73	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+74	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+74	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+75	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+75	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+76	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+76	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+77	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+77	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+78	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+79	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+8	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+8	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+80	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+81	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+82	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+83	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+84	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+85	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+86	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+87	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+88	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+89	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+9	.dart_tool/flutter_build/d832cf4a455512f03694e8cab5edd2c2/outputs.json	/^["C:\\\\Users\\\\brenn\\\\source\\\\repos\\\\brenn\\\\ishop\\\\build\\\\app\\\\intermediates\\\\/;"	s
+9	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+90	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+91	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+92	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+93	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+94	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+95	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+96	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+97	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+98	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+99	.dart_tool/package_config.json	/^    {$/;"	o	array:packages
+Build Failed	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^Build Failed :($/;"	k	section:xÉ
+C.éÉ¿[^`\x03¿[~\x012¿	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^[C.éÉ¿[^`¿[~2¿$/;"	s
+H\x16¿	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^[H¿$/;"	s
+I	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^I=.èŒ¿I_Ä¿$/;"	k
+I	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^I=.èŒ¿I_Ä¿$/;"	k	section:ù.£È¿[ø.£Î¿\\\x06.¿\\j.¿\\©.èŒ¿\\‹.¿
+Level recordStackTraceAtLevel	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^Level recordStackTraceAtLevel = Level.OFF;$/;"	k	section:xÉ
+String _generatedOutputDirectory	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^String _generatedOutputDirectory = 'generated';$/;"	k	section:xÉ
+String get generatedOutputDirectory	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^String get generatedOutputDirectory => '$cacheDir\/$_generatedOutputDirectory';$/;"	k	section:xÉ
+String get separator	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^String get separator => context.separator;$/;"	k	section:xÉ
+Style get style	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^Style get style => context.style;$/;"	k	section:xÉ
+\x20backgroundColors	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const List<AnsiCode> backgroundColors = [$/;"	k	section:xÉ
+\x20defaultRootPackageSources	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const List<String> defaultRootPackageSources = [$/;"	k	section:xÉ
+\x20foregroundColors	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const List<AnsiCode> foregroundColors = [$/;"	k	section:xÉ
+\x20styles	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const List<AnsiCode> styles = [$/;"	k	section:xÉ
+_generatedOutputDirectoryIsLocked	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^void lockGeneratedOutputDirectory() => _generatedOutputDirectoryIsLocked = true;$/;"	k	section:xÉ
+`É	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^[`É]ÉÉˆ	ÇaÉ]ÑÑ	å‘kÉ]ä”ä”ã¶\\?_Äã$/;"	s
+bool _generatedOutputDirectoryIsLocked	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^bool _generatedOutputDirectoryIsLocked = false;$/;"	k	section:xÉ
+bool get ansiOutputEnabled	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^bool get ansiOutputEnabled =>$/;"	k	section:xÉ
+bool hierarchicalLoggingEnabled	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^bool hierarchicalLoggingEnabled = false;$/;"	k	section:xÉ
+bool isRoot	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^List<String> _depsFromYaml(YamlMap yaml, {bool isRoot = false}) {$/;"	k	section:xÉ
+configVersion	.dart_tool/package_config.json	/^  "configVersion": 2,$/;"	n
+const String cacheDir	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const String cacheDir = '.dart_tool\/build';$/;"	k	section:xÉ
+const _ansiEscapeForScript	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const _ansiEscapeForScript = '\\\\033';$/;"	k	section:xÉ
+const _ansiEscapeLiteral	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const _ansiEscapeLiteral = '\\x1B';$/;"	k	section:xÉ
+const _importantPackages	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const _importantPackages = [$/;"	k	section:xÉ
+const backgroundBlack	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const backgroundBlack =$/;"	k	section:xÉ
+const backgroundBlue	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const backgroundBlue =$/;"	k	section:xÉ
+const backgroundCyan	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const backgroundCyan =$/;"	k	section:xÉ
+const backgroundDarkGray	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const backgroundDarkGray =$/;"	k	section:xÉ
+const backgroundDefault	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const backgroundDefault =$/;"	k	section:xÉ
+const backgroundGreen	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const backgroundGreen =$/;"	k	section:xÉ
+const backgroundLightBlue	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const backgroundLightBlue =$/;"	k	section:xÉ
+const backgroundLightCyan	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const backgroundLightCyan =$/;"	k	section:xÉ
+const backgroundLightGray	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const backgroundLightGray =$/;"	k	section:xÉ
+const backgroundLightGreen	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const backgroundLightGreen =$/;"	k	section:xÉ
+const backgroundLightMagenta	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const backgroundLightMagenta =$/;"	k	section:xÉ
+const backgroundLightRed	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const backgroundLightRed =$/;"	k	section:xÉ
+const backgroundLightYellow	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const backgroundLightYellow =$/;"	k	section:xÉ
+const backgroundMagenta	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const backgroundMagenta =$/;"	k	section:xÉ
+const backgroundRed	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const backgroundRed = AnsiCode._('red', AnsiCodeType.background, 41, resetAll);$/;"	k	section:xÉ
+const backgroundWhite	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const backgroundWhite =$/;"	k	section:xÉ
+const backgroundYellow	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const backgroundYellow =$/;"	k	section:xÉ
+const black	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const black = AnsiCode._('black', AnsiCodeType.foreground, 30, resetAll);$/;"	k	section:xÉ
+const blue	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const blue = AnsiCode._('blue', AnsiCodeType.foreground, 34, resetAll);$/;"	k	section:xÉ
+const buildPhasePoolSize	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const buildPhasePoolSize = 16;$/;"	k	section:xÉ
+const cyan	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const cyan = AnsiCode._('cyan', AnsiCodeType.foreground, 36, resetAll);$/;"	k	section:xÉ
+const darkGray	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const darkGray = AnsiCode._('dark gray', AnsiCodeType.foreground, 90, resetAll);$/;"	k	section:xÉ
+const defaultForeground	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const defaultForeground =$/;"	k	section:xÉ
+const defaultLevel	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const defaultLevel = Level.INFO;$/;"	k	section:xÉ
+const entryPointDir	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const entryPointDir = '$cacheDir\/entrypoint';$/;"	k	section:xÉ
+const green	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const green = AnsiCode._('green', AnsiCodeType.foreground, 32, resetAll);$/;"	k	section:xÉ
+const lightBlue	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const lightBlue =$/;"	k	section:xÉ
+const lightCyan	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const lightCyan =$/;"	k	section:xÉ
+const lightGray	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const lightGray =$/;"	k	section:xÉ
+const lightGreen	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const lightGreen =$/;"	k	section:xÉ
+const lightMagenta	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const lightMagenta =$/;"	k	section:xÉ
+const lightRed	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const lightRed = AnsiCode._('light red', AnsiCodeType.foreground, 91, resetAll);$/;"	k	section:xÉ
+const lightYellow	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const lightYellow =$/;"	k	section:xÉ
+const magenta	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const magenta = AnsiCode._('magenta', AnsiCodeType.foreground, 35, resetAll);$/;"	k	section:xÉ
+const red	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const red = AnsiCode._('red', AnsiCodeType.foreground, 31, resetAll);$/;"	k	section:xÉ
+const resetAll	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const resetAll = AnsiCode._('all', AnsiCodeType.reset, 0, null);$/;"	k	section:xÉ
+const resetBlink	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const resetBlink = AnsiCode._('blink', AnsiCodeType.reset, 25, null);$/;"	k	section:xÉ
+const resetBold	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const resetBold = AnsiCode._('bold', AnsiCodeType.reset, 22, null);$/;"	k	section:xÉ
+const resetCrossedOut	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const resetCrossedOut = AnsiCode._('crossed out', AnsiCodeType.reset, 29, null);$/;"	k	section:xÉ
+const resetDim	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const resetDim = AnsiCode._('dim', AnsiCodeType.reset, 22, null);$/;"	k	section:xÉ
+const resetHidden	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const resetHidden = AnsiCode._('hidden', AnsiCodeType.reset, 28, null);$/;"	k	section:xÉ
+const resetItalic	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const resetItalic = AnsiCode._('italic', AnsiCodeType.reset, 23, null);$/;"	k	section:xÉ
+const resetReverse	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const resetReverse = AnsiCode._('reverse', AnsiCodeType.reset, 27, null);$/;"	k	section:xÉ
+const resetUnderlined	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const resetUnderlined = AnsiCode._('underlined', AnsiCodeType.reset, 24, null);$/;"	k	section:xÉ
+const scriptLocation	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const scriptLocation = '$entryPointDir\/build.dart';$/;"	k	section:xÉ
+const scriptSnapshotLocation	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const scriptSnapshotLocation = '$scriptLocation.snapshot';$/;"	k	section:xÉ
+const styleBlink	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const styleBlink = AnsiCode._('blink', AnsiCodeType.style, 5, resetBlink);$/;"	k	section:xÉ
+const styleBold	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const styleBold = AnsiCode._('bold', AnsiCodeType.style, 1, resetBold);$/;"	k	section:xÉ
+const styleCrossedOut	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const styleCrossedOut =$/;"	k	section:xÉ
+const styleDim	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const styleDim = AnsiCode._('dim', AnsiCodeType.style, 2, resetDim);$/;"	k	section:xÉ
+const styleHidden	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const styleHidden = AnsiCode._('hidden', AnsiCodeType.style, 8, resetHidden);$/;"	k	section:xÉ
+const styleItalic	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const styleItalic = AnsiCode._('italic', AnsiCodeType.style, 3, resetItalic);$/;"	k	section:xÉ
+const styleReverse	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const styleReverse = AnsiCode._('reverse', AnsiCodeType.style, 7, resetReverse);$/;"	k	section:xÉ
+const styleUnderlined	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const styleUnderlined =$/;"	k	section:xÉ
+const white	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const white = AnsiCode._('white', AnsiCodeType.foreground, 97, resetAll);$/;"	k	section:xÉ
+const yellow	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^const yellow = AnsiCode._('yellow', AnsiCodeType.foreground, 33, resetAll);$/;"	k	section:xÉ
+dart	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'dart:async';$/;"	k	section:xÉ
+dart	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'dart:collection';$/;"	k	section:xÉ
+dart	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'dart:convert';$/;"	k	section:xÉ
+dart	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'dart:io' as io;$/;"	k	section:xÉ
+dart	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'dart:io';$/;"	k	section:xÉ
+dart	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'dart:isolate';$/;"	k	section:xÉ
+dart	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'dart:math' as math;$/;"	k	section:xÉ
+final Context context	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final Context context = createInternal();$/;"	k	section:xÉ
+final Context posix	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final Context posix = Context(style: Style.posix);$/;"	k	section:xÉ
+final Context url	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final Context url = Context(style: Style.url);$/;"	k	section:xÉ
+final Context windows	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final Context windows = Context(style: Style.windows);$/;"	k	section:xÉ
+final SharedStdIn sharedStdIn	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final SharedStdIn sharedStdIn = SharedStdIn(stdin);$/;"	k	section:xÉ
+final String _scriptPath	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final String _scriptPath = Platform.script.scheme == 'file'$/;"	k	section:xÉ
+final String assetGraphPath	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final String assetGraphPath = assetGraphPathFor(_scriptPath);$/;"	k	section:xÉ
+final _descriptorPool	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final _descriptorPool = Pool(32);$/;"	k	section:xÉ
+final _log	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final _log = Logger('Entrypoint');$/;"	k	section:xÉ
+final _logSuffix	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final _logSuffix = '\\n';$/;"	k	section:xÉ
+final _logger	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final _logger = Logger('ApplyBuilders');$/;"	k	section:xÉ
+final _logger	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final _logger = Logger('Bootstrap');$/;"	k	section:xÉ
+final _logger	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final _logger = Logger('BuildOptions');$/;"	k	section:xÉ
+final _logger	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final _logger = Logger('IOEnvironment');$/;"	k	section:xÉ
+final _previousLocationsFile	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final _previousLocationsFile = File($/;"	k	section:xÉ
+final _sdkPackageNode	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final _sdkPackageNode = PackageNode($/;"	k	section:xÉ
+final errorCachePath	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final errorCachePath =$/;"	k	section:xÉ
+final lineLength	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final lineLength = stdout.hasTerminal ? stdout.terminalColumns : 80;$/;"	k	section:xÉ
+final pubBinary	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final pubBinary = p.join(sdkBin, Platform.isWindows ? 'pub.bat' : 'pub');$/;"	k	section:xÉ
+final sdkBin	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final sdkBin = p.join(sdkPath, 'bin');$/;"	k	section:xÉ
+final sdkPath	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^final sdkPath = p.dirname(p.dirname(Platform.resolvedExecutable));$/;"	k	section:xÉ
+generated	.dart_tool/package_config.json	/^  "generated": "2020-10-25T16:49:45.565945Z",$/;"	s
+generator	.dart_tool/package_config.json	/^  "generator": "pub",$/;"	s
+generatorVersion	.dart_tool/package_config.json	/^  "generatorVersion": "2.11.0-213.1.beta"$/;"	s
+int level	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^String extension(String path, [int level = 1]) =>$/;"	k	section:xÉ
+int start	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^List<String> wrapTextAsLines(String text, {int start = 0, int length}) {$/;"	k	section:xÉ
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "1.11"$/;"	s	object:packages.119
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "1.17"$/;"	s	object:packages.24
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "1.20"$/;"	s	object:packages.30
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "1.20"$/;"	s	object:packages.67
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "1.24"$/;"	s	object:packages.101
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "1.8"$/;"	s	object:packages.130
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.103
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.104
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.106
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.108
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.118
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.122
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.125
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.127
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.132
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.142
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.16
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.18
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.2
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.20
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.26
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.31
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.37
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.39
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.40
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.41
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.52
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.53
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.54
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.55
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.59
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.71
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.72
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.76
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.80
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.86
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.89
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.91
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.93
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.0"$/;"	s	object:packages.95
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.102
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.111
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.112
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.113
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.114
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.115
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.116
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.117
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.123
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.134
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.135
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.136
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.137
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.139
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.19
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.21
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.28
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.36
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.42
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.43
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.44
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.45
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.46
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.50
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.51
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.63
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.64
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.65
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.68
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.69
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.74
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.84
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.96
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.97
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.98
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.1"$/;"	s	object:packages.99
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.10"$/;"	s	object:packages.11
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.10"$/;"	s	object:packages.133
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.10"$/;"	s	object:packages.140
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.10"$/;"	s	object:packages.15
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.10"$/;"	s	object:packages.23
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.10"$/;"	s	object:packages.48
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.10"$/;"	s	object:packages.81
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.10"$/;"	s	object:packages.88
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.2"$/;"	s	object:packages.0
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.2"$/;"	s	object:packages.107
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.2"$/;"	s	object:packages.124
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.2"$/;"	s	object:packages.131
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.2"$/;"	s	object:packages.138
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.2"$/;"	s	object:packages.141
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.2"$/;"	s	object:packages.147
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.2"$/;"	s	object:packages.34
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.2"$/;"	s	object:packages.4
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.2"$/;"	s	object:packages.47
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.2"$/;"	s	object:packages.85
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.2"$/;"	s	object:packages.90
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.2"$/;"	s	object:packages.92
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.3"$/;"	s	object:packages.14
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.3"$/;"	s	object:packages.144
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.3"$/;"	s	object:packages.17
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.3"$/;"	s	object:packages.25
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.3"$/;"	s	object:packages.3
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.3"$/;"	s	object:packages.49
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.3"$/;"	s	object:packages.66
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.3"$/;"	s	object:packages.75
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.4"$/;"	s	object:packages.146
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.4"$/;"	s	object:packages.73
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.5"$/;"	s	object:packages.56
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.5"$/;"	s	object:packages.79
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.6"$/;"	s	object:packages.109
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.6"$/;"	s	object:packages.110
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.6"$/;"	s	object:packages.121
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.6"$/;"	s	object:packages.126
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.6"$/;"	s	object:packages.13
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.6"$/;"	s	object:packages.33
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.6"$/;"	s	object:packages.70
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.6"$/;"	s	object:packages.8
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.6"$/;"	s	object:packages.9
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.1
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.100
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.105
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.120
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.128
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.129
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.143
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.145
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.22
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.29
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.32
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.35
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.38
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.5
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.57
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.58
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.6
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.60
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.61
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.77
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.78
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.82
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.83
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.87
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.7"$/;"	s	object:packages.94
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.8"$/;"	s	object:packages.62
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.9"$/;"	s	object:packages.10
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.9"$/;"	s	object:packages.12
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.9"$/;"	s	object:packages.27
+languageVersion	.dart_tool/package_config.json	/^      "languageVersion": "2.9"$/;"	s	object:packages.7
+name	.dart_tool/package_config.json	/^      "name": "_fe_analyzer_shared",$/;"	s	object:packages.0
+name	.dart_tool/package_config.json	/^      "name": "analyzer",$/;"	s	object:packages.1
+name	.dart_tool/package_config.json	/^      "name": "archive",$/;"	s	object:packages.2
+name	.dart_tool/package_config.json	/^      "name": "args",$/;"	s	object:packages.3
+name	.dart_tool/package_config.json	/^      "name": "async",$/;"	s	object:packages.4
+name	.dart_tool/package_config.json	/^      "name": "auto_route",$/;"	s	object:packages.5
+name	.dart_tool/package_config.json	/^      "name": "auto_route_generator",$/;"	s	object:packages.6
+name	.dart_tool/package_config.json	/^      "name": "build",$/;"	s	object:packages.7
+name	.dart_tool/package_config.json	/^      "name": "build_config",$/;"	s	object:packages.8
+name	.dart_tool/package_config.json	/^      "name": "build_daemon",$/;"	s	object:packages.9
+name	.dart_tool/package_config.json	/^      "name": "build_resolvers",$/;"	s	object:packages.10
+name	.dart_tool/package_config.json	/^      "name": "build_runner",$/;"	s	object:packages.11
+name	.dart_tool/package_config.json	/^      "name": "build_runner_core",$/;"	s	object:packages.12
+name	.dart_tool/package_config.json	/^      "name": "built_collection",$/;"	s	object:packages.13
+name	.dart_tool/package_config.json	/^      "name": "built_value",$/;"	s	object:packages.14
+name	.dart_tool/package_config.json	/^      "name": "characters",$/;"	s	object:packages.15
+name	.dart_tool/package_config.json	/^      "name": "charcode",$/;"	s	object:packages.16
+name	.dart_tool/package_config.json	/^      "name": "checked_yaml",$/;"	s	object:packages.17
+name	.dart_tool/package_config.json	/^      "name": "cli_util",$/;"	s	object:packages.18
+name	.dart_tool/package_config.json	/^      "name": "cloud_firestore",$/;"	s	object:packages.19
+name	.dart_tool/package_config.json	/^      "name": "cloud_firestore_platform_interface",$/;"	s	object:packages.20
+name	.dart_tool/package_config.json	/^      "name": "cloud_firestore_web",$/;"	s	object:packages.21
+name	.dart_tool/package_config.json	/^      "name": "code_builder",$/;"	s	object:packages.22
+name	.dart_tool/package_config.json	/^      "name": "collection",$/;"	s	object:packages.23
+name	.dart_tool/package_config.json	/^      "name": "convert",$/;"	s	object:packages.24
+name	.dart_tool/package_config.json	/^      "name": "crypto",$/;"	s	object:packages.25
+name	.dart_tool/package_config.json	/^      "name": "cupertino_icons",$/;"	s	object:packages.26
+name	.dart_tool/package_config.json	/^      "name": "dart_style",$/;"	s	object:packages.27
+name	.dart_tool/package_config.json	/^      "name": "device_info",$/;"	s	object:packages.28
+name	.dart_tool/package_config.json	/^      "name": "device_info_platform_interface",$/;"	s	object:packages.29
+name	.dart_tool/package_config.json	/^      "name": "dynamic_theme",$/;"	s	object:packages.30
+name	.dart_tool/package_config.json	/^      "name": "eva_icons_flutter",$/;"	s	object:packages.31
+name	.dart_tool/package_config.json	/^      "name": "expandable",$/;"	s	object:packages.32
+name	.dart_tool/package_config.json	/^      "name": "ffi",$/;"	s	object:packages.33
+name	.dart_tool/package_config.json	/^      "name": "file",$/;"	s	object:packages.34
+name	.dart_tool/package_config.json	/^      "name": "firebase",$/;"	s	object:packages.35
+name	.dart_tool/package_config.json	/^      "name": "firebase_analytics",$/;"	s	object:packages.36
+name	.dart_tool/package_config.json	/^      "name": "firebase_analytics_platform_interface",$/;"	s	object:packages.37
+name	.dart_tool/package_config.json	/^      "name": "firebase_analytics_web",$/;"	s	object:packages.38
+name	.dart_tool/package_config.json	/^      "name": "firebase_auth",$/;"	s	object:packages.39
+name	.dart_tool/package_config.json	/^      "name": "firebase_auth_platform_interface",$/;"	s	object:packages.40
+name	.dart_tool/package_config.json	/^      "name": "firebase_auth_web",$/;"	s	object:packages.41
+name	.dart_tool/package_config.json	/^      "name": "firebase_core",$/;"	s	object:packages.42
+name	.dart_tool/package_config.json	/^      "name": "firebase_core_platform_interface",$/;"	s	object:packages.43
+name	.dart_tool/package_config.json	/^      "name": "firebase_core_web",$/;"	s	object:packages.44
+name	.dart_tool/package_config.json	/^      "name": "fixnum",$/;"	s	object:packages.45
+name	.dart_tool/package_config.json	/^      "name": "flare_dart",$/;"	s	object:packages.46
+name	.dart_tool/package_config.json	/^      "name": "flare_flutter",$/;"	s	object:packages.47
+name	.dart_tool/package_config.json	/^      "name": "flutter",$/;"	s	object:packages.48
+name	.dart_tool/package_config.json	/^      "name": "flutter_launcher_icons",$/;"	s	object:packages.49
+name	.dart_tool/package_config.json	/^      "name": "flutter_plugin_android_lifecycle",$/;"	s	object:packages.50
+name	.dart_tool/package_config.json	/^      "name": "flutter_polyline_points",$/;"	s	object:packages.51
+name	.dart_tool/package_config.json	/^      "name": "flutter_web_plugins",$/;"	s	object:packages.52
+name	.dart_tool/package_config.json	/^      "name": "font_awesome_flutter",$/;"	s	object:packages.53
+name	.dart_tool/package_config.json	/^      "name": "frino_icons",$/;"	s	object:packages.54
+name	.dart_tool/package_config.json	/^      "name": "functional_widget",$/;"	s	object:packages.55
+name	.dart_tool/package_config.json	/^      "name": "functional_widget_annotation",$/;"	s	object:packages.56
+name	.dart_tool/package_config.json	/^      "name": "geocoding",$/;"	s	object:packages.57
+name	.dart_tool/package_config.json	/^      "name": "geocoding_platform_interface",$/;"	s	object:packages.58
+name	.dart_tool/package_config.json	/^      "name": "geoflutterfire",$/;"	s	object:packages.59
+name	.dart_tool/package_config.json	/^      "name": "geolocator",$/;"	s	object:packages.60
+name	.dart_tool/package_config.json	/^      "name": "geolocator_platform_interface",$/;"	s	object:packages.61
+name	.dart_tool/package_config.json	/^      "name": "get",$/;"	s	object:packages.62
+name	.dart_tool/package_config.json	/^      "name": "get_it",$/;"	s	object:packages.63
+name	.dart_tool/package_config.json	/^      "name": "glob",$/;"	s	object:packages.64
+name	.dart_tool/package_config.json	/^      "name": "google_maps_flutter",$/;"	s	object:packages.65
+name	.dart_tool/package_config.json	/^      "name": "google_maps_flutter_platform_interface",$/;"	s	object:packages.66
+name	.dart_tool/package_config.json	/^      "name": "google_maps_webservice",$/;"	s	object:packages.67
+name	.dart_tool/package_config.json	/^      "name": "google_sign_in",$/;"	s	object:packages.68
+name	.dart_tool/package_config.json	/^      "name": "google_sign_in_platform_interface",$/;"	s	object:packages.69
+name	.dart_tool/package_config.json	/^      "name": "google_sign_in_web",$/;"	s	object:packages.70
+name	.dart_tool/package_config.json	/^      "name": "gradient_widgets",$/;"	s	object:packages.71
+name	.dart_tool/package_config.json	/^      "name": "graphs",$/;"	s	object:packages.72
+name	.dart_tool/package_config.json	/^      "name": "http",$/;"	s	object:packages.73
+name	.dart_tool/package_config.json	/^      "name": "http_multi_server",$/;"	s	object:packages.74
+name	.dart_tool/package_config.json	/^      "name": "http_parser",$/;"	s	object:packages.75
+name	.dart_tool/package_config.json	/^      "name": "image",$/;"	s	object:packages.76
+name	.dart_tool/package_config.json	/^      "name": "injectable",$/;"	s	object:packages.77
+name	.dart_tool/package_config.json	/^      "name": "injectable_generator",$/;"	s	object:packages.78
+name	.dart_tool/package_config.json	/^      "name": "intl",$/;"	s	object:packages.79
+name	.dart_tool/package_config.json	/^      "name": "io",$/;"	s	object:packages.80
+name	.dart_tool/package_config.json	/^      "name": "ishop",$/;"	s	object:packages.147
+name	.dart_tool/package_config.json	/^      "name": "js",$/;"	s	object:packages.81
+name	.dart_tool/package_config.json	/^      "name": "json_annotation",$/;"	s	object:packages.82
+name	.dart_tool/package_config.json	/^      "name": "json_serializable",$/;"	s	object:packages.83
+name	.dart_tool/package_config.json	/^      "name": "liquid_swipe",$/;"	s	object:packages.84
+name	.dart_tool/package_config.json	/^      "name": "logger",$/;"	s	object:packages.85
+name	.dart_tool/package_config.json	/^      "name": "logging",$/;"	s	object:packages.86
+name	.dart_tool/package_config.json	/^      "name": "matcher",$/;"	s	object:packages.87
+name	.dart_tool/package_config.json	/^      "name": "meta",$/;"	s	object:packages.88
+name	.dart_tool/package_config.json	/^      "name": "mime",$/;"	s	object:packages.89
+name	.dart_tool/package_config.json	/^      "name": "nested",$/;"	s	object:packages.90
+name	.dart_tool/package_config.json	/^      "name": "node_interop",$/;"	s	object:packages.91
+name	.dart_tool/package_config.json	/^      "name": "node_io",$/;"	s	object:packages.92
+name	.dart_tool/package_config.json	/^      "name": "observable_ish",$/;"	s	object:packages.93
+name	.dart_tool/package_config.json	/^      "name": "package_config",$/;"	s	object:packages.94
+name	.dart_tool/package_config.json	/^      "name": "path",$/;"	s	object:packages.95
+name	.dart_tool/package_config.json	/^      "name": "path_provider_linux",$/;"	s	object:packages.96
+name	.dart_tool/package_config.json	/^      "name": "path_provider_platform_interface",$/;"	s	object:packages.97
+name	.dart_tool/package_config.json	/^      "name": "path_provider_windows",$/;"	s	object:packages.98
+name	.dart_tool/package_config.json	/^      "name": "pedantic",$/;"	s	object:packages.99
+name	.dart_tool/package_config.json	/^      "name": "petitparser",$/;"	s	object:packages.100
+name	.dart_tool/package_config.json	/^      "name": "platform",$/;"	s	object:packages.101
+name	.dart_tool/package_config.json	/^      "name": "plugin_platform_interface",$/;"	s	object:packages.102
+name	.dart_tool/package_config.json	/^      "name": "pool",$/;"	s	object:packages.103
+name	.dart_tool/package_config.json	/^      "name": "process",$/;"	s	object:packages.104
+name	.dart_tool/package_config.json	/^      "name": "provider",$/;"	s	object:packages.105
+name	.dart_tool/package_config.json	/^      "name": "pub_semver",$/;"	s	object:packages.106
+name	.dart_tool/package_config.json	/^      "name": "pubspec_parse",$/;"	s	object:packages.107
+name	.dart_tool/package_config.json	/^      "name": "quiver",$/;"	s	object:packages.108
+name	.dart_tool/package_config.json	/^      "name": "recase",$/;"	s	object:packages.109
+name	.dart_tool/package_config.json	/^      "name": "rxdart",$/;"	s	object:packages.110
+name	.dart_tool/package_config.json	/^      "name": "shared_preferences",$/;"	s	object:packages.111
+name	.dart_tool/package_config.json	/^      "name": "shared_preferences_linux",$/;"	s	object:packages.112
+name	.dart_tool/package_config.json	/^      "name": "shared_preferences_macos",$/;"	s	object:packages.113
+name	.dart_tool/package_config.json	/^      "name": "shared_preferences_platform_interface",$/;"	s	object:packages.114
+name	.dart_tool/package_config.json	/^      "name": "shared_preferences_web",$/;"	s	object:packages.115
+name	.dart_tool/package_config.json	/^      "name": "shared_preferences_windows",$/;"	s	object:packages.116
+name	.dart_tool/package_config.json	/^      "name": "shelf",$/;"	s	object:packages.117
+name	.dart_tool/package_config.json	/^      "name": "shelf_web_socket",$/;"	s	object:packages.118
+name	.dart_tool/package_config.json	/^      "name": "sky_engine",$/;"	s	object:packages.119
+name	.dart_tool/package_config.json	/^      "name": "source_gen",$/;"	s	object:packages.120
+name	.dart_tool/package_config.json	/^      "name": "source_span",$/;"	s	object:packages.121
+name	.dart_tool/package_config.json	/^      "name": "stack_trace",$/;"	s	object:packages.122
+name	.dart_tool/package_config.json	/^      "name": "stacked",$/;"	s	object:packages.123
+name	.dart_tool/package_config.json	/^      "name": "stacked_services",$/;"	s	object:packages.124
+name	.dart_tool/package_config.json	/^      "name": "stream_channel",$/;"	s	object:packages.125
+name	.dart_tool/package_config.json	/^      "name": "stream_transform",$/;"	s	object:packages.126
+name	.dart_tool/package_config.json	/^      "name": "string_scanner",$/;"	s	object:packages.127
+name	.dart_tool/package_config.json	/^      "name": "supercharged",$/;"	s	object:packages.128
+name	.dart_tool/package_config.json	/^      "name": "supercharged_dart",$/;"	s	object:packages.129
+name	.dart_tool/package_config.json	/^      "name": "term_glyph",$/;"	s	object:packages.130
+name	.dart_tool/package_config.json	/^      "name": "timing",$/;"	s	object:packages.131
+name	.dart_tool/package_config.json	/^      "name": "tuple",$/;"	s	object:packages.132
+name	.dart_tool/package_config.json	/^      "name": "typed_data",$/;"	s	object:packages.133
+name	.dart_tool/package_config.json	/^      "name": "url_launcher",$/;"	s	object:packages.134
+name	.dart_tool/package_config.json	/^      "name": "url_launcher_linux",$/;"	s	object:packages.135
+name	.dart_tool/package_config.json	/^      "name": "url_launcher_macos",$/;"	s	object:packages.136
+name	.dart_tool/package_config.json	/^      "name": "url_launcher_platform_interface",$/;"	s	object:packages.137
+name	.dart_tool/package_config.json	/^      "name": "url_launcher_web",$/;"	s	object:packages.138
+name	.dart_tool/package_config.json	/^      "name": "url_launcher_windows",$/;"	s	object:packages.139
+name	.dart_tool/package_config.json	/^      "name": "vector_math",$/;"	s	object:packages.140
+name	.dart_tool/package_config.json	/^      "name": "watcher",$/;"	s	object:packages.141
+name	.dart_tool/package_config.json	/^      "name": "web_socket_channel",$/;"	s	object:packages.142
+name	.dart_tool/package_config.json	/^      "name": "win32",$/;"	s	object:packages.143
+name	.dart_tool/package_config.json	/^      "name": "xdg_directories",$/;"	s	object:packages.144
+name	.dart_tool/package_config.json	/^      "name": "xml",$/;"	s	object:packages.145
+name	.dart_tool/package_config.json	/^      "name": "yaml",$/;"	s	object:packages.146
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^N(EP\/GQP9-,EILO&O7#(N#)(% OM"Q.+4$55PJ%0)FQQ73/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^export 'package:build\/build.dart' show PostProcessBuilder, PostProcessBuildStep;$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^f?D>\/0$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:args\/args.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:args\/command_runner.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:async\/async.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build\/build.dart' show BuilderOptions;$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build\/build.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build\/experiments.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build\/src\/builder\/logging.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build_config\/build_config.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build_daemon\/constants.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build_daemon\/daemon.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build_daemon\/data\/serializers.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build_daemon\/data\/server_log.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build_resolvers\/build_resolvers.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build_runner\/src\/build_script_generate\/bootstrap.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build_runner\/src\/build_script_generate\/build_script_generate.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build_runner\/src\/daemon\/constants.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build_runner\/src\/entrypoint\/base_command.dart' show lineLength;$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build_runner\/src\/entrypoint\/clean.dart' show cleanFor;$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build_runner\/src\/entrypoint\/runner.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build_runner\/src\/logging\/std_io_logging.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build_runner_core\/build_runner_core.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:build_runner_core\/src\/generate\/phase.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:charcode\/charcode.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:code_builder\/code_builder.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:crypto\/crypto.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:dart_style\/dart_style.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:glob\/glob.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:graphs\/graphs.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:http_multi_server\/http_multi_server.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:io\/ansi.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:io\/io.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:json_annotation\/json_annotation.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:logging\/logging.dart' hide Level;$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:logging\/logging.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:meta\/meta.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:package_config\/package_config.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:path\/path.dart' as p;$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:path\/path.dart' as path;$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:pedantic\/pedantic.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:pool\/pool.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:shelf\/shelf_io.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:stack_trace\/stack_trace.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:string_scanner\/string_scanner.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:timing\/timing.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:watcher\/watcher.dart';$/;"	k	section:xÉ
+package	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^import 'package:yaml\/yaml.dart';$/;"	k	section:xÉ
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.0
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.1
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.10
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.100
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.101
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.102
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.103
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.104
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.105
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.106
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.107
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.108
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.109
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.11
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.110
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.111
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.112
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.113
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.114
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.115
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.116
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.117
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.118
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.119
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.12
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.120
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.121
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.122
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.123
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.124
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.125
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.126
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.127
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.128
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.129
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.13
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.130
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.131
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.132
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.133
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.134
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.135
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.136
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.137
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.138
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.139
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.14
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.140
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.141
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.142
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.143
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.144
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.145
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.146
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.147
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.15
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.16
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.17
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.18
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.19
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.2
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.20
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.21
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.22
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.23
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.24
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.25
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.26
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.27
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.28
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.29
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.3
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.30
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.31
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.32
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.33
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.34
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.35
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.36
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.37
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.38
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.39
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.4
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.40
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.41
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.42
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.43
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.44
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.45
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.46
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.47
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.48
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.49
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.5
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.50
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.51
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.52
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.53
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.54
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.55
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.56
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.57
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.58
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.59
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.6
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.60
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.61
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.62
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.63
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.64
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.65
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.66
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.67
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.68
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.69
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.7
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.70
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.71
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.72
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.73
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.74
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.75
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.76
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.77
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.78
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.79
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.8
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.80
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.81
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.82
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.83
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.84
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.85
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.86
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.87
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.88
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.89
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.9
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.90
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.91
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.92
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.93
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.94
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.95
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.96
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.97
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.98
+packageUri	.dart_tool/package_config.json	/^      "packageUri": "lib\/",$/;"	s	object:packages.99
+packages	.dart_tool/package_config.json	/^  "packages": [$/;"	a
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "..\/",$/;"	s	object:packages.147
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.0
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.1
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.10
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.100
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.101
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.102
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.103
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.104
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.105
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.106
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.107
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.108
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.109
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.11
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.110
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.111
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.112
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.113
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.114
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.115
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.116
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.117
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.118
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.12
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.120
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.121
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.122
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.123
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.124
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.125
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.126
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.127
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.128
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.129
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.13
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.130
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.131
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.132
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.133
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.134
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.135
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.136
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.137
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.138
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.139
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.14
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.140
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.141
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.142
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.143
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.144
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.145
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.146
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.15
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.16
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.17
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.18
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.19
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.2
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.20
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.21
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.22
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.23
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.24
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.25
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.26
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.27
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.28
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.29
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.3
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.30
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.31
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.32
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.33
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.34
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.35
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.36
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.37
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.38
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.39
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.4
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.40
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.41
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.42
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.43
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.44
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.45
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.46
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.47
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.49
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.5
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.50
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.51
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.53
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.54
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.55
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.56
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.57
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.58
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.59
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.6
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.60
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.61
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.62
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.63
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.64
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.65
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.66
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.67
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.68
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.69
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.7
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.70
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.71
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.72
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.73
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.74
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.75
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.76
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.77
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.78
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.79
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.8
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.80
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.81
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.82
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.83
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.84
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.85
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.86
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.87
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.88
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.89
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.9
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.90
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.91
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.92
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.93
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.94
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.95
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.96
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.97
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.98
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/AppData\/Local\/Pub\/Cache\/hosted\/pub.dartlang./;"	s	object:packages.99
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/source\/repos\/flutter\/bin\/cache\/pkg\/sky_engi/;"	s	object:packages.119
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/source\/repos\/flutter\/packages\/flutter",$/;"	s	object:packages.48
+rootUri	.dart_tool/package_config.json	/^      "rootUri": "file:\/\/\/C:\/Users\/brenn\/source\/repos\/flutter\/packages\/flutter_web_plu/;"	s	object:packages.52
+typedef BuildPhaseFactory	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^typedef BuildPhaseFactory = BuildPhase Function($/;"	k	section:xÉ
+typedef IsReadable	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^typedef IsReadable = FutureOr<Readability> Function($/;"	k	section:xÉ
+typedef LoggerHandler	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^typedef LoggerHandler = void Function(LogRecord record);$/;"	k	section:xÉ
+typedef OnDelete	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^typedef OnDelete = void Function(AssetId id);$/;"	k	section:xÉ
+typedef PackageFilter	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^typedef PackageFilter = bool Function(PackageNode node);$/;"	k	section:xÉ
+typedef StartProcess	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^typedef StartProcess = Future<io.Process> Function($/;"	k	section:xÉ
+xÉ	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^[xÉ]ç‰ç‰éBn?qÄé¿uz\\	sÉ]éGéNé™[¿$/;"	s
+Ö`\x03¿\x01$˚`\x03¿\x01%\x01\a'£È\x16¿	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^[Ö`¿$˚`¿%'£È¿$/;"	s
+ù.£È¿[ø.£Î¿\\\x06.¿\\j.¿\\©.èŒ¿\\‹.¿	.dart_tool/pub/bin/build_runner/build_runner.dart-2.11.0-213.1.beta.snapshot	/^[ù.£È¿[ø.£Î¿\\.¿\\j.¿\\©.èŒ¿\\‹.¿]	.éÉ¿]"¿$/;"	s

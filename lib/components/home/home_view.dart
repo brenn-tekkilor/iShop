@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:ishop/components/home/home_model.dart';
 import 'package:ishop/core/models/place.dart';
 import 'package:ishop/core/util/scribe.dart';
-import 'package:ishop/views/base/base_view.dart';
-import 'package:ishop/views/home/home_model.dart';
+import 'package:stacked/stacked.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final appBarText = Theme.of(context).textTheme.bodyText1;
-    return BaseView<HomeModel>(
+    return ViewModelBuilder<HomeModel>.reactive(
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
           toolbarHeight: 60.0,
@@ -25,8 +25,7 @@ class HomeView extends StatelessWidget {
                       (place.id.isEmpty)
                           ? TextButton(
                               child: Text('CHOOSE PICKUP!', style: appBarText),
-                              onPressed: () =>
-                                  Navigator.of(context).pushNamed('places'),
+                              onPressed: () => model.navigateToPlacesView(),
                             )
                           : TextButton(
                               child: Text(
@@ -35,8 +34,7 @@ class HomeView extends StatelessWidget {
                                       max: 30,
                                       trailing: '...'),
                                   style: appBarText),
-                              onPressed: () =>
-                                  Navigator.of(context).pushNamed('places'),
+                              onPressed: () => model.navigateToPlacesView(),
                             ),
                   valueListenable: model.placeNotifier,
                 ),
@@ -57,6 +55,7 @@ class HomeView extends StatelessWidget {
           ),
         ),
       ),
+      viewModelBuilder: () => HomeModel.initial(),
     );
   }
 }
