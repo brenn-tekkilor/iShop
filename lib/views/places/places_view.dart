@@ -11,11 +11,15 @@ class PlacesView extends StatelessWidget {
     return FutureBuilder(
         future: locator.allReady(),
         builder: (context, snapshot) => snapshot.hasData
-            ? Container(
-                width: width,
-                height: height,
-                alignment: Alignment.center,
-                child: MapView(),
+            ? Stack(
+                children: <Widget>[
+                  Container(
+                    width: width,
+                    height: height,
+                    alignment: Alignment.center,
+                    child: MapView(),
+                  ),
+                ],
               )
             : CircularProgressIndicator());
   }
