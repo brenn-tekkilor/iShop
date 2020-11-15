@@ -1,3 +1,0 @@
-enum Country {
-  us,
-}

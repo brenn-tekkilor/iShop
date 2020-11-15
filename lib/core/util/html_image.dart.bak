@@ -1,5 +1,0 @@
-class HTMLImage {
-  HTMLImageSizeType size;
-  String url;
-}
-

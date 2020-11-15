@@ -1,0 +1,32 @@
+import 'package:flutter/material.dart';
+import 'package:ishop/utils/util.dart';
+
+import 'package:ishop/services/app_service.dart.bak';
+
+class PlacesSwitch extends StatelessWidget {
+  const PlacesSwitch({Key key, @required this.banner})
+      : otherBanner = banner == PlaceBanner.foodAndDrug
+            ? PlaceBanner.marketplace
+            : PlaceBanner.foodAndDrug,
+        super(key: key);
+  final PlaceBanner banner;
+  final PlaceBanner otherBanner;
+
+  @override
+  Widget build(BuildContext context) {
+    void onChanged(bool value) => AppService.placesOf(context).banner =
+        !!value ? PlaceBanner.all : otherBanner;
+    bool getValue(PlaceBanner filter) => filter != null
+        ? (filter == PlaceBanner.all || filter == banner)
+            ? true
+            : false
+        : true;
+    return ValueListenableBuilder<PlaceBanner>(
+      builder: (BuildContext context, PlaceBanner filter, _) => Switch(
+        value: getValue(filter),
+        onChanged: onChanged,
+      ),
+      valueListenable: AppService.placesOf(context).bannerNotifier,
+    );
+  }
+}

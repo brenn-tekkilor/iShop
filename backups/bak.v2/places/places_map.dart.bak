@@ -1,0 +1,103 @@
+import 'dart:async';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:ishop/model/places.dart';
+import 'package:ishop/pages/places/places_list.dart.bak';
+import 'package:ishop/services/app_service.dart.bak';
+import 'package:ishop/app/places/places_service.dart';
+
+class PlacesMap extends StatefulWidget {
+  @override
+  _PlacesMapState createState() => _PlacesMapState();
+}
+
+class _PlacesMapState extends State<PlacesMap> {
+  //#region properties
+  final _markers = <Marker>{};
+  PlacesService _service;
+  StreamSubscription<List<DocumentSnapshot>> _subscription;
+  //#endregion
+
+  void _addMarker(DocumentSnapshot doc, PlacesService service) {
+    if (doc != null && service != null) {
+      final data = doc.data();
+      if (data != null) {
+        if (doc.id != null) {
+          final id = doc.id;
+          if (id.isNotEmpty) {
+            _markers.removeWhere((e) => e.markerId.value == doc.id);
+          }
+          final place = Place.fromDocument(doc);
+          final marker = place.toMarker(() async {
+            final list = service.listController;
+            if (list != null) {
+              list.jumpTo(0.0);
+              list.jumpTo(100.0);
+              await list
+                  .animateTo(140 + 60.0 * _markers.length,
+                      duration: Duration(milliseconds: 800),
+                      curve: Curves.easeInOut)
+                  .then((value) async => await service
+                      .showMapMarkerInfo(id)
+                      .then((value) => print('Jumped to marker id: ' + id))
+                      .catchError((e) => print(e)))
+                  .catchError((e) => print(e));
+            }
+          });
+          _markers.add(marker);
+        }
+      }
+    }
+  }
+
+  void _updateMarkers(List<DocumentSnapshot> docs) {
+    _markers.clear();
+    docs.forEach((doc) => _addMarker(doc, _service));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    _service = AppService.placesOf(context);
+    _subscription = _service.stream.listen(_updateMarkers);
+    final initialLocation = _service.deviceLocation;
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+    return Container(
+      width: width,
+      height: height,
+      child: Stack(
+        children: <Widget>[
+          Expanded(
+            child: GoogleMap(
+              //#region initialCameraPosition
+              initialCameraPosition: CameraPosition(
+                target: initialLocation,
+                zoom: 12,
+              ),
+              //#endregion
+              //#region markers
+              markers: _markers,
+              //#endregion
+              zoomControlsEnabled: false,
+              myLocationButtonEnabled: true,
+              myLocationEnabled: true,
+              trafficEnabled: true,
+              //#region onMapCreated
+              onMapCreated: (mapController) {
+                _service.mapController = mapController;
+              },
+              //#endregion
+            ),
+          ),
+          Container(
+            alignment: Alignment.bottomCenter,
+            child: PlacesList(),
+          )
+        ],
+      ),
+    );
+  }
+}
+//#endregion

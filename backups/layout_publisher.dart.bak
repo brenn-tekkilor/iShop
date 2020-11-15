@@ -1,0 +1,55 @@
+class LayoutPublisher {
+  static final Map<String, LayoutPUblisher> _keyValues = {};
+
+  static void initDesignSize() {
+    getInstance(key: ConstKeys.roundAngelKey).designSize = Size(500.0, 500.0);
+    getInstance(key: ConstKeys.regularPolygonKey).designSize =
+        Size(500.0, 500.0);
+    getInstance(key: ConstKeys.logoKey).designSize = Size(580, 648.0);
+    getInstance(key: ConstKeys.circleKey).designSize = Size(500.0, 500.0);
+    getInstance(key: ConstKeys.circleTriangleKey).designSize =
+        Size(500.0, 500.0);
+  }
+
+  //device pixel ratio.
+  Size _designSize;
+
+  //logic size in device
+  Size _logicalSize;
+
+  static CanvasDesigner getInstance({key = ConstKeys.deviceKey}) {
+    if (_keyValues.containsKey(key)) {
+      return _keyValues[key];
+    } else {
+      _keyValues[key] = CanvasDesigner();
+      return _keyValues[key];
+    }
+  }
+
+  set designSize(Size size) {
+    _designSize = size;
+  }
+
+  double get width => _logicalSize.width;
+
+  double get height => _logicalSize.height;
+
+  set logicSize(Size size) => _logicalSize = size;
+
+  double getAxisX(double designWidth) {
+    return (designWidth * width) / _designSize.width;
+  }
+
+  // the y direction
+  double getAxisY(double h) {
+    return (h * height) / _designSize.height;
+  }
+
+  // diagonal direction value with design size s.
+  double getAxisBoth(double s) {
+    return s *
+        sqrt((width * width + height * height) /
+            (_designSize.width * _designSize.width +
+                _designSize.height * _designSize.height));
+  }
+}

@@ -1,0 +1,184 @@
+import 'dart:async';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:ishop/pages/places/place_card.dart.bak';
+import 'package:ishop/pages/places/places_range.dart';
+import 'package:ishop/pages/places/places_switch.dart';
+import 'package:ishop/services/app_service.dart.bak';
+import 'package:ishop/app/places/places_service.dart';
+import 'package:ishop/utils/util.dart';
+
+class PlacesList extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => _PlacesListState();
+}
+
+class _PlacesListState extends State<PlacesList> {
+  //#region properties
+
+  final _cards = <PlaceCard>{};
+  PlacesService _service;
+  StreamSubscription<List<DocumentSnapshot>> _subscription;
+  //#region methods
+  void _addCard(PlaceCard value) {
+    if (!_cards.contains(value)) {
+      _cards.removeWhere((e) => e.key == value.key);
+      _cards.add(value);
+    }
+  }
+
+  void _updateCards(List<DocumentSnapshot> docs) {
+    _cards.clear();
+    docs.forEach((e) => _addCard(PlaceCard.fromDocument(e)));
+    setState(() {});
+  }
+
+  double get _width => MediaQuery.of(context).size.width;
+
+  PlacesSwitch get _fSwitch => PlacesSwitch(
+        banner: PlaceBanner.foodAndDrug,
+      );
+  PlacesSwitch get _mSwitch => PlacesSwitch(
+        banner: PlaceBanner.marketplace,
+      );
+  PlacesRange get _s => PlacesRange();
+
+  //#endregion
+
+  //#endregion
+
+  //#region overrides
+
+  @override
+  void dispose() {
+    _subscription.cancel();
+    super.dispose();
+  }
+
+  //#region build
+  @override
+  Widget build(BuildContext context) {
+    return DraggableScrollableSheet(
+        initialChildSize: 0.1,
+        minChildSize: 0.1,
+        maxChildSize: 0.7,
+        expand: true,
+        builder: (context, scrollController) {
+          _service = AppService.placesOf(context);
+          _subscription = _service.stream.listen(_updateCards);
+          _service.listController = scrollController;
+          return CustomScrollView(
+            controller: _service.listController,
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            slivers: <Widget>[
+              SliverAppBar(
+                elevation: 100,
+                backgroundColor: Theme.of(context).accentColor.withOpacity(0.9),
+                automaticallyImplyLeading: false,
+                toolbarHeight: 56,
+                collapsedHeight: 60,
+                expandedHeight: 62,
+                pinned: true,
+                shadowColor: Theme.of(context).shadowColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20.0),
+                    topRight: Radius.circular(20.0),
+                  ),
+                ),
+                actions: <Widget>[
+                  Container(
+                    width: _width / 2.0,
+                    height: 50,
+                    padding: EdgeInsets.only(
+                      left: 2.0,
+                      bottom: 4.0,
+                    ),
+                    alignment: Alignment.centerLeft,
+                    child: Builder(
+                      builder: (context) => Column(
+                        children: <Widget>[
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Expanded(
+                                child: const Text('FOOD & DRUG',
+                                    textAlign: TextAlign.justify),
+                              ),
+                              Container(
+                                width: 40,
+                                height: 25,
+                                alignment: Alignment.centerRight,
+                                padding: EdgeInsets.only(
+                                  left: 1.5,
+                                  right: 1.5,
+                                ),
+                                child: PlacesSwitch(
+                                  banner: PlaceBanner.foodAndDrug,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: _width / 2.0,
+                    height: 50,
+                    padding: EdgeInsets.only(
+                      left: 2.0,
+                      bottom: 4.0,
+                    ),
+                    alignment: Alignment.centerRight,
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Expanded(
+                              child: const Text('MARKETPLACE',
+                                  textAlign: TextAlign.justify),
+                            ),
+                            Container(
+                              width: 40,
+                              height: 25,
+                              alignment: Alignment.centerRight,
+                              padding: EdgeInsets.only(
+                                left: 1.5,
+                                right: 1.5,
+                              ),
+                              child: PlacesSwitch(
+                                banner: PlaceBanner.marketplace,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              SliverToBoxAdapter(
+                child: Builder(builder: (context) => const PlacesRange()),
+              ),
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) => _cards.elementAt(index),
+                  childCount: _cards.length,
+                ),
+              ),
+            ],
+          );
+        });
+  }
+
+  //#endregion
+}

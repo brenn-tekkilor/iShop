@@ -1,0 +1,4 @@
+﻿enum Taxonomy {
+  retailSales,
+  foodForHomeConsumption,
+}
