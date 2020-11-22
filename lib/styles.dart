@@ -150,10 +150,14 @@ class AppStyles {
         splashColor: AppColors.secondaryColorLighter,
       );
   static CardTheme get primaryCardTheme => CardTheme(
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+        shape: BeveledRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.elliptical(10.0, 10.0),
+            topRight: Radius.elliptical(10.0, 10.0),
+          ),
+        ),
         shadowColor: AppColors.lightShadowColor,
-        color: AppColors.primaryColorLighter,
+        color: Colors.white70,
         clipBehavior: Clip.antiAlias,
       );
   static DialogTheme get primaryDialogTheme => DialogTheme(
@@ -167,7 +171,6 @@ class AppStyles {
       );
   static IconThemeData get primaryIconTheme => IconThemeData(
         color: AppColors.secondaryColorDarker,
-        opacity: 0.0,
         size: 60,
       );
   static ColorScheme get primaryLightColorScheme => ColorScheme(
@@ -337,7 +340,6 @@ class AppStyles {
       secondaryTextTheme.merge(primaryBlackShadesTextTheme);
   static IconThemeData get secondaryIconTheme => IconThemeData(
         color: AppColors.secondaryAccentColor,
-        opacity: 0.8,
         size: 48,
       );
   static TextTheme get secondaryTextTheme => TextTheme(

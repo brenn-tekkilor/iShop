@@ -1,9 +1,9 @@
-import 'package:ishop/util/dev/const_logger/console_logger.dart';
-import 'package:ishop/util/dev/const_logger/const_console_output.dart';
-import 'package:ishop/util/dev/const_logger/const_development_filter.dart';
-import 'package:ishop/util/dev/const_logger/const_log_filter.dart';
-import 'package:ishop/util/dev/const_logger/const_log_output.dart';
-import 'package:ishop/util/dev/const_logger/const_log_printer.dart';
+import 'package:ishop/dev/const_logger/console_logger.dart';
+import 'package:ishop/dev/const_logger/const_console_output.dart';
+import 'package:ishop/dev/const_logger/const_development_filter.dart';
+import 'package:ishop/dev/const_logger/const_log_filter.dart';
+import 'package:ishop/dev/const_logger/const_log_output.dart';
+import 'package:ishop/dev/const_logger/const_log_printer.dart';
 import 'package:logger/logger.dart';
 
 /// Use instances of logger to send log messages to the [ConstLogPrinter].

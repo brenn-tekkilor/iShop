@@ -3,9 +3,8 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:ishop/data/service/geo_radius.dart';
 import 'package:tuple/tuple.dart';
-
-import 'file:///C:/Users/brenn/source/repos/brenn/ishop/lib/data/service/geo_radius.dart';
 
 /*
 ////  Static Factory class and extension adapters enable conversions between

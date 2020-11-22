@@ -1,0 +1,192 @@
+import 'package:flutter/material.dart';
+
+class DraggableStagger extends StatefulWidget {
+  DraggableStagger({
+    Key? key,
+    required this.animation,
+    Duration duration = _defaultDuration,
+    //#region dragging args
+    int startDragMargin = 100,
+    //#endregion
+    //#region Matrix4 translate args
+    double x = 0.0,
+    double y = 0.0,
+    double z = 0.0,
+    //#endregion
+    //#region
+    double left = 0.0,
+    double top = 0.0,
+    double bottom = 0.0,
+    double width = 0.0,
+    double height = 0.0,
+  })  : duration = duration,
+        startDragMargin = startDragMargin,
+        x = x,
+        y = y,
+        z = z,
+        maxSlide = x > y
+            ? x > z
+                ? x
+                : z
+            : y > z
+                ? y
+                : z,
+        top = top,
+        bottom = bottom,
+        width = width,
+        height = height,
+
+  final Animation<double> animation;
+  final Duration duration;
+  final int startDragMargin;
+  final double maxSlide;
+  final double x;
+  final double y;
+  final double z;
+
+  ///
+  /// Of the following set of three horizontal Positioned Widget properties,
+  /// ([left], [right], [width]),
+  /// and like wise the three vertical Positioned Widget properties,
+  /// ([top], [bottom], [height]),
+  ///  values zero, one, or two of the three properties for either Axis
+  ///  may being as such relative to
+  ///  either Axis set will produce an  null value
+  ///  Axis with a null value.third must be null, and If all three  are null,
+  ///
+  ///  the [Stack.alignment] is used to position the child vertically.
+  ///
+  /// Similarly, only two out of the three vertical values
+  /// can be set while the third is left null.
+  /// If all three are null, the [Stack.alignment] is used to position the child
+  /// horizontally.
+  ///
+  final double? left;
+
+final double? right;
+  /// The distance that the child's top edge is inset from the top of the stack.
+  final double top;
+
+  /// The distance that the child's bottom edge is inset from the bottom of the stack.
+  final double bottom;
+
+  /// The child's width.
+  final double width;
+
+  /// The child's height.
+  final double height;
+
+  @override
+  _DraggableStaggerState createState() => _DraggableStaggerState();
+
+  static const _defaultDuration = Duration(milliseconds: 1384);
+}
+
+class _DraggableStaggerState extends State<DraggableStagger>
+    with SingleTickerProviderStateMixin {
+  Widget? _animatedChild;
+  AnimationController? _controller;
+  bool _canBeDragged = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: widget.duration,
+    );
+    final c = widget.isEndAnimation
+        ? widget.child
+        : AnimatedOpacity(
+            duration: widget.duration,
+            opacity: _controller!.status == AnimationStatus.completed ? 0 : 1,
+            child: widget.child,
+          );
+    _animatedChild = InkWell(child: c, onTap: toggle);
+  }
+
+  void toggle() => _controller!.isCompleted ? close() : open();
+
+  @override
+  void dispose() {
+    _controller!.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    return Container(
+      width: size.width,
+      height: size.height,
+      child: GestureDetector(
+        onHorizontalDragStart: _onDragStart,
+        onHorizontalDragUpdate: _onDragUpdate,
+        onHorizontalDragEnd: _onDragEnd,
+        onTap: toggle,
+        child: AnimatedBuilder(
+          animation: _controller!,
+          builder: (context, _) {
+            var x = widget.x * _controller!.value;
+            var y = widget.y * _controller!.value;
+            var z = widget.z * _controller!.value;
+            return Stack(
+              children: <Widget>[
+                Positioned(
+                  bottom: 50.0,
+                  left: -150.0,
+                  child: Transform(
+                    transform: Matrix4.identity()..translate(x, y, z),
+                    child: _animatedChild,
+                  ),
+                ),
+              ],
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  void _onDragStart(DragStartDetails details) {
+    final isDragOpenFromLeft = _controller!.isDismissed &&
+        details.globalPosition.dx < widget.startDragMargin;
+    final isDragCloseFromRight = _controller!.isCompleted &&
+        details.globalPosition.dx > widget.startDragMargin;
+    _canBeDragged = isDragOpenFromLeft || isDragCloseFromRight;
+  }
+
+  void _onDragUpdate(DragUpdateDetails details) {
+    if (_canBeDragged) {
+      final delta = details.primaryDelta! / widget.maxSlide;
+      _controller!.value += delta;
+    }
+  }
+
+  void _onDragEnd(DragEndDetails details) {
+    if (_controller!.isDismissed || _controller!.isCompleted) {
+      return;
+    }
+    if (details.velocity.pixelsPerSecond.dx.abs() >= 365.0) {
+      final visualVelocity = details.velocity.pixelsPerSecond.dx /
+          MediaQuery.of(context).size.width;
+      _controller!.fling(velocity: visualVelocity);
+    } else if (_controller!.value < 0.5) {
+      close();
+    } else {
+      open();
+    }
+  }
+
+  void open() {
+    _controller!.forward(
+      from: _controller!.value,
+    );
+  }
+
+  void close() {
+    _controller!.reverse(
+      from: _controller!.value,
+    );
+  }
+}

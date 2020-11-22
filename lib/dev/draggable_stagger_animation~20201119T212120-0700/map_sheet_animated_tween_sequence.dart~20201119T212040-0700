@@ -1,0 +1,25 @@
+import 'package:flutter/animation.dart';
+import 'package:flutter/src/animation/animation.dart';
+import 'package:ishop/com/animation/animated_tween_sequence.dart';
+
+class MapSheetAnimatedTweenSequence extends AnimatedTweenSequence {
+  MapSheetAnimatedTweenSequence({required AnimationController controller})
+      : _animation = TweenSequence(
+          <TweenSequenceItem<double>>[
+            TweenSequenceItem<double>(
+              tween: Tween<double>(begin: 0.0, end: 310.0)
+                  .chain(CurveTween(curve: Curves.ease)),
+              weight: 40.0,
+            ),
+            TweenSequenceItem<double>(
+              tween: Tween<double>(begin: 0.0, end: 550.0),
+              weight: 60.0,
+            ),
+        ).animate(controller),
+        super(controller: controller);
+
+  final Animation<double> _animation;
+
+  @override
+  Animation<double> get animation => _animation;
+}

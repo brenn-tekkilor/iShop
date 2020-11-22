@@ -1,16 +1,16 @@
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:ishop/data/enums/place_banner.dart';
-import 'package:ishop/data/model/place.dart';
+import 'package:ishop/data/model/place_info.dart';
 import 'package:ishop/data/service/geo_radius.dart';
 import 'package:ishop/data/service/places_query_subject.dart';
 import 'package:ishop/util/enum_parser.dart';
-import 'package:ishop/util/extensions/document_snapshot_extensions.dart';
 import 'package:ishop/util/extensions/latitude_longitude_adapter.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -18,27 +18,20 @@ class PlacesAPI {
   //#region Ctor / factory
   //#region Ctor
   PlacesAPI._create()
-      : _markerController = BehaviorSubject<Set<Marker>>.seeded(<Marker>{}),
-        _cardController = BehaviorSubject<Set<Card>>.seeded(<Card>{}),
+      : _placeInfoController =
+            BehaviorSubject<Set<PlaceInfo>>.seeded(<PlaceInfo>{}),
         _placesQueryController = BehaviorSubject<PlacesQuerySubject>.seeded(
             PlacesQuerySubject.initial()),
         _placesSet = <DocumentSnapshot>{},
         _banner = PlaceBanner.all,
         _radius = GeoRadius.defaultRadius,
         _deviceLocation = _defaultDeviceLocation,
+        _sheetNotifier = ValueNotifier<bool>(false),
         _radiusCenter =
             _defaultDeviceLocation.to<GeoFirePoint>() as GeoFirePoint {
-    _markerController.onListen = _cardController.onListen = _startSubscriptions;
-    _markerController.onCancel = () {
-      if (!_cardController.hasListener) {
-        _stopSubscriptions;
-      }
-    };
-    _cardController.onCancel = () {
-      if (!_markerController.hasListener) {
-        _stopSubscriptions();
-      }
-    };
+    _placeInfoController.onListen = _startSubscription;
+
+    _placeInfoController.onCancel = _stopSubscription;
   }
   //#endregion
   factory PlacesAPI.instance() {
@@ -47,16 +40,18 @@ class PlacesAPI {
 
   static final PlacesAPI _instance = PlacesAPI._create();
   final BehaviorSubject<PlacesQuerySubject> _placesQueryController;
-  final BehaviorSubject<Set<Marker>> _markerController;
-  final BehaviorSubject<Set<Card>> _cardController;
+  final BehaviorSubject<Set<PlaceInfo>> _placeInfoController;
+  final ValueListenable<bool> _sheetNotifier;
   StreamSubscription<Position>? _devicePositionSubscription;
   StreamSubscription<List<DocumentSnapshot>>? _placesSubscription;
   Set<DocumentSnapshot> _placesSet;
   PlaceBanner _banner;
   double _radius;
   GeoFirePoint _radiusCenter;
-  Place? preferredPlace;
   LatLng _deviceLocation;
+  PlaceInfo? selectedPlace;
+  GoogleMapController? placesMapController;
+  ScrollController? sheetScroller;
 
   Stream<List<DocumentSnapshot>> get _placesStream =>
       _placesQueryController.switchMap((s) => Geoflutterfire()
@@ -64,10 +59,9 @@ class PlacesAPI {
           .within(
               center: s.r.c, radius: s.r.r, field: 'd.g', strictMode: true));
 
-  Stream<Set<Marker>> get markerStream => _markerController.stream;
-  Stream<Set<Card>> get cardStream => _cardController.stream;
+  Stream<Set<PlaceInfo>> get placeInfoStream => _placeInfoController.stream;
 
-  void _startSubscriptions() {
+  void _startSubscription() {
     _devicePositionSubscription ??= Geolocator.getPositionStream(
       distanceFilter: 800,
       timeInterval: 5,
@@ -75,7 +69,7 @@ class PlacesAPI {
     _placesSubscription ??= _placesStream.listen((e) => placesSet = e.toSet());
   }
 
-  void _stopSubscriptions() {
+  void _stopSubscription() {
     if (_devicePositionSubscription != null) {
       _devicePositionSubscription?.cancel();
       _devicePositionSubscription = null;
@@ -87,11 +81,16 @@ class PlacesAPI {
   }
 
   void _updatePlaces() {
-    if (_markerController.hasListener) {
-      _markerController.add(placesSet.map((e) => e.toMarker()).toSet());
-    }
-    if (_cardController.hasListener) {
-      _cardController.add(placesSet.map((e) => e.toCard()).toSet());
+    if (_placeInfoController.hasListener) {
+      _placeInfoController.add(placesSet.map((e) {
+        final d = e.data()['d'];
+        return PlaceInfo(
+          id: e.id,
+          name: d['n'],
+          banner: d['b'],
+          latLng: (d['g']['geopoint'] as GeoPoint).to<LatLng>(),
+        );
+      }).toSet());
     }
   }
 
@@ -209,24 +208,30 @@ class PlacesAPI {
   }
 
   //#region places sheet scroll controller controls
-  ScrollController? placesSheetScrollController;
+  ValueListenable<bool> get sheetNotifier => _sheetNotifier;
+  bool get isSheetVisible => sheetNotifier.value;
+  set isSheetVisible(bool value) {
+    if (isSheetVisible != value) {
+      (_sheetNotifier as ValueNotifier).value = value;
+    }
+  }
+
   Future<void> placesSheetScrollTo(String value) async {
-    if (placesSheetScrollController != null) {
-      placesSheetScrollController?.jumpTo(0.0);
-      placesSheetScrollController?.jumpTo(240.0);
+    if (sheetScroller != null) {
+      sheetScroller?.jumpTo(0.0);
+      sheetScroller?.jumpTo(240.0);
       final i = placesSet
           .toList(
             growable: false,
           )
           .indexWhere((e) => e.id == value);
-      await placesSheetScrollController?.animateTo(60.0 * i,
+      await sheetScroller?.animateTo(60.0 * i,
           duration: Duration(milliseconds: 800), curve: Curves.easeInOut);
     }
   }
   //#endregion
 
   //#region GoogleMap controls
-  GoogleMapController? placesMapController;
   Future<void> animateMapTo(LatLng latLng) async =>
       await placesMapController?.animateCamera(CameraUpdate.newCameraPosition(
         CameraPosition(

@@ -37,10 +37,11 @@ dependencies:
 
 
 dev_dependencies:
-  analyzer: ^0.40.6
+  analyzer: any
   flutter_launcher_icons: ^0.8.1
   pedantic: ^1.9.2
-  build_runner: ^1.10.4
+  build_runner: any
+  build: any
   functional_widget: any
   auto_route_generator: any
 

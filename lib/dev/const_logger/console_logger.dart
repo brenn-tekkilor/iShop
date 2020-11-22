@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:ishop/util/dev/const_logger/const_log_printer.dart';
-import 'package:ishop/util/dev/const_logger/const_logger.dart';
+import 'package:ishop/dev/const_logger/const_log_printer.dart';
+import 'package:ishop/dev/const_logger/const_logger.dart';
 import 'package:logger/logger.dart';
 
 /// Default implementation of [LogPrinter].

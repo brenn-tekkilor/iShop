@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ishop/app/home/home_view.dart';
 import 'package:ishop/app/login/login_view.dart';
 import 'package:ishop/app/places/places_view.dart';
+import 'package:ishop/dev/dev.dart';
 
 class RouteArguments {
   RouteArguments({this.isAuthorized = false});
@@ -25,6 +26,8 @@ abstract class AppRouter {
         return MaterialPageRoute(builder: (_) => LoginView());
       case 'places':
         return MaterialPageRoute(builder: (_) => PlacesView());
+      case 'dev':
+        return MaterialPageRoute(builder: (_) => Dev());
       default:
         return MaterialPageRoute(builder: (_) {
           return Scaffold(

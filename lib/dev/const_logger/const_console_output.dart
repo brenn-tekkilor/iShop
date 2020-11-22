@@ -1,4 +1,4 @@
-import 'package:ishop/util/dev/const_logger/const_log_output.dart';
+import 'package:ishop/dev/const_logger/const_log_output.dart';
 import 'package:logger/logger.dart';
 
 class ConstConsoleOutput extends ConstLogOutput {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ishop/app/login/login_provider.dart';
 import 'package:ishop/app_router.dart';
+import 'package:ishop/com/basic_button.dart';
 import 'package:provider/provider.dart';
 
 class HomeView extends StatelessWidget {
@@ -39,6 +40,14 @@ class HomeView extends StatelessWidget {
               'Please choose a place.',
               style: Theme.of(context)?.typography.black.headline2,
             ),
+            BasicButton(
+              text: 'DEV',
+              onTap: () => Navigator.of(context)?.pushNamed('dev',
+                  arguments: RouteArguments(
+                      isAuthorized:
+                          Provider.of<LoginProvider>(context, listen: false)
+                              .isAuthorized)),
+            )
           ],
         ),
       ),
