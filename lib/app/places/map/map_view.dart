@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:ishop/app/places/map/map_pin.dart';
 import 'package:ishop/app/places/places_provider.dart';
 import 'package:ishop/data/model/place_info.dart';
 import 'package:ishop/data/service/places_api.dart';
@@ -97,10 +96,12 @@ class _MapViewState extends State<MapView> {
                   .placesMapController = mapController;
             },
           ),
+          /*
           MapPin(
             pinPosition: pinPosition,
             selectedPin: currentlySelectedPin,
           ),
+           */
         ],
       ),
     );
