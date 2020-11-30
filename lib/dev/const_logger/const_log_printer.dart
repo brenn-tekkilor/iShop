@@ -1,12 +1,14 @@
-import 'package:logger/logger.dart';
+import 'package:ishop/dev/const_logger/const_log_event.dart';
 
+/// Const Log Printer
 abstract class ConstLogPrinter {
+  /// Const Log Printer default const constructor
   const ConstLogPrinter();
-  void init() {}
 
-  /// Is called every time a new [LogEvent] is sent and handles printing or
+  /// Is called every time a new [ConstLogEvent] is sent and handles printing or
   /// storing the message.
-  List<String> log(LogEvent event);
+  List<String> log(ConstLogEvent event);
 
+  /// destroy
   void destroy() {}
 }

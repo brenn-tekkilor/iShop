@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/animation/animation.dart';
 import 'package:ishop/com/custom_staggered_animation.dart';
 
-class PlacesSheetAnimationBuilder extends CustomStaggeredAnimation {
-  PlacesSheetAnimationBuilder(
+class PlacesListExpandablePanelAnimationBuilder
+    extends CustomStaggeredAnimation {
+  PlacesListExpandablePanelAnimationBuilder(
       {Key? key,
-      required AnimationController controller,
+      required Animation<double> controller,
       required double beginValueX,
       required double endValueX,
       required double beginIntervalX,
@@ -37,18 +38,18 @@ class PlacesSheetAnimationBuilder extends CustomStaggeredAnimation {
         _child = child,
         super(key: key);
 
-  final AnimationController _controller;
+  final Animation<double> _controller;
   final Animation<double> _slideOut;
   final Animation<double> _slideUp;
   final Widget _child;
 
   @override
-  AnimationController get controller => _controller;
+  Animation<double> get controller => _controller;
 
   // This function is called each time the controller "ticks" a new frame.
   // When it runs, all of the animation's values will have been
   // updated to reflect the controller's current value.
-  Widget _buildAnimation(BuildContext context, _) => Transform(
+  Widget _buildAnimation(BuildContext context, Widget? child) => Transform(
       transform: Matrix4.identity()..translate(_slideOut.value, _slideUp.value),
       child: _child);
   @override

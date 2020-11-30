@@ -1,0 +1,159 @@
+import 'dart:async';
+
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:ishop/data/model/animated_list_model.dart';
+import 'package:ishop/data/model/place_card_item.dart';
+import 'package:ishop/data/model/place_info.dart';
+import 'package:ishop/data/service/places_api.dart';
+
+/// Places List View of Places
+class PlacesList extends StatefulWidget {
+  /// Places list constructor
+  const PlacesList({Key? key}) : super(key: key);
+  @override
+  _PlacesListState createState() => _PlacesListState();
+}
+
+class _PlacesListState extends State<PlacesList> {
+  final _api = PlacesAPI.instance();
+  final _placeList = <PlaceInfo>[];
+  late final AnimatedListModel<PlaceInfo> _placeListModel;
+  final GlobalKey<SliverAnimatedListState> _listKey =
+      GlobalKey<SliverAnimatedListState>();
+  StreamSubscription<List<PlaceInfo>>? _placesSubscription;
+  PlaceInfo? _selectedItem;
+
+  @override
+  void initState() {
+    super.initState();
+    _placesSubscription = _api.placeInfoStream.listen(_updatePlaces);
+    _placeListModel = AnimatedListModel<PlaceInfo>(
+      listKey: _listKey,
+      initialItems: <PlaceInfo>[_defaultInitialPlaceInfo],
+      removedItemBuilder: _buildRemovedItem,
+    );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    if (_placesSubscription != null) {
+      _placesSubscription?.cancel();
+      _placesSubscription = null;
+    }
+  }
+
+  void _updatePlaces(List<PlaceInfo> value) {
+    _placeList
+      ..clear()
+      ..addAll(value);
+    _placeListModel.update(value);
+    setState(() {});
+  }
+
+  // Used to build list items that haven't been removed.
+  Widget _buildItem(
+      BuildContext context, int index, Animation<double> animation) {
+    final info =
+        _placeListModel.isEmpty ? const PlaceInfo() : _placeListModel[index];
+    final isSelected = _selectedItem == info;
+    return SlideTransition(
+      position: Tween<Offset>(
+        begin: const Offset(-1.5, 0),
+        end: Offset.zero,
+      ).animate(
+        CurvedAnimation(
+          parent: animation,
+          curve: const Interval(
+            0,
+            1,
+            curve: Curves.elasticIn,
+          ),
+        ),
+      ),
+      child: PlaceCardItem(
+        index: index,
+        info: info,
+        isSelected: isSelected,
+        onTap: () {
+          setState(() {
+            _selectedItem = isSelected ? null : info;
+          });
+        },
+      ),
+    );
+  }
+
+  // Used to build an item after it has been removed from the list. This
+  // method is needed because a removed item remains visible until its
+  // animation has completed (even though it's gone as far this ListModel is
+  // concerned). The widget will be used by the
+  // [AnimatedListState.removeItem] method's
+  // [AnimatedListRemovedItemBuilder] parameter.
+  Widget _buildRemovedItem(PlaceInfo info, int index, BuildContext context,
+      Animation<double> animation) {
+    final info =
+        _placeListModel.isEmpty ? const PlaceInfo() : _placeListModel[index];
+    final isSelected = _selectedItem == info;
+    return PlaceCardItem(
+      index: index,
+      info: info,
+      onTap: () {
+        setState(() {
+          _selectedItem = isSelected ? null : _selectedItem;
+        });
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) => SizedBox.expand(
+        child: DraggableScrollableSheet(
+            initialChildSize: 0.1,
+            minChildSize: 0.01,
+            maxChildSize: 0.4,
+            builder: (context, scrollController) {
+              _api.sheetScroller = scrollController;
+              return Container(
+                alignment: Alignment.bottomLeft,
+                color: Colors.blue[100],
+                child: CustomScrollView(
+                  controller: scrollController,
+                  physics: const BouncingScrollPhysics(),
+                  shrinkWrap: true,
+                  slivers: <Widget>[
+                    const SliverAppBar(
+                      automaticallyImplyLeading: false,
+                      floating: true,
+                      toolbarHeight: 50,
+                      collapsedHeight: 55,
+                      expandedHeight: 60,
+                      flexibleSpace: FlexibleSpaceBar(
+                        stretchModes: [
+                          StretchMode.zoomBackground,
+                          StretchMode.fadeTitle,
+                          StretchMode.blurBackground,
+                        ],
+                        centerTitle: true,
+                        title: Text('LIST VIEW'),
+                        background: Ink.image(Image(
+                           image: Image.asset('assets/images/kroger_logo.png',
+                             fit: BoxFit.cover,
+                             color: Colors.blueGrey[200].withOpacity(0.8),
+                             colorBlendMode: BlendMode.color,),
+                        ),
+                      ),
+                    ),
+                    SliverAnimatedList(
+                      key: _listKey,
+                      initialItemCount: _placeListModel.length,
+                      itemBuilder: _buildItem,
+                    ),
+                  ],
+                ),
+              );
+            }),
+      );
+  static const _defaultInitialPlaceInfo = PlaceInfo();
+}

@@ -7,9 +7,11 @@ import 'package:ishop/data/enums/place_banner.dart';
 import 'package:ishop/data/model/place_address.dart';
 import 'package:ishop/util/enum_parser.dart';
 
+/// a Place
 class Place {
   //#region ctors
   //#region Place()
+  /// default constructor
   const Place(
       {String id = '',
       PlaceAddress address = _defaultAddress,
@@ -30,24 +32,60 @@ class Place {
         _hoursOfOperationId = hoursOfOperationId,
         _departmentCodeSet = departmentCodeSet;
   //#endregion
-  factory Place.fromJson(Map<String, dynamic> json) => Place(
-        id: json['id'],
-        address: PlaceAddress.fromJson(json['c']['a']),
-        banner: EnumParser.fromString<PlaceBanner>(
-            PlaceBanner.values, json['d']['b'])!,
-        hoursOfOperationId: json['e']['h'],
-        latitude: (json['d']['g'] as GeoFirePoint).geoPoint?.latitude as double,
-        longitude:
-            (json['d']['g'] as GeoFirePoint).geoPoint?.longitude as double,
-        name: json['d']['n'],
-        phoneNumber: json['c']['p'],
-        departmentCodeSet: json['e']['d'] as Set<String>,
-      );
+  /// constructor from a json map
+  factory Place.fromJson(Map<String, dynamic> json) {
+    PlaceAddress? a;
+    GeoFirePoint? p;
+    GeoPoint g;
+    double? lat;
+    double? lng;
+    Set<String>? dep;
+
+    Map<String, dynamic> m;
+    dynamic? d;
+
+    d = json.containsKey('c') ? json['c']['a'] : null;
+    if (d is Map<String, dynamic>) {
+      m = d;
+      final _a = PlaceAddress.fromJson(m);
+      if (_a is PlaceAddress) {
+        a = _a;
+      }
+    }
+
+    d = json.containsKey('d') ? json['d']['g'] : null;
+    if (d is GeoFirePoint) {
+      p = d;
+      g = p.geoPoint;
+      lat = g.latitude;
+      lng = g.longitude;
+    }
+
+    d = json.containsKey('e') ? json['e']['d'] : null;
+    if (d is Set<String>) {
+      dep = d;
+    }
+
+    return Place(
+      id: json['id'].toString(),
+      address: a ?? _defaultAddress,
+      banner: EnumParser.fromString<PlaceBanner>(
+          PlaceBanner.values, json['d']['b'].toString())!,
+      hoursOfOperationId: json['e']['h'].toString(),
+      latitude: lat ?? _defaultLatitude,
+      longitude: lng ?? _defaultLongitude,
+      name: json['d']['n'].toString(),
+      phoneNumber: json['c']['p'].toString(),
+      departmentCodeSet: dep ?? <String>{},
+    );
+  }
+
+  /// constructor from a firestore document
   factory Place.fromDoc(DocumentSnapshot doc) {
     final data = doc.data();
-    final c = data.containsKey('c') ? data['c'] : _defaultContact;
-    final d = data.containsKey('d') ? data['d'] : _defaultDisplay;
-    final e = data.containsKey('e') ? data['e'] : _defaultExtra;
+    final dynamic c = data.containsKey('c') ? data['c'] : _defaultContact;
+    final dynamic d = data.containsKey('d') ? data['d'] : _defaultDisplay;
+    final dynamic e = data.containsKey('e') ? data['e'] : _defaultExtra;
     return Place.fromJson(<String, dynamic>{
       'id': doc.id,
       'c': c,
@@ -68,20 +106,49 @@ class Place {
   final Set<String> _departmentCodeSet;
   //#endregion
   //#region getters
+  /// id
   String get id => _id;
+
+  /// name
   String get name => _name;
+
+  /// address
   PlaceAddress get address => _address;
+
+  /// banner
   PlaceBanner get banner => _banner;
+
+  /// latitude
   double get latitude => _latitude;
+
+  /// longitude
   double get longitude => _longitude;
+
+  /// latLng
   LatLng get latLng => LatLng(_latitude, _longitude);
+
+  /// GeoFirePoint
   GeoFirePoint get geoFirePoint => GeoFirePoint(_latitude, _longitude);
+
+  /// GeoPoint
   GeoPoint get geoPoint => GeoPoint(_latitude, _longitude);
+
+  /// Position
   Position get position => Position(latitude: _latitude, longitude: _longitude);
+
+  /// Location
   Location get location => Location(latitude: _latitude, longitude: _longitude);
+
+  /// PhoneNumber
   String get phoneNumber => _phoneNumber;
+
+  /// Hours of Operation id
   String get hoursOfOperationId => _hoursOfOperationId;
+
+  /// departments
   Set<String> get departmentCodeSet => _departmentCodeSet;
+
+  /// converts Place to be used as a Google Maps Marker
   Marker get marker => Marker(
         markerId: MarkerId(id),
         icon: banner == PlaceBanner.marketplace
@@ -93,7 +160,9 @@ class Place {
           snippet: banner.toString(),
         ),
       );
-  Map<String, dynamic> get json => {
+
+  /// converts Place to a json map
+  Map<String, dynamic> get json => <String, dynamic>{
         'id': id,
         'c': <String, dynamic>{
           'a': address.json,

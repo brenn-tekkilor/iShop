@@ -1,21 +1,31 @@
-include: package:pedantic/analysis_options.yaml
-
+include: all_lint_rules.yaml
+# Enable all rules by default
 analyzer:
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: false
+  errors:
+    # Otherwise cause the import of all_lint_rules to warn because of some rules conflicts.
+    # The conflicts are fixed in this file instead, so we can safely ignore the warning.
+    included_file_warning: ignore
   enable-experiment:
     - non-nullable
   exclude:
     - lib/src/retail-locations-service.g.dart
-    -
 
 linter:
   rules:
-    - always_declare_return_types
-    - camel_case_types
-    - empty_constructor_bodies
-    - annotate_overrides
-    - avoid_init_to_null
-    - constant_identifier_names
-    - one_member_abstracts
-    - slash_for_doc_comments
-    - sort_constructors_first
-    - unnecessary_brace_in_string_interps
+    # incompatible with omit_local_variable_types
+    always_specify_types: false
+    # incompatible with prefer_single_quotes
+    prefer_double_quotes: false
+    # incompatible with prefer_final_locales
+    unnecessary_final: false
+    # prefer package imports
+    prefer_relative_imports: false
+    # waiting on provider-nullsafety
+    import_of_legacy_library_into_null_safe: false
+    # key goes first
+    always_put_required_named_parameters_first: false
+    # conflicts with turning off implicit dynamic
+    avoid_annotating_with_dynamic: false

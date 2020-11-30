@@ -1,26 +1,14 @@
-import 'package:logger/logger.dart';
+import 'package:ishop/dev/const_logger/const_level.dart';
+import 'package:ishop/dev/const_logger/const_log_event.dart';
+import 'package:ishop/dev/const_logger/const_log_filter.dart';
 
-import 'const_log_filter.dart';
-
+/// Const Development Filter
 class ConstDevelopmentFilter extends ConstLogFilter {
-  const ConstDevelopmentFilter({Level lvl = _defaultLevel}) : super(lvl: lvl);
-
+  /// Const Development Filter default const constructor
+  const ConstDevelopmentFilter({ConstLevel level = _defaultLevel})
+      : super(level: level);
   @override
-  ConstLogFilter init() {
-    return this;
-  }
+  bool shouldLog(ConstLogEvent event) => event.level.index >= level.index;
 
-  @override
-  bool shouldLog(LogEvent event) {
-    var shouldLog = false;
-    assert(() {
-      if (event.level.index >= level.index) {
-        shouldLog = true;
-      }
-      return true;
-    }());
-    return shouldLog;
-  }
-
-  static const _defaultLevel = Level.verbose;
+  static const _defaultLevel = ConstLevel.verbose;
 }

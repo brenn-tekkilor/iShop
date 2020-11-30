@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// a basic button
 class BasicButton extends StatelessWidget implements PreferredSizeWidget {
+  /// basic button default const constructor
   const BasicButton({Key? key, String text = '', required VoidCallback onTap})
       : _text = text,
         _onTap = onTap,
@@ -11,19 +13,19 @@ class BasicButton extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) => InkWell(
+        onTap: _onTap,
         child: Container(
-          decoration: BoxDecoration(
-            color: const Color.fromRGBO(247, 64, 106, 1.0),
-            borderRadius: BorderRadius.all(const Radius.circular(30.0)),
+          decoration: const BoxDecoration(
+            color: Color.fromRGBO(247, 64, 106, 1),
+            borderRadius: BorderRadius.all(Radius.circular(30)),
           ),
           child: Text(
             _text,
-            style: Theme.of(context)?.typography.white.headline6,
+            style: Theme.of(context).typography.white.headline6,
           ),
         ),
-        onTap: _onTap,
       );
 
   @override
-  Size get preferredSize => Size(320, 60);
+  Size get preferredSize => const Size(320, 60);
 }

@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
 import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -14,12 +13,10 @@ import 'package:ishop/util/extensions/document_snapshot_extensions.dart';
 import 'package:ishop/util/extensions/latitude_longitude_adapter.dart';
 import 'package:rxdart/rxdart.dart';
 
-/// Places API
-class PlacesAPI {
-  //#region Ctor / factory
-  //#region Ctor
-  /// private constructor
-  PlacesAPI._create()
+/// Places
+class Places {
+  /// Places constructor
+  Places()
       : _placeInfoController =
             BehaviorSubject<List<PlaceInfo>>.seeded(<PlaceInfo>[]),
         _placesQueryController = BehaviorSubject<PlacesQuerySubject>.seeded(
@@ -32,11 +29,6 @@ class PlacesAPI {
       ..onListen = _startSubscription
       ..onCancel = _stopSubscription;
   }
-  //#endregion
-  /// returns the singleton instance
-  factory PlacesAPI.instance() => _instance;
-
-  static final PlacesAPI _instance = PlacesAPI._create();
   final BehaviorSubject<PlacesQuerySubject> _placesQueryController;
   final BehaviorSubject<List<PlaceInfo>> _placeInfoController;
   StreamSubscription<Position>? _devicePositionSubscription;
@@ -45,12 +37,6 @@ class PlacesAPI {
   PlaceBanner _queryBanner;
   double _queryRadius;
   LatLng _deviceLocation;
-
-  /// map controller
-  GoogleMapController? placesMapController;
-
-  /// sheet scroll controller
-  ScrollController? sheetScroller;
 
   Stream<List<DocumentSnapshot>> get _placesStream =>
       _placesQueryController.switchMap((s) => Geoflutterfire()
@@ -181,33 +167,6 @@ class PlacesAPI {
     }
   }
 
-  /// scrolls places sheet
-  Future<void> placesSheetScrollTo(String value) async {
-    if (sheetScroller != null) {
-      sheetScroller?.jumpTo(0);
-      sheetScroller?.jumpTo(240);
-      final i = _placesDocs
-          .toList(
-            growable: false,
-          )
-          .indexWhere((e) => e.id == value);
-      await sheetScroller?.animateTo(60.0 * i,
-          duration: const Duration(milliseconds: 800), curve: Curves.easeInOut);
-    }
-  }
-
-  /// animates google map
-  Future<void> animateMapTo(LatLng latLng) async =>
-      await placesMapController?.animateCamera(CameraUpdate.newCameraPosition(
-        CameraPosition(
-          target: latLng,
-          zoom: 16,
-        ),
-      ));
-
-  /// zooms google map in/out
-  Future<void> animateMapZoom(double value) async =>
-      await placesMapController?.animateCamera(CameraUpdate.zoomTo(value));
   static const _defaultDeviceLocation =
       LatLng(GeoRadius.defaultLatitude, GeoRadius.defaultLongitude);
 }

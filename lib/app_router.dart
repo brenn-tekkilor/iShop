@@ -4,38 +4,38 @@ import 'package:ishop/app/login/login_view.dart';
 import 'package:ishop/app/places/places_view.dart';
 import 'package:ishop/dev/dev.dart';
 
+/// Route Arguments
 class RouteArguments {
-  RouteArguments({this.isAuthorized = false});
-  bool isAuthorized;
+  /// Route Arguments constructor
+  const RouteArguments({this.isAuthorized = false});
+
+  /// is authorized
+  final bool isAuthorized;
 }
 
+/// App Router
 abstract class AppRouter {
+  //// generate route
   static Route<dynamic> generateRoute(RouteSettings settings) {
-    if (settings.name != 'login') {
-      final isAuthorized = settings.arguments != null
-          ? (settings.arguments as RouteArguments).isAuthorized
-          : false;
-      if (!isAuthorized) {
-        settings = RouteSettings(name: 'login');
-      }
-    }
-    switch (settings.name) {
+    final a = settings.arguments;
+    final b = a is RouteArguments ? a : const RouteArguments();
+    final s = b.isAuthorized ? settings : const RouteSettings(name: 'login');
+    switch (s.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => HomeView());
+        return MaterialPageRoute<dynamic>(builder: (_) => const HomeView());
       case 'login':
-        return MaterialPageRoute(builder: (_) => LoginView());
+        return MaterialPageRoute<dynamic>(builder: (_) => LoginView());
       case 'places':
-        return MaterialPageRoute(builder: (_) => PlacesView());
+        return MaterialPageRoute<dynamic>(builder: (_) => const PlacesView());
       case 'dev':
-        return MaterialPageRoute(builder: (_) => Dev());
+        return MaterialPageRoute<dynamic>(builder: (_) => Dev());
       default:
-        return MaterialPageRoute(builder: (_) {
-          return Scaffold(
-            body: Center(
-              child: Text('No route defined for ${settings.name}'),
-            ),
-          );
-        });
+        return MaterialPageRoute<dynamic>(
+            builder: (_) => Scaffold(
+                  body: Center(
+                    child: Text('No route defined for ${settings.name}'),
+                  ),
+                ));
     }
   }
 }

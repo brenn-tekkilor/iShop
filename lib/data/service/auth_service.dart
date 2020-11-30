@@ -3,7 +3,9 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:ishop/dev/const_logger/console_logger.dart';
 
+/// Firebase_auth service
 class AuthService {
   ////#region AuthService() Ctor
   AuthService()
@@ -12,20 +14,28 @@ class AuthService {
         emailKey = GlobalKey<FormFieldState<String>>(),
         passwordKey = GlobalKey<FormFieldState<String>>(),
         _tokenStreamController = StreamController<IdTokenResult>() {
-    _tokenStreamController.onListen =
-        _tokenStreamController.onResume = _startTokenStream;
-    _tokenStreamController.onPause =
-        _tokenStreamController.onCancel = _stopTokenStream;
+    _tokenStreamController
+      ..onListen = _tokenStreamController.onResume = _startTokenStream
+      ..onPause = _tokenStreamController.onCancel = _stopTokenStream;
   }
   ////#endregion
+  static const ConsoleLogger logger = ConsoleLogger(className: 'AuthService');
   ////#region properties
   // FirebaseAuth.instance
   final FirebaseAuth _fireAuth;
   ////#region Login form state
   final GlobalKey<FormState> formKey;
+
+  /// email key
   final GlobalKey<FormFieldState<String>> emailKey;
-  String get emailFormField => emailKey.currentState?.value ?? '';
+
+  /// user password value
   final GlobalKey<FormFieldState<String>> passwordKey;
+
+  /// user email value
+  String get emailFormField => emailKey.currentState?.value ?? '';
+
+  /// user password form field
   String get passwordFormField => passwordKey.currentState?.value ?? '';
   ////#endregion
   ////#region authentication state streams
@@ -34,7 +44,8 @@ class AuthService {
   // on listen/resume => _authStateChange.listen
   // on pause/cancel => _authStateChange.cancel
   final StreamController<IdTokenResult> _tokenStreamController;
-  // emits IdTokenResult
+
+  /// steam emits IdTokenResult
   Stream<IdTokenResult> get tokenStream => _tokenStreamController.stream;
   ////#endregion
   ////#endregion
@@ -54,34 +65,35 @@ class AuthService {
   }
 
   ////#endregion
-  // _fireAuth.signIn(email, password)
+  /// _fireAuth.signIn(email, password)
   void signInWithEmailAndPassword() {
     final e = emailFormField;
     final p = passwordFormField;
     if (emailFormField.isNotEmpty && passwordFormField.isNotEmpty) {
       _fireAuth
           .signInWithEmailAndPassword(email: e, password: p)
-          .catchError((e) => print(e));
+          .catchError(logger.log);
     }
   }
 
   // _fireAuth.getIdToken => _tokenStreamCtrl.add(IdTokenResult)
   void _updateToken(User user) {
-    _fireAuth.currentUser.getIdTokenResult().then((value) {
-      _tokenStreamController.add(value);
-    }).catchError((e) => print(e));
+    _fireAuth.currentUser
+        .getIdTokenResult()
+        .then(_tokenStreamController.add)
+        .catchError(logger.log);
   }
 
-  // Google OAuth SignIn
+  /// Google OAuth SignIn
   void signInWithGoogle() => GoogleSignIn()
       .signIn()
-      .then((account) async => await account.authentication)
-      .then((details) async => await _fireAuth
+      .then((account) => account.authentication)
+      .then((details) => _fireAuth
           .signInWithCredential(GoogleAuthProvider.credential(
             accessToken: details.accessToken,
             idToken: details.idToken,
           ))
-          .catchError((e) => print(e)))
-      .catchError((e) => print(e));
+          .catchError(logger.log))
+      .catchError(logger.log);
   ////#endregion
 }

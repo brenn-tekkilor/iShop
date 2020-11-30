@@ -6,25 +6,28 @@ import 'package:ishop/styles.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const IShopApp());
 }
 
+/// initialize firebase app
 Future<FirebaseApp> initialize() async => await Firebase.initializeApp();
 
-class MyApp extends StatelessWidget {
+/// IShop app main entry point and root widget.
+class IShopApp extends StatelessWidget {
+  /// IShopApp default const constructor
+  const IShopApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) => FutureBuilder(
       future: initialize(),
-      builder: (BuildContext context, AsyncSnapshot snapshot) =>
-          snapshot.hasData
-              ? ChangeNotifierProvider<LoginProvider>(
-                  create: (context) => LoginProvider(),
-                  child: MaterialApp(
-                    title: 'iShop',
-                    theme: AppStyles.primaryTheme,
-                    initialRoute: 'login',
-                    onGenerateRoute: AppRouter.generateRoute,
-                  ),
-                )
-              : CircularProgressIndicator());
+      builder: (context, snapshot) => snapshot.hasData
+          ? ChangeNotifierProvider<LoginProvider>(
+              create: (context) => LoginProvider(),
+              child: MaterialApp(
+                title: 'iShop',
+                theme: AppStyles.primaryTheme,
+                initialRoute: 'login',
+                onGenerateRoute: AppRouter.generateRoute,
+              ),
+            )
+          : const CircularProgressIndicator());
 }

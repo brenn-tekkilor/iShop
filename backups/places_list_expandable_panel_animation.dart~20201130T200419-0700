@@ -1,0 +1,88 @@
+import 'package:flutter/material.dart';
+import 'package:ishop/app/places/list/places_list_expandable_panel_animation_builder.dart';
+
+class PlacesListExpandablePanelAnimation extends StatefulWidget {
+  PlacesListExpandablePanelAnimation({required this.child});
+
+  final Widget child;
+  @override
+  _PlacesListExpandablePanelAnimationState createState() =>
+      _PlacesListExpandablePanelAnimationState();
+}
+
+class _PlacesListExpandablePanelAnimationState
+    extends State<PlacesListExpandablePanelAnimation>
+    with TickerProviderStateMixin {
+  late final AnimationController _controller;
+
+  Future<void> _openAnimation() async {
+    try {
+      await _controller.forward().orCancel;
+    } on TickerCanceled {
+      // the animation got canceled, probably because we were disposed
+    }
+  }
+
+  Future<void> _closeAnimation() async {
+    try {
+      await _controller.reverse().orCancel;
+    } on TickerCanceled {
+      // the animation got canceled, probably because we were disposed
+    }
+  }
+
+  Future<void> _toggleAnimation() async {
+    try {
+      if (!_controller.isAnimating) {
+        if (!_controller.isCompleted) {
+          await _openAnimation();
+        } else {
+          await _closeAnimation();
+        }
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+        duration: const Duration(milliseconds: 2000), vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final listWidth = size.width * 0.75;
+    return Container(
+      width: listWidth,
+      height: size.height * 0.40,
+      child: PlacesListExpandablePanelAnimationBuilder(
+        controller: _controller.view,
+        beginValueX: 0.0,
+        endValueX: listWidth - (listWidth - 250),
+        beginIntervalX: 0.0,
+        endIntervalX: 0.4,
+        beginValueY: 0.0,
+        endValueY: -255.0,
+        beginIntervalY: 0.6,
+        endIntervalY: 1.0,
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () {
+            _toggleAnimation();
+          },
+          child: widget.child,
+        ),
+      ),
+    );
+  }
+}
