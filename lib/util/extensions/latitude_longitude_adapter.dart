@@ -1,10 +1,16 @@
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:cloud_firestore/cloud_firestore.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:geocoding/geocoding.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:geoflutterfire/geoflutterfire.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:geolocator/geolocator.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:ishop/data/model/geo_radius.dart';
 import 'package:ishop/util/extensions/json_extensions.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:tuple/tuple.dart';
 
 /*

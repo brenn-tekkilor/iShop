@@ -1,56 +1,41 @@
 import 'dart:async';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
-import 'package:geoflutterfire/geoflutterfire.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:ishop/data/enums/place_banner.dart';
-import 'package:ishop/data/model/geo_radius.dart';
-import 'package:ishop/data/model/place_info.dart';
-import 'package:ishop/data/service/places_query_subject.dart';
-import 'package:ishop/util/enum_parser.dart';
+import 'package:cloud_firestore/cloud_firestore.dart' show DocumentSnapshot;
+import 'package:geoflutterfire/geoflutterfire.dart'
+    show Coordinates, GeoFirePoint, Geoflutterfire;
+import 'package:geolocator/geolocator.dart' show Position;
+import 'package:ishop/app/app_provider.dart';
+import 'package:ishop/data/enums/place_banner.dart' show PlaceBanner;
+import 'package:ishop/data/model/geo_radius.dart' show GeoRadius;
+import 'package:ishop/data/model/place_details.dart' show PlaceDetails;
+import 'package:ishop/data/service/places_query_subject.dart'
+    show PlacesQuerySubject;
 import 'package:ishop/util/extensions/document_snapshot_extensions.dart';
 import 'package:ishop/util/extensions/latitude_longitude_adapter.dart';
 import 'package:rxdart/rxdart.dart';
 
-/// Places API
+/// Places
 class PlacesAPI {
-  //#region Ctor / factory
-  //#region Ctor
-  /// private constructor
-  PlacesAPI._create()
+  /// Places constructor
+  PlacesAPI()
       : _placeInfoController =
-            BehaviorSubject<List<PlaceInfo>>.seeded(<PlaceInfo>[]),
+            BehaviorSubject<List<PlaceDetails>>.seeded(<PlaceDetails>[]),
         _placesQueryController = BehaviorSubject<PlacesQuerySubject>.seeded(
             PlacesQuerySubject.initial()),
         _placesDocs = <DocumentSnapshot>[],
         _queryBanner = PlaceBanner.all,
-        _queryRadius = GeoRadius.defaultRadius,
-        _deviceLocation = _defaultDeviceLocation {
+        _queryRadius = GeoRadius.defaultRadius {
     _placeInfoController
       ..onListen = _startSubscription
       ..onCancel = _stopSubscription;
   }
-  //#endregion
-  /// returns the singleton instance
-  factory PlacesAPI.instance() => _instance;
-
-  static final PlacesAPI _instance = PlacesAPI._create();
   final BehaviorSubject<PlacesQuerySubject> _placesQueryController;
-  final BehaviorSubject<List<PlaceInfo>> _placeInfoController;
+  final BehaviorSubject<List<PlaceDetails>> _placeInfoController;
   StreamSubscription<Position>? _devicePositionSubscription;
   StreamSubscription<List<DocumentSnapshot>>? _placesSubscription;
   List<DocumentSnapshot> _placesDocs;
   PlaceBanner _queryBanner;
   double _queryRadius;
-  LatLng _deviceLocation;
-
-  /// map controller
-  GoogleMapController? placesMapController;
-
-  /// sheet scroll controller
-  ScrollController? sheetScroller;
 
   Stream<List<DocumentSnapshot>> get _placesStream =>
       _placesQueryController.switchMap((s) => Geoflutterfire()
@@ -59,15 +44,13 @@ class PlacesAPI {
               center: s.r.c, radius: s.r.r, field: 'd.g', strictMode: true));
 
   /// public place info stream
-  Stream<List<PlaceInfo>> get placeInfoStream => _placeInfoController.stream;
-  Stream<Position> get _deviceLocationStream => Geolocator.getPositionStream(
-        distanceFilter: 800,
-        intervalDuration: const Duration(seconds: 5),
-      );
+  Stream<List<PlaceDetails>> get placeInfoStream => _placeInfoController.stream;
+
+  /// deviceLocationStream
 
   void _startSubscription() {
     _devicePositionSubscription ??=
-        _deviceLocationStream.listen(_updateLocation);
+        AppProvider.deviceLocationStream.listen(_updateLocation);
     _placesSubscription ??= _placesStream.listen(_updatePlaces);
   }
 
@@ -86,12 +69,15 @@ class PlacesAPI {
     _placesDocs = value;
     if (_placeInfoController.hasListener) {
       _placeInfoController
-          .add(value.map((e) => e.placeInfo).toList(growable: false));
+          .add(value.map((e) => e.placeDetails).toList(growable: false));
     }
   }
 
   void _updateLocation(Position value) {
-    deviceLocation = value.to<LatLng>() ?? _defaultDeviceLocation;
+    final focus = value.to<GeoFirePoint>();
+    if (focus is GeoFirePoint) {
+      _queryGeoRadiusFocus = focus;
+    }
   }
 
   GeoRadius get _queryGeoRadius => _placesQueryController.value.r;
@@ -136,9 +122,10 @@ class PlacesAPI {
         if (_placesDocs.isNotEmpty) {
           final docs = _placesDocs
               .where((e) =>
-                  e.haversineDistance(
-                      latitude: _queryGeoRadiusFocusLatitude,
-                      longitude: _queryGeoRadiusFocusLongitude) <=
+                  GeoFirePoint.distanceBetween(
+                      to: Coordinates(e.latitude, e.longitude),
+                      from: Coordinates(_queryGeoRadiusFocusLatitude,
+                          _queryGeoRadiusFocusLongitude)) <=
                   value)
               .toList(growable: false);
           _updatePlaces(docs);
@@ -159,55 +146,10 @@ class PlacesAPI {
         );
       } else {
         if (_placesDocs.isNotEmpty) {
-          final stringValue = EnumParser.stringValue(value).toLowerCase();
-          final docs = _placesDocs
-              .where((e) => e.banner.toLowerCase() == stringValue)
-              .toList();
+          final docs = _placesDocs.where((e) => e.banner == value).toList();
           _updatePlaces(docs);
         }
       }
     }
   }
-
-  /// device location
-  LatLng get deviceLocation => _deviceLocation;
-  set deviceLocation(LatLng value) {
-    if (deviceLocation != value) {
-      _deviceLocation = value;
-      final focus = value.to<GeoFirePoint>();
-      if (focus is GeoFirePoint) {
-        _queryGeoRadiusFocus = focus;
-      }
-    }
-  }
-
-  /// scrolls places sheet
-  Future<void> placesSheetScrollTo(String value) async {
-    if (sheetScroller != null) {
-      sheetScroller?.jumpTo(0);
-      sheetScroller?.jumpTo(240);
-      final i = _placesDocs
-          .toList(
-            growable: false,
-          )
-          .indexWhere((e) => e.id == value);
-      await sheetScroller?.animateTo(60.0 * i,
-          duration: const Duration(milliseconds: 800), curve: Curves.easeInOut);
-    }
-  }
-
-  /// animates google map
-  Future<void> animateMapTo(LatLng latLng) async =>
-      await placesMapController?.animateCamera(CameraUpdate.newCameraPosition(
-        CameraPosition(
-          target: latLng,
-          zoom: 16,
-        ),
-      ));
-
-  /// zooms google map in/out
-  Future<void> animateMapZoom(double value) async =>
-      await placesMapController?.animateCamera(CameraUpdate.zoomTo(value));
-  static const _defaultDeviceLocation =
-      LatLng(GeoRadius.defaultLatitude, GeoRadius.defaultLongitude);
 }

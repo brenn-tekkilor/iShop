@@ -1,41 +1,42 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ishop/app/places/places_provider.dart';
-import 'package:ishop/data/model/place_info.dart';
-import 'package:ishop/styles.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:provider/provider.dart';
 
+import 'file:///C:/Users/brenn/source/repos/brenn/ishop/lib/com/interfaces/geo_directional_map_item.dart';
+
 /// PlaceCardItem
-class PlaceCardItem extends StatefulWidget {
+class PlaceListItem<T extends MapMarkerInfo> extends StatefulWidget {
   /// PlaceCardItem default const constructor
-  const PlaceCardItem({
+  const PlaceListItem({
     Key? key,
     @required required this.index,
-    @required required this.info,
+    @required required this.data,
   }) : super(key: key);
 
   /// the index if in a list or nan
   final int index;
 
   /// the place info
-  final PlaceInfo info;
+  final T data;
   @override
-  _PlaceCardItemState createState() => _PlaceCardItemState();
+  _PlaceListItemState createState() => _PlaceListItemState();
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
       ..add(ObjectFlagProperty<int>.has('index', index))
-      ..add(ObjectFlagProperty<PlaceInfo>.has('info', info));
+      ..add(ObjectFlagProperty<T>.has('data', data));
   }
 }
 
-class _PlaceCardItemState extends State<PlaceCardItem> {
+class _PlaceListItemState extends State<PlaceListItem> {
   @override
   Widget build(BuildContext context) {
-    var selectedPlace =
-        context.select<PlacesProvider, PlaceInfo?>((p) => p.selectedPlace);
-    final isSelected = selectedPlace == widget.info;
+    var selectedPlace = context
+        .select<PlacesProvider, PlaceListItem?>((p) => p.selectedListCard);
+    final isSelected = selectedPlace == widget;
     final bgColor = isSelected ? Colors.blueGrey : Colors.white;
     return Padding(
       padding: const EdgeInsets.only(
@@ -45,7 +46,7 @@ class _PlaceCardItemState extends State<PlaceCardItem> {
       ),
       child: GestureDetector(
         onTap: () {
-          selectedPlace = isSelected ? null : widget.info;
+          selectedPlace = isSelected ? null : widget;
         },
         child: Container(
           margin: const EdgeInsets.all(10),
@@ -67,13 +68,13 @@ class _PlaceCardItemState extends State<PlaceCardItem> {
                 margin: const EdgeInsets.only(left: 5),
                 child: ClipRect(
                     child:
-                        Image.asset(widget.info.logoPath, fit: BoxFit.cover)),
+                        Image.asset(widget.data.logoPath, fit: BoxFit.cover)),
               ),
               Expanded(
                 child: Container(
                   margin: const EdgeInsets.only(left: 5),
-                  child: Text(widget.info.name,
-                      style: AppStyles.primaryTextTheme.subtitle2),
+                  child: Text(widget.data.subheading,
+                      style: Theme.of(context).primaryTextTheme.subtitle2),
                 ),
               ),
             ],

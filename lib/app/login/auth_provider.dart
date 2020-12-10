@@ -1,14 +1,15 @@
 import 'dart:async';
 
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:ishop/data/service/auth_service.dart';
 
 /// Login Service Provider
-class LoginProvider extends ChangeNotifier {
+class AuthProvider extends ChangeNotifier {
   /// Constructor
-  LoginProvider() : _api = AuthService() {
+  AuthProvider() : _api = AuthService() {
     _tokenStream = _api.tokenStream.listen(_onTokenChange);
   }
 

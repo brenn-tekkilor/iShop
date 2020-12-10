@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:ishop/styles.dart';
 
 /// a basic tile widget
 class BasicTile extends StatelessWidget {
@@ -45,7 +44,7 @@ class BasicTile extends StatelessWidget {
           color: color,
           elevation: elevation,
           borderRadius: BorderRadius.circular(borderRadius),
-          shadowColor: AppColors.lightShadowColor,
+          shadowColor: Theme.of(context).shadowColor,
           child: InkWell(
             splashColor: splashColor,
             borderRadius: BorderRadius.circular(borderRadius),

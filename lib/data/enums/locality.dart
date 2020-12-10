@@ -1,1 +1,5 @@
-enum Locality { phoenix }
+/// Locality
+enum Locality {
+  /// phoenix
+  phoenix,
+}

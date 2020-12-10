@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
 
+/// AppErrorWidget
 abstract class AppErrorWidget {
+  /// create
   static Widget create(Object exception, StackTrace stackTrace) {
     final details = FlutterErrorDetails(
       exception: exception,

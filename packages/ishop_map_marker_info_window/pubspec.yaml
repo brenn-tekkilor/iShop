@@ -1,0 +1,26 @@
+name: ishop_map_marker_info_window
+description: An ishop animated map marker info window
+version: 0.0.1
+author: Klinton Kerber
+publish_to: none
+
+environment:
+  sdk: ">=2.10.0-56.0.dev <2.12.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  ishop:
+    path: ../../
+  provider: ^4.3.2+3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/logos/

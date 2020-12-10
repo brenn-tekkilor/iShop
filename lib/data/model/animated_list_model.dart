@@ -10,65 +10,77 @@
 import 'package:flutter/material.dart';
 
 /// removed item builder function type definition
-typedef ListModelRemovedItemBuilderFunc<E> = Widget Function(
-    E item, int index, BuildContext context, Animation<double> animation);
+typedef ListModelRemovedItemBuilderFunc<T> = Widget Function(
+    T? item, BuildContext context, Animation<double> animation);
 
 /// Keeps a dart list in sync with an animated flutter list
-class AnimatedListModel<E> {
+class AnimatedListModel<T extends Object> {
   /// constructor
-  AnimatedListModel({
-    @required required this.listKey,
-    @required required ListModelRemovedItemBuilderFunc<E> removedItemBuilder,
-    @required required Iterable<E> initialItems,
-  })   : _items = List<E>.from(initialItems),
+  AnimatedListModel(
+      {@required required this.listKey,
+      @required required ListModelRemovedItemBuilderFunc<T> removedItemBuilder,
+      T? initialItem})
+      : _items = initialItem != null ? <T>[initialItem] : <T>[],
         _removedItemBuilder = removedItemBuilder;
 
   /// the animated list key
   final GlobalKey<SliverAnimatedListState> listKey;
-  final ListModelRemovedItemBuilderFunc<E> _removedItemBuilder;
-  final List<E> _items;
+  final ListModelRemovedItemBuilderFunc<T> _removedItemBuilder;
+  final List<T> _items;
   SliverAnimatedListState? get _animatedList => listKey.currentState;
 
   /// inserts an item into the list
-  void insert(int index, E value) {
-    _items.insert(index, value);
-    _animatedList?.insertItem(index);
+  void insert(int index, T? value) {
+    if (value != null) {
+      _items.insert(index, value);
+      _animatedList?.insertItem(index);
+    }
   }
 
-  /// adds all the items to the list
-  void _addAll(Iterable<E> value) {
-    value.forEach(_add);
-  }
+  /// add
+  void add(T? value) => insert(_items.length, value);
 
-  void _removeAll(Iterable<E> value) => value.forEach(_remove);
-  void _add(E value) {
-    _items.add(value);
-    _animatedList?.insertItem(_items.length - 1);
-  }
+  /// clears the list
+  void clear() => _items.clear();
 
-  E _remove(E value) => _removeAt(_items.indexOf(value));
+  /// test every value
+  bool every(bool Function(T element) test) => _items.every(test);
+
+  /// test each value
+  Iterable<T> where(bool Function(T element) test) => _items.where(test);
 
   /// removes an item from the list and
   /// calls the removedItemBuilder function
   /// that was passed as an argument to this class's constructor
-  E _removeAt(int index) {
-    final removedItem = _items[index];
-    if (removedItem != null) {
-      _items.removeAt(index);
-      _animatedList?.removeItem(
-        index,
-        (context, animation) =>
-            _removedItemBuilder(removedItem, index, context, animation),
-      );
+  T? removeAt(int value) {
+    final T? removedItem;
+    if (value < _items.length) {
+      final dynamic removed = _items.removeAt(value);
+      removedItem = removed is T ? removed : null;
+      if (removedItem != null) {
+        _animatedList?.removeItem(
+          value,
+          (context, animation) =>
+              _removedItemBuilder(removedItem, context, animation),
+        );
+      }
+      return removedItem;
     }
-    return removedItem;
+    return null;
   }
 
-  /// clears the list and adds new values
-  void update(List<E> value) {
-    _removeAll(_items.where((e) => !value.contains(e)));
-    _addAll(value.where((e) => !_items.contains(e)));
+  /// remove
+  T? remove(T value) {
+    if (contains(value)) {
+      return removeAt(indexOf(value));
+    }
   }
+
+  /// contains
+  bool contains(T value) => _items.contains(value);
+
+  /// indexOf
+  int indexOf(T value) => _items.indexOf(value);
 
   /// gets the number of items in the list
   int get length => _items.length;
@@ -76,9 +88,9 @@ class AnimatedListModel<E> {
   /// returns true if there are no items in the list
   bool get isEmpty => _items.isEmpty;
 
-  /// operator for indexing into the list at the class lvl
-  E operator [](int index) => _items[index];
+  /// returns true if the list is not empty
+  bool get isNotEmpty => _items.isNotEmpty;
 
-  /// returns the item at the specified index of the list
-  int indexOf(E item) => _items.indexOf(item);
+  /// operator for indexing into the list at the class lvl
+  T operator [](int index) => _items[index];
 }

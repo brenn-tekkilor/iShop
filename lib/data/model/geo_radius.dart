@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:geoflutterfire/geoflutterfire.dart';
 
 @immutable
@@ -48,7 +49,7 @@ class GeoRadius {
   int get hashCode => latitude.hashCode ^ longitude.hashCode ^ r.hashCode;
 
   /// default radius
-  static const defaultRadius = 4.0;
+  static const defaultRadius = 1.0;
 
   /// default latitude
   static const defaultLatitude = 33.646132;

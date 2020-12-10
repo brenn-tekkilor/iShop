@@ -1,3 +1,5 @@
+/// AdministrativeArea
 enum AdministrativeArea {
-  az, // Arizona
+  /// Arizona
+  az,
 }

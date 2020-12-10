@@ -57,6 +57,13 @@ class ConsoleLogger extends ConstLogPrinter {
   String get _middleBorder => '$middleCorner$singleDivider';
   String get _bottomBorder => '$bottomLeftCorner$doubleDivider';
   //#endregion
+  /// logError
+  void logError(Object? error, {StackTrace? stack}) {
+    final m = error.toString();
+    const level = ConstLevel.error;
+    final s = stack ?? StackTrace.current;
+    final _ = log(ConstLogEvent(level, m, error, s));
+  }
 
   @override
   List<String> log(ConstLogEvent event) {

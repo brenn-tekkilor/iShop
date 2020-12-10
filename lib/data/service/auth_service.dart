@@ -1,7 +1,9 @@
 import 'dart:async';
 
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:ishop/dev/const_logger/console_logger.dart';
 
@@ -72,7 +74,7 @@ class AuthService {
     if (emailFormField.isNotEmpty && passwordFormField.isNotEmpty) {
       _fireAuth
           .signInWithEmailAndPassword(email: e, password: p)
-          .catchError(logger.log);
+          .catchError(logger.logError);
     }
   }
 
@@ -81,7 +83,7 @@ class AuthService {
     _fireAuth.currentUser
         .getIdTokenResult()
         .then(_tokenStreamController.add)
-        .catchError(logger.log);
+        .catchError(logger.logError);
   }
 
   /// Google OAuth SignIn
@@ -93,7 +95,7 @@ class AuthService {
             accessToken: details.accessToken,
             idToken: details.idToken,
           ))
-          .catchError(logger.log))
-      .catchError(logger.log);
+          .catchError(logger.logError))
+      .catchError(logger.logError);
   ////#endregion
 }
